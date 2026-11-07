@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DUCES Consultancy Services provides business finance consultancy and documentation support in the UAE. Explore business funding options and application guidance.">
+  <meta name="description" content="DUCES Consultancy Services offers UAE business finance consultancy, loan-readiness guidance, documentation support and bank application coordination.">
   <meta name="theme-color" content="#123B70">
-  <title>Business Finance | DUCES Consultancy Services</title>
+  <title>Business Finance & Loan Consultancy | DUCES</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,536 +14,216 @@
   <link rel="stylesheet" href="assets/style.css">
 
   <style>
-    :root {
-      --duces-blue: #123B70;
-      --duces-corporate: #1976B9;
-      --duces-green: #008F6B;
-      --duces-gold: #D9AD55;
-      --duces-white: #FFFFFF;
-      --duces-bg: #F5F7FA;
-      --duces-border: #E5EBF1;
-      --duces-text: #334155;
+    .page-hero {
+      background: linear-gradient(115deg, rgba(18,59,112,.97), rgba(25,118,185,.88));
+      color: #fff;
+      padding: 82px 0 76px;
     }
-
-    body {
-      font-family: "DM Sans", sans-serif;
-      color: var(--duces-text);
+    .page-hero .eyebrow { color: #D9AD55; }
+    .page-hero h1 {
+      color: #fff;
+      max-width: 790px;
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.15;
+      margin: 14px 0 20px;
     }
-
-    h1, h2, h3, h4 {
-      font-family: "Manrope", sans-serif;
-      color: var(--duces-blue);
+    .page-hero p {
+      color: rgba(255,255,255,.88);
+      max-width: 720px;
+      font-size: 1.08rem;
+      line-height: 1.8;
     }
-
-    .nav-dropdown {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
+    .page-hero .btn-outline {
+      border-color: rgba(255,255,255,.75);
+      color: #fff;
     }
-
-    .nav-dropdown summary {
-      list-style: none;
-      cursor: pointer;
+    .breadcrumb {
+      font-size: .88rem;
+      margin-bottom: 24px;
+      color: rgba(255,255,255,.72);
     }
-
-    .nav-dropdown summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .dropdown-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .dropdown-label::after {
-      content: "⌄";
-      font-size: 15px;
-    }
-
+    .breadcrumb a { color: #fff; text-decoration: none; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown summary { list-style: none; cursor: pointer; }
+    .nav-dropdown summary::-webkit-details-marker { display: none; }
     .dropdown-menu {
+      display: none;
       position: absolute;
-      top: calc(100% + 12px);
+      top: 100%;
       left: 0;
-      z-index: 1000;
-      min-width: 235px;
-      padding: 9px;
-      background: var(--duces-white);
-      border: 1px solid var(--duces-border);
+      min-width: 230px;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #E5EBF1;
       border-radius: 10px;
-      box-shadow: 0 14px 35px rgba(18, 59, 112, .13);
+      box-shadow: 0 12px 30px rgba(18,59,112,.12);
+      z-index: 100;
     }
-
+    .nav-dropdown[open] .dropdown-menu { display: grid; }
     .dropdown-menu a {
       display: block;
-      padding: 11px 13px;
-      color: var(--duces-blue);
-      text-decoration: none;
+      padding: 10px 12px;
       border-radius: 7px;
-      font-size: 14px;
-      font-weight: 600;
+      color: #123B70;
+      text-decoration: none;
+      font-size: .92rem;
     }
-
     .dropdown-menu a:hover,
-    .dropdown-menu a.active {
-      color: var(--duces-corporate);
-      background: var(--duces-bg);
-    }
+    .dropdown-menu a.active { background: #F5F7FA; color: #1976B9; }
 
-    .finance-hero {
-      position: relative;
-      overflow: hidden;
-      padding: 88px 0;
-      background:
-        radial-gradient(circle at 88% 18%, rgba(25,118,185,.12), transparent 28%),
-        linear-gradient(120deg, #F5F7FA 0%, #FFFFFF 62%, #EDF4FA 100%);
-    }
-
-    .finance-hero::after {
-      content: "";
-      position: absolute;
-      width: 320px;
-      height: 320px;
-      right: -130px;
-      bottom: -190px;
-      border: 1px solid rgba(25,118,185,.16);
-      border-radius: 50%;
-      box-shadow: 0 0 0 35px rgba(25,118,185,.035),
-                  0 0 0 70px rgba(25,118,185,.025);
-    }
-
-    .finance-hero-grid {
+    .service-grid {
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      align-items: center;
-      gap: 55px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .finance-eyebrow {
-      display: inline-block;
-      margin-bottom: 17px;
-      padding: 8px 13px;
-      color: var(--duces-green);
-      background: rgba(0,143,107,.08);
-      border-radius: 30px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .finance-hero h1 {
-      max-width: 680px;
-      margin: 0 0 20px;
-      font-size: clamp(36px, 5vw, 54px);
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-    }
-
-    .finance-hero h1 span {
-      color: var(--duces-corporate);
-    }
-
-    .finance-hero p {
-      max-width: 620px;
-      margin: 0 0 27px;
-      color: #526276;
-      font-size: 17px;
-      line-height: 1.8;
-    }
-
-    .finance-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-    }
-
-    .finance-actions .btn {
-      padding: 13px 22px;
-      border-radius: 6px;
-      font-weight: 700;
-    }
-
-    .finance-actions .btn-primary {
-      background: var(--duces-blue);
-      border: 1px solid var(--duces-blue);
-      color: var(--duces-white);
-    }
-
-    .finance-actions .btn-primary:hover {
-      background: var(--duces-corporate);
-      border-color: var(--duces-corporate);
-    }
-
-    .finance-actions .btn-outline {
-      color: var(--duces-blue);
-      border: 1px solid var(--duces-blue);
-      background: transparent;
-    }
-
-    .finance-actions .btn-outline:hover {
-      color: var(--duces-white);
-      background: var(--duces-blue);
-    }
-
-    .hero-panel {
-      padding: 30px;
-      background: var(--duces-white);
-      border: 1px solid var(--duces-border);
-      border-radius: 14px;
-      box-shadow: 0 18px 45px rgba(18,59,112,.09);
-    }
-
-    .hero-panel h3 {
-      margin: 0 0 8px;
-      font-size: 21px;
-    }
-
-    .hero-panel > p {
-      margin: 0 0 22px;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .panel-item {
-      display: flex;
-      gap: 13px;
-      align-items: flex-start;
-      padding: 14px 0;
-      border-top: 1px solid var(--duces-border);
-    }
-
-    .panel-icon {
-      display: flex;
-      flex: 0 0 38px;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
-      color: var(--duces-green);
-      background: rgba(0,143,107,.09);
-      border-radius: 9px;
-      font-weight: 800;
-    }
-
-    .panel-item strong {
-      display: block;
-      margin-bottom: 3px;
-      color: var(--duces-blue);
-      font-size: 14px;
-    }
-
-    .panel-item span {
-      color: #64748B;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .finance-section {
-      padding: 76px 0;
-    }
-
-    .finance-section.light {
-      background: var(--duces-bg);
-    }
-
-    .finance-heading {
-      max-width: 730px;
-      margin: 0 auto 42px;
-      text-align: center;
-    }
-
-    .finance-heading .small-label {
-      color: var(--duces-green);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-    }
-
-    .finance-heading h2 {
-      margin: 12px 0;
-      font-size: clamp(27px, 4vw, 36px);
-      line-height: 1.25;
-    }
-
-    .finance-heading p {
-      margin: 0;
-      color: #64748B;
-      line-height: 1.8;
-    }
-
-    .finance-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,minmax(0,1fr));
       gap: 22px;
+      margin-top: 34px;
     }
-
-    .finance-card {
+    .service-card {
+      background: #fff;
+      border: 1px solid #E5EBF1;
+      border-radius: 14px;
       padding: 27px;
-      background: var(--duces-white);
-      border: 1px solid var(--duces-border);
+      box-shadow: 0 8px 26px rgba(18,59,112,.045);
+    }
+    .service-number {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
       border-radius: 11px;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .finance-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 30px rgba(18,59,112,.08);
-    }
-
-    .finance-card .card-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 46px;
-      height: 46px;
-      margin-bottom: 18px;
-      color: var(--duces-corporate);
-      background: #EAF3FA;
-      border-radius: 10px;
-      font-size: 21px;
+      background: #F5F7FA;
+      color: #1976B9;
       font-weight: 800;
     }
-
-    .finance-card h3 {
-      margin: 0 0 10px;
-      font-size: 19px;
+    .service-card h3 {
+      color: #123B70;
+      font-family: 'Manrope',sans-serif;
+      font-size: 1.12rem;
+      margin: 15px 0 9px;
     }
-
-    .finance-card p {
-      margin: 0;
-      color: #64748B;
-      font-size: 14px;
+    .service-card p {
+      color: #566579;
+      font-size: .95rem;
       line-height: 1.75;
+      margin: 0;
     }
-
-    .finance-two-col {
+    .split-panel {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 45px;
+      gap: 38px;
       align-items: start;
     }
-
-    .finance-copy h2 {
-      margin: 0 0 16px;
-      font-size: clamp(27px, 4vw, 35px);
-      line-height: 1.25;
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 22px 0 0;
     }
-
-    .finance-copy p {
-      color: #64748B;
-      line-height: 1.8;
+    .check-list li {
+      position: relative;
+      padding: 0 0 15px 28px;
+      color: #566579;
+      line-height: 1.7;
     }
-
-    .finance-checklist {
-      display: grid;
-      gap: 13px;
-      margin-top: 23px;
-    }
-
-    .finance-check {
-      display: flex;
-      gap: 11px;
-      align-items: flex-start;
-      color: #475569;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .finance-check b {
-      color: var(--duces-green);
-      font-size: 17px;
-    }
-
-    .finance-note {
-      padding: 27px;
-      background: var(--duces-white);
-      border: 1px solid var(--duces-border);
-      border-left: 4px solid var(--duces-green);
-      border-radius: 9px;
-    }
-
-    .finance-note h3 {
-      margin: 0 0 12px;
-      font-size: 20px;
-    }
-
-    .finance-note p {
-      margin: 0 0 12px;
-      color: #64748B;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .finance-note p:last-child {
-      margin-bottom: 0;
-    }
-
-    .finance-process {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .process-step {
-      padding: 24px 20px;
-      background: var(--duces-white);
-      border: 1px solid var(--duces-border);
-      border-radius: 10px;
-    }
-
-    .process-number {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
-      margin-bottom: 16px;
-      color: var(--duces-white);
-      background: var(--duces-blue);
-      border-radius: 50%;
-      font-family: "Manrope", sans-serif;
+    .check-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #008F6B;
       font-weight: 800;
     }
-
-    .process-step h3 {
-      margin: 0 0 9px;
-      font-size: 17px;
-    }
-
-    .process-step p {
-      margin: 0;
-      color: #64748B;
-      font-size: 13px;
-      line-height: 1.7;
-    }
-
-    .finance-faq {
-      max-width: 850px;
-      margin: 0 auto;
-    }
-
-    .finance-faq details {
-      margin-bottom: 12px;
-      padding: 18px 20px;
-      background: var(--duces-white);
-      border: 1px solid var(--duces-border);
-      border-radius: 9px;
-    }
-
-    .finance-faq summary {
-      color: var(--duces-blue);
-      cursor: pointer;
-      font-weight: 700;
-      line-height: 1.5;
-    }
-
-    .finance-faq details p {
-      margin: 13px 0 0;
-      color: #64748B;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .finance-cta {
-      padding: 62px 25px;
-      color: var(--duces-white);
-      background: var(--duces-blue);
-      border-radius: 13px;
-      text-align: center;
-    }
-
-    .finance-cta h2 {
-      margin: 0 0 12px;
-      color: var(--duces-white);
-      font-size: clamp(26px, 4vw, 35px);
-    }
-
-    .finance-cta p {
-      max-width: 650px;
-      margin: 0 auto 24px;
-      color: rgba(255,255,255,.82);
-      line-height: 1.8;
-    }
-
-    .finance-cta .btn {
-      display: inline-block;
-      padding: 13px 23px;
-      color: var(--duces-blue);
-      background: var(--duces-white);
-      border-radius: 6px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .finance-cta .btn:hover {
-      background: #EDF4FA;
-    }
-
-    .finance-disclaimer {
-      margin-top: 25px;
-      padding: 15px 18px;
-      color: #64748B;
+    .info-panel {
       background: #F5F7FA;
-      border: 1px solid var(--duces-border);
-      border-radius: 8px;
-      font-size: 12px;
+      border: 1px solid #E5EBF1;
+      border-radius: 16px;
+      padding: 30px;
+    }
+    .info-panel h3 {
+      color: #123B70;
+      font-family: 'Manrope',sans-serif;
+      margin-top: 0;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4,minmax(0,1fr));
+      gap: 18px;
+      margin-top: 32px;
+    }
+    .process-step {
+      border-top: 3px solid #D9AD55;
+      background: #fff;
+      padding: 22px;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 6px 22px rgba(18,59,112,.05);
+    }
+    .process-step span { color: #1976B9; font-weight: 800; font-size: .85rem; }
+    .process-step h3 {
+      color: #123B70;
+      font-size: 1.02rem;
+      margin: 10px 0;
+      font-family: 'Manrope',sans-serif;
+    }
+    .process-step p {
+      color: #566579;
+      font-size: .9rem;
       line-height: 1.7;
+      margin: 0;
     }
-
-    @media (max-width: 900px) {
-      .finance-hero-grid,
-      .finance-two-col {
-        grid-template-columns: 1fr;
-      }
-
-      .finance-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .finance-process {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero-panel {
-        max-width: 650px;
-      }
+    .faq-list { max-width: 900px; margin: 30px auto 0; }
+    .faq-list details {
+      background: #fff;
+      border: 1px solid #E5EBF1;
+      border-radius: 10px;
+      padding: 19px 22px;
+      margin-bottom: 12px;
     }
-
-    @media (max-width: 600px) {
-      .finance-hero {
-        padding: 58px 0;
-      }
-
-      .finance-grid,
-      .finance-process {
-        grid-template-columns: 1fr;
-      }
-
-      .finance-section {
-        padding: 55px 0;
-      }
-
-      .hero-panel {
-        padding: 22px;
-      }
-
-      .finance-hero p {
-        font-size: 15px;
-      }
-
+    .faq-list summary {
+      color: #123B70;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Manrope',sans-serif;
+    }
+    .faq-list details p {
+      color: #566579;
+      line-height: 1.75;
+      margin: 14px 0 0;
+    }
+    .notice-panel {
+      background: #F5F7FA;
+      border-left: 4px solid #D9AD55;
+      padding: 19px 22px;
+      border-radius: 0 10px 10px 0;
+      color: #566579;
+      line-height: 1.75;
+      margin-top: 28px;
+    }
+    .bank-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .bank-list span {
+      background: #fff;
+      border: 1px solid #E5EBF1;
+      color: #123B70;
+      border-radius: 30px;
+      padding: 9px 15px;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+    @media(max-width:900px) {
+      .service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .process-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    }
+    @media(max-width:650px) {
+      .page-hero { padding: 60px 0; }
+      .service-grid,.process-grid,.split-panel { grid-template-columns: 1fr; }
+      .nav-dropdown { width: 100%; }
       .dropdown-menu {
         position: static;
-        min-width: 100%;
-        margin-top: 8px;
         box-shadow: none;
-      }
-
-      .nav-dropdown[open] {
-        display: block;
+        border: 0;
+        padding-left: 15px;
       }
     }
   </style>
@@ -554,14 +234,14 @@
   <div class="topline">
     <div class="container top-inner">
       <span>UAE Business & Financial Consultancy</span>
-      <span>Call / WhatsApp: +971 50 535 6966</span>
+      <a href="https://wa.me/971505356966" target="_blank" rel="noopener">WhatsApp: +971 50 535 6966</a>
     </div>
   </div>
 
   <header class="site-header">
     <div class="container nav-wrap">
-      <a href="index.html" class="brand" aria-label="DUCES Consultancy Services Home">
-        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services" class="logo">
+      <a class="brand" href="index.html" aria-label="DUCES Consultancy Services Home">
+        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services">
       </a>
 
       <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
@@ -573,262 +253,259 @@
         <a href="about.html">About Us</a>
 
         <details class="nav-dropdown" open>
-          <summary><span class="dropdown-label">Banking &amp; Finance</span></summary>
+          <summary>Banking & Finance ▾</summary>
           <div class="dropdown-menu">
             <a href="business-bank-account.html">Business Bank Account</a>
-            <a href="business-loan.html" class="active">Business Finance</a>
+            <a class="active" href="business-loan.html">Business Finance</a>
             <a href="mortgage-loan.html">Mortgage Finance</a>
           </div>
         </details>
 
         <details class="nav-dropdown">
-          <summary><span class="dropdown-label">Accounting &amp; Tax</span></summary>
+          <summary>Accounting & Tax ▾</summary>
           <div class="dropdown-menu">
-            <a href="accounting-bookkeeping.html">Accounting &amp; Bookkeeping</a>
-            <a href="vat-corporate-tax.html">VAT &amp; Corporate Tax</a>
+            <a href="accounting-bookkeeping.html">Accounting & Bookkeeping</a>
+            <a href="vat-corporate-tax.html">VAT & Corporate Tax</a>
           </div>
         </details>
 
         <a href="business-setup.html">Business Setup</a>
-        <a href="pro-visa-services.html">PRO &amp; Visa</a>
+        <a href="pro-visa-services.html">PRO & Visa Services</a>
         <a href="contact.html">Contact Us</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="finance-hero">
-      <div class="container finance-hero-grid">
-        <div>
-          <span class="finance-eyebrow">Banking &amp; Finance Consultancy</span>
-          <h1>Business Finance Solutions for <span>UAE Companies</span></h1>
-          <p>
-            Explore suitable business funding options with structured consultancy,
-            financial document preparation and application coordination.
-            DUCES helps business owners understand the process and prepare
-            for discussions with financial institutions.
-          </p>
-          <div class="finance-actions">
-            <a href="contact.html" class="btn btn-primary">Discuss Your Requirements</a>
-            <a href="https://wa.me/971505356966" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp Us</a>
-          </div>
-        </div>
-
-        <div class="hero-panel">
-          <h3>Business Finance Support</h3>
-          <p>Practical guidance through key stages of a business finance application.</p>
-
-          <div class="panel-item">
-            <div class="panel-icon">01</div>
-            <div>
-              <strong>Initial Business Review</strong>
-              <span>Understand your business profile and funding requirement.</span>
-            </div>
-          </div>
-
-          <div class="panel-item">
-            <div class="panel-icon">02</div>
-            <div>
-              <strong>Document Readiness</strong>
-              <span>Organise relevant business and financial documents.</span>
-            </div>
-          </div>
-
-          <div class="panel-item">
-            <div class="panel-icon">03</div>
-            <div>
-              <strong>Application Coordination</strong>
-              <span>Coordinate submission and follow-up with relevant institutions.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="finance-section">
+    <section class="page-hero">
       <div class="container">
-        <div class="finance-heading">
-          <span class="small-label">Finance Support</span>
-          <h2>Understand Your Business Funding Options</h2>
+        <div class="breadcrumb"><a href="index.html">Home</a> / Business Finance</div>
+        <span class="eyebrow">BUSINESS FINANCE CONSULTANCY</span>
+        <h1>Business Loan & Finance Consultancy in the UAE</h1>
+        <p>
+          Support for UAE businesses exploring finance options, preparing
+          documentation and understanding lender requirements. A structured
+          approach can help you assess readiness before approaching a bank.
+        </p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Discuss Finance Options</a>
+          <a href="https://wa.me/971505356966" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">BUSINESS FINANCE SUPPORT</span>
+          <h2>Explore Finance with Better Preparation</h2>
           <p>
-            Funding requirements differ from one business to another.
-            The right approach starts with understanding your business activity,
-            financial position, cash flow and purpose of funding.
+            Financing decisions depend on business performance, cash flow,
+            banking history, documentation and the lender's own eligibility
+            assessment. We help you organise the information needed for an
+            informed discussion.
           </p>
         </div>
 
-        <div class="finance-grid">
-          <article class="finance-card">
-            <div class="card-icon">↗</div>
-            <h3>Business Expansion</h3>
-            <p>Explore funding requirements for expansion, additional locations, equipment or business growth plans.</p>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-number">01</div>
+            <h3>Business Loan Readiness</h3>
+            <p>Initial review of business profile, operating history, turnover and available documentation to understand possible next steps.</p>
           </article>
 
-          <article class="finance-card">
-            <div class="card-icon">◫</div>
-            <h3>Working Capital</h3>
-            <p>Understand potential funding routes for operational cash flow, supplier payments and day-to-day business needs.</p>
+          <article class="service-card">
+            <div class="service-number">02</div>
+            <h3>Working Capital Finance</h3>
+            <p>Guidance for businesses exploring finance to support operational expenses, inventory and cash-flow requirements.</p>
           </article>
 
-          <article class="finance-card">
-            <div class="card-icon">▣</div>
-            <h3>Equipment &amp; Assets</h3>
-            <p>Review financing requirements for eligible machinery, commercial equipment and business assets.</p>
+          <article class="service-card">
+            <div class="service-number">03</div>
+            <h3>Business Expansion Finance</h3>
+            <p>Documentation and application coordination support for businesses exploring finance for planned expansion.</p>
           </article>
 
-          <article class="finance-card">
-            <div class="card-icon">⌁</div>
-            <h3>Business Term Finance</h3>
-            <p>Understand the documentation and assessment process for suitable term-finance enquiries.</p>
+          <article class="service-card">
+            <div class="service-number">04</div>
+            <h3>Banking Profile Review</h3>
+            <p>Discussion of banking conduct, account activity, financial records and other factors that may be relevant to a lender assessment.</p>
           </article>
 
-          <article class="finance-card">
-            <div class="card-icon">▤</div>
-            <h3>Receivables &amp; Trade Needs</h3>
-            <p>Discuss business funding requirements connected with invoices, receivables and trade operations.</p>
+          <article class="service-card">
+            <div class="service-number">05</div>
+            <h3>Documentation Assistance</h3>
+            <p>Support in organising financial statements, bank statements, VAT records and company documents for lender review.</p>
           </article>
 
-          <article class="finance-card">
-            <div class="card-icon">◎</div>
-            <h3>Finance Readiness Review</h3>
-            <p>Review available business records and identify documentation gaps before approaching a lender.</p>
+          <article class="service-card">
+            <div class="service-number">06</div>
+            <h3>Application Coordination</h3>
+            <p>Coordination support during the application process and follow-up on information requests, subject to lender procedures.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="finance-section light">
-      <div class="container finance-two-col">
-        <div class="finance-copy">
-          <span class="small-label">Eligibility Preparation</span>
-          <h2>Prepare Your Business Before Applying</h2>
+    <section class="section section-light">
+      <div class="container split-panel">
+        <div>
+          <span class="eyebrow">UNDERSTANDING ELIGIBILITY</span>
+          <h2>What May Matter in a Business Finance Assessment?</h2>
           <p>
-            Financial institutions independently assess each application.
-            Their requirements may vary according to the business activity,
-            company age, turnover, account conduct, financial statements
-            and requested facility.
+            Banks and finance providers apply their own credit policies.
+            Eligibility is not determined by one factor alone. Depending on the
+            product and lender, the following may be reviewed:
           </p>
 
-          <div class="finance-checklist">
-            <div class="finance-check"><b>✓</b><span>Valid UAE trade licence and company details</span></div>
-            <div class="finance-check"><b>✓</b><span>Business bank statements for the requested period</span></div>
-            <div class="finance-check"><b>✓</b><span>VAT returns and financial records, where applicable</span></div>
-            <div class="finance-check"><b>✓</b><span>Business profile, activity and ownership information</span></div>
-            <div class="finance-check"><b>✓</b><span>Clear explanation of funding purpose and expected use</span></div>
-            <div class="finance-check"><b>✓</b><span>Additional documents requested by the financial institution</span></div>
-          </div>
+          <ul class="check-list">
+            <li>Business activity, legal structure and operating history</li>
+            <li>Annual turnover and transaction patterns</li>
+            <li>Bank account conduct and average balances</li>
+            <li>VAT returns and available financial statements</li>
+            <li>Existing liabilities and repayment obligations</li>
+            <li>Ownership details and relevant personal or business credit profile</li>
+            <li>Purpose of finance and proposed repayment capacity</li>
+          </ul>
         </div>
 
-        <aside class="finance-note">
-          <h3>What Can Affect an Assessment?</h3>
-          <p><strong>Business activity:</strong> The nature of the company's operations and its accepted business category.</p>
-          <p><strong>Turnover and cash flow:</strong> Revenue consistency, transaction patterns and account conduct.</p>
-          <p><strong>Company history:</strong> Business operating period and available financial records.</p>
-          <p><strong>Existing obligations:</strong> Current loans, liabilities and repayment commitments.</p>
-          <p><strong>Facility structure:</strong> Requested amount, tenure, security and other lender-specific conditions.</p>
+        <aside class="info-panel">
+          <h3>Commonly Requested Documents</h3>
+          <p>The exact checklist varies by lender and finance product. Common requests may include:</p>
+          <ul class="check-list">
+            <li>Valid trade licence and company documents</li>
+            <li>MOA or relevant ownership documents</li>
+            <li>Recent business bank statements</li>
+            <li>VAT returns, where applicable</li>
+            <li>Financial statements or management accounts</li>
+            <li>Shareholder and authorised signatory identification</li>
+            <li>Existing loan or liability details, if applicable</li>
+          </ul>
         </aside>
       </div>
     </section>
 
-    <section class="finance-section">
+    <section class="section">
       <div class="container">
-        <div class="finance-heading">
-          <span class="small-label">Our Approach</span>
-          <h2>A Structured Finance Consultancy Process</h2>
+        <div class="section-head">
+          <span class="eyebrow">FINANCIAL INSTITUTIONS</span>
+          <h2>Understanding Available Banking Channels</h2>
           <p>
-            We help organise the process so that business owners can approach
-            relevant financial institutions with a clearer understanding of their requirements.
+            We can discuss potential banking channels based on your business
+            profile and requirements. Product availability and eligibility
+            are determined by each institution.
           </p>
         </div>
 
-        <div class="finance-process">
+        <div class="bank-list" style="justify-content:center;">
+          <span>Wio</span>
+          <span>First Abu Dhabi Bank</span>
+          <span>RAKBANK</span>
+          <span>Emirates Islamic</span>
+          <span>ADIB</span>
+          <span>Mashreq</span>
+        </div>
+
+        <div class="notice-panel">
+          The institutions listed are examples of UAE banking channels. Listing
+          a bank does not imply a formal partnership, endorsement or guaranteed
+          access to its products. Any application is subject to the institution's
+          own assessment and approval.
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">OUR PROCESS</span>
+          <h2>From Initial Review to Application Coordination</h2>
+          <p>A clear process helps identify missing information before a finance application is considered.</p>
+        </div>
+
+        <div class="process-grid">
           <article class="process-step">
-            <div class="process-number">1</div>
+            <span>STEP 01</span>
             <h3>Understand</h3>
-            <p>Discuss your business activity, funding purpose and current financial position.</p>
+            <p>Discuss your business, finance requirement and intended use of funds.</p>
           </article>
-
           <article class="process-step">
-            <div class="process-number">2</div>
+            <span>STEP 02</span>
             <h3>Review</h3>
-            <p>Review available company documents and identify possible information gaps.</p>
+            <p>Review available business information and identify potential documentation gaps.</p>
           </article>
-
           <article class="process-step">
-            <div class="process-number">3</div>
+            <span>STEP 03</span>
+            <h3>Prepare</h3>
+            <p>Organise the relevant documents and discuss possible lender channels.</p>
+          </article>
+          <article class="process-step">
+            <span>STEP 04</span>
             <h3>Coordinate</h3>
-            <p>Coordinate the relevant documentation and application process with the appropriate institution.</p>
-          </article>
-
-          <article class="process-step">
-            <div class="process-number">4</div>
-            <h3>Follow Up</h3>
-            <p>Assist with communication and document follow-up during the assessment process.</p>
+            <p>Support the agreed application and follow-up process, subject to lender procedures.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="finance-section light">
+    <section class="section">
       <div class="container">
-        <div class="finance-heading">
-          <span class="small-label">Frequently Asked Questions</span>
-          <h2>Business Finance – Common Questions</h2>
-          <p>Important points to understand before starting a finance enquiry.</p>
+        <div class="section-head">
+          <span class="eyebrow">FREQUENTLY ASKED QUESTIONS</span>
+          <h2>Business Finance – FAQs</h2>
         </div>
 
-        <div class="finance-faq">
+        <div class="faq-list">
           <details>
-            <summary>Does DUCES directly provide business loans?</summary>
-            <p>No. DUCES provides consultancy, documentation guidance and application coordination. Financing is provided and assessed by the relevant financial institution.</p>
+            <summary>Does DUCES provide business loans directly?</summary>
+            <p>No. DUCES is a consultancy service. We provide guidance, documentation assistance and coordination for businesses exploring finance from relevant financial institutions.</p>
           </details>
 
           <details>
-            <summary>Is business finance approval guaranteed?</summary>
-            <p>No. Approval is never guaranteed. Each institution independently reviews eligibility, documentation, credit assessment, business performance and its internal policies.</p>
+            <summary>Can a newly established company apply for business finance?</summary>
+            <p>Requirements differ by lender and product. Some finance products may require an established operating history, revenue records or other eligibility conditions. We can help you understand the information a lender may request.</p>
           </details>
 
           <details>
-            <summary>What documents are normally required?</summary>
-            <p>Common documents may include a trade licence, company documents, partner identification, business bank statements, VAT records and financial statements. The exact list depends on the institution and facility.</p>
+            <summary>Is a minimum turnover required?</summary>
+            <p>There is no single minimum turnover applicable to every lender or finance product. Eligibility criteria vary and may also depend on profitability, account conduct, business activity and repayment capacity.</p>
           </details>
 
           <details>
-            <summary>Can a newly established company apply?</summary>
-            <p>Requirements vary by institution and finance product. Some facilities require an established operating history, while other options may have different criteria. A review is needed before determining suitability.</p>
+            <summary>How long does a business finance application take?</summary>
+            <p>Processing time depends on the lender, completeness of the documents, product and credit assessment. Timelines cannot be guaranteed.</p>
           </details>
 
           <details>
-            <summary>How much finance can my company receive?</summary>
-            <p>The amount, if any, depends on the lender's assessment of the business, turnover, cash flow, liabilities, security and other applicable criteria. DUCES does not promise a specific funding amount.</p>
+            <summary>Can DUCES guarantee loan approval?</summary>
+            <p>No. Credit decisions, loan terms, limits and approvals are determined solely by the relevant financial institution. We do not guarantee approval or a specific financing amount.</p>
           </details>
+        </div>
 
-          <details>
-            <summary>Does DUCES charge for consultancy?</summary>
-            <p>Any applicable consultancy or service fee should be explained and agreed with the client before the service begins. Financial institution charges, if applicable, are separate.</p>
-          </details>
+        <div class="notice-panel">
+          <strong>Important:</strong> DUCES Consultancy Services is not a bank or
+          financial institution and does not independently approve or disburse
+          loans. Our role is limited to consultancy, documentation assistance
+          and coordination. All finance applications are subject to the
+          relevant institution's eligibility criteria, credit assessment,
+          terms and final approval.
         </div>
       </div>
     </section>
 
-    <section class="finance-section">
+    <section class="section">
       <div class="container">
-        <div class="finance-cta">
-          <h2>Discuss Your Business Finance Requirements</h2>
+        <div class="section-head">
+          <span class="eyebrow">START A CONVERSATION</span>
+          <h2>Discuss Your Business Finance Requirement</h2>
           <p>
-            Share your business profile and funding objective.
-            Our team can help you understand the documentation and
-            coordination process for your enquiry.
+            Tell us about your business and the type of finance you are exploring.
+            We can help you identify the information and documentation to review.
           </p>
-          <a href="contact.html" class="btn">Send an Enquiry</a>
-        </div>
-
-        <div class="finance-disclaimer">
-          <strong>Important Notice:</strong> DUCES Consultancy Services operates as a consultancy and coordination service.
-          It is not a bank or lending institution. All finance products, eligibility conditions, rates, fees,
-          security requirements and approvals are determined solely by the relevant financial institution.
-          Information on this page is general in nature and does not constitute a guarantee of finance,
-          financial advice or an offer of credit.
+          <div class="hero-actions" style="justify-content:center; margin-top:24px;">
+            <a href="contact.html" class="btn btn-primary">Send an Enquiry</a>
+            <a href="https://wa.me/971505356966" class="btn btn-outline" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          </div>
         </div>
       </div>
     </section>
@@ -837,51 +514,46 @@
   <footer class="site-footer">
     <div class="container footer-main">
       <div class="footer-about">
-        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services" class="footer-logo">
+        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services" style="max-width:170px;height:auto;">
         <p>
-          Business consultancy and coordination support for entrepreneurs
-          and companies across the UAE.
+          Business consultancy and coordination support for entrepreneurs,
+          professionals and businesses across the UAE.
         </p>
       </div>
 
       <div class="footer-links">
-        <h4>Quick Links</h4>
+        <h3>Quick Links</h3>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="business-setup.html">Business Setup</a>
+        <a href="business-bank-account.html">Banking Support</a>
         <a href="contact.html">Contact Us</a>
       </div>
 
       <div class="footer-links">
-        <h4>Banking &amp; Finance</h4>
+        <h3>Our Services</h3>
         <a href="business-bank-account.html">Business Bank Account</a>
         <a href="business-loan.html">Business Finance</a>
         <a href="mortgage-loan.html">Mortgage Finance</a>
+        <a href="accounting-bookkeeping.html">Accounting & Bookkeeping</a>
+        <a href="vat-corporate-tax.html">VAT & Corporate Tax</a>
       </div>
 
       <div class="footer-links">
-        <h4>Accounting &amp; Tax</h4>
-        <a href="accounting-bookkeeping.html">Accounting &amp; Bookkeeping</a>
-        <a href="vat-corporate-tax.html">VAT &amp; Corporate Tax</a>
-        <a href="pro-visa-services.html">PRO &amp; Visa Services</a>
+        <h3>Contact</h3>
+        <a href="https://wa.me/971505356966" target="_blank" rel="noopener">+971 50 535 6966</a>
+        <a href="mailto:chetanpatil.2798@gmail.com">Email DUCES</a>
+        <a href="contact.html">Send an Enquiry</a>
       </div>
     </div>
 
     <div class="container footer-bottom">
       <p>© <span id="year"></span> DUCES Consultancy Services. All rights reserved.</p>
-      <div>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <span> | </span>
-        <a href="terms.html">Terms &amp; Conditions</a>
-      </div>
+      <p><a href="privacy-policy.html">Privacy Policy</a></p>
     </div>
   </footer>
 
-  <a class="whatsapp-float"
-     href="https://wa.me/971505356966"
-     target="_blank"
-     rel="noopener"
-     aria-label="Chat with DUCES on WhatsApp">WhatsApp</a>
+  <a class="whatsapp-float" href="https://wa.me/971505356966" target="_blank" rel="noopener" aria-label="Chat with DUCES on WhatsApp">WhatsApp</a>
 
   <script src="assets/script.js"></script>
 </body>
