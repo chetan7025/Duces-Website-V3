@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="assets/style.css">
 
   <style>
@@ -44,7 +43,7 @@
     }
 
     .contact-hero .eyebrow {
-      color: #E8C77F;
+      color: var(--gold);
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -179,7 +178,7 @@
       border: 1px solid var(--silver);
       border-radius: 7px;
       padding: 13px 14px;
-      background: #FFFFFF;
+      background: var(--white);
       color: var(--text);
       font: inherit;
       font-size: 14px;
@@ -197,6 +196,27 @@
     .form-field textarea {
       min-height: 130px;
       resize: vertical;
+    }
+
+    .consent-field {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin: 5px 0 20px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #64748B;
+    }
+
+    .consent-field input {
+      margin-top: 4px;
+      accent-color: var(--royal);
+      flex: 0 0 auto;
+    }
+
+    .consent-field a {
+      color: var(--blue);
+      font-weight: 600;
     }
 
     .form-submit {
@@ -305,7 +325,7 @@
 
   <div class="topline">
     <div class="container top-inner">
-      <span>Business Consultancy & Support in the UAE</span>
+      <span>Business Consultancy &amp; Support in the UAE</span>
       <span>Call us: <a href="tel:+971505356966">+971 50 535 6966</a></span>
     </div>
   </div>
@@ -417,59 +437,102 @@
             Complete the details below so we can understand your requirements.
           </p>
 
-          <form id="ducesContactForm">
+          <form
+            class="contact-form"
+            action="https://formsubmit.co/chetanpatil.2798@gmail.com"
+            method="POST">
+
+            <input type="hidden" name="_subject" value="New DUCES Website Enquiry">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_next" value="https://chetan7025.github.io/Duces-Website-V3/thank-you.html">
+
+            <!-- Spam honeypot: keep this field hidden from visitors. -->
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
             <div class="form-grid">
 
               <div class="form-field">
                 <label for="fullName">Full Name *</label>
-                <input type="text" id="fullName" name="fullName"
-                       placeholder="Your full name" required>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="Full Name"
+                  placeholder="Your full name"
+                  autocomplete="name"
+                  required>
               </div>
 
               <div class="form-field">
                 <label for="phone">Contact Number *</label>
-                <input type="tel" id="phone" name="phone"
-                       placeholder="+971 ..." required>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="Phone Number"
+                  placeholder="+971 ..."
+                  autocomplete="tel"
+                  required>
               </div>
 
               <div class="form-field">
                 <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email"
-                       placeholder="name@example.com" required>
+                <input
+                  type="email"
+                  id="email"
+                  name="Email Address"
+                  placeholder="name@example.com"
+                  autocomplete="email"
+                  required>
               </div>
 
               <div class="form-field">
                 <label for="service">Service Required *</label>
-                <select id="service" name="service" required>
+                <select id="service" name="Service Required" required>
                   <option value="">Select a service</option>
                   <option>Business Bank Account</option>
                   <option>Business Finance</option>
                   <option>Mortgage Finance</option>
                   <option>Business Setup / Company Formation</option>
                   <option>PRO / Visa Coordination</option>
-                  <option>Accounting & Bookkeeping</option>
-                  <option>VAT & Corporate Tax</option>
+                  <option>Accounting &amp; Bookkeeping</option>
+                  <option>VAT &amp; Corporate Tax</option>
                   <option>Other Enquiry</option>
                 </select>
               </div>
 
               <div class="form-field full">
                 <label for="message">Tell Us About Your Requirements *</label>
-                <textarea id="message" name="message"
-                          placeholder="Please describe your requirements..."
-                          required></textarea>
+                <textarea
+                  id="message"
+                  name="Message"
+                  placeholder="Please describe your requirements..."
+                  required></textarea>
               </div>
 
             </div>
 
+            <label class="consent-field" for="privacyConsent">
+              <input
+                type="checkbox"
+                id="privacyConsent"
+                name="Privacy Consent"
+                value="Agreed"
+                required>
+              <span>
+                I agree that DUCES Consultancy Services may use the information
+                provided to respond to my enquiry, in accordance with its
+                <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.
+              </span>
+            </label>
+
             <button type="submit" class="form-submit">
-              Prepare Enquiry Email
+              Submit Enquiry
             </button>
 
             <p class="form-note">
-              Selecting this button opens your email application with your
-              enquiry details addressed to DUCES. Your email application must
-              be configured to send the message.
+              Your enquiry will be submitted to DUCES by email. Please do not
+              include passwords, banking PINs, card details or other sensitive
+              security information in this form.
             </p>
           </form>
         </div>
@@ -493,7 +556,8 @@
   <footer class="site-footer">
     <div class="container footer-main">
       <div class="footer-about">
-        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services"
+        <img src="assets/duces-logo.jpg"
+             alt="DUCES Consultancy Services"
              style="max-height:55px;width:auto;margin-bottom:15px;">
         <p>
           Business consultancy and coordination support for entrepreneurs
@@ -516,6 +580,7 @@
         <a href="vat-corporate-tax.html">VAT &amp; Corporate Tax</a>
         <a href="pro-visa-services.html">PRO &amp; Visa Services</a>
         <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
       </div>
 
       <div class="footer-links">
@@ -540,36 +605,6 @@
   </a>
 
   <script src="assets/script.js"></script>
-
-  <script>
-    document.getElementById("ducesContactForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const name = document.getElementById("fullName").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const service = document.getElementById("service").value;
-      const message = document.getElementById("message").value.trim();
-
-      if (!name || !phone || !email || !service || !message) {
-        alert("Please complete all required fields.");
-        return;
-      }
-
-      const subject = encodeURIComponent("Website Enquiry - " + service);
-      const body = encodeURIComponent(
-        "New enquiry from the DUCES website\n\n" +
-        "Name: " + name + "\n" +
-        "Contact Number: " + phone + "\n" +
-        "Email: " + email + "\n" +
-        "Service Required: " + service + "\n\n" +
-        "Requirements:\n" + message
-      );
-
-      window.location.href =
-        "mailto:chetanpatil.2798@gmail.com?subject=" + subject + "&body=" + body;
-    });
-  </script>
 
 </body>
 </html>
