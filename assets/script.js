@@ -35,13 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Close menu after selecting a navigation link.
+    // Close after selecting a navigation link.
 
     navLinks.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", closeMenu);
     });
 
-    // Close menu when Escape is pressed.
+    // Close when Escape is pressed.
 
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Close menu when clicking outside the navigation.
+    // Close when clicking outside the navigation.
 
     document.addEventListener("click", function (event) {
       const clickedInsideMenu = navLinks.contains(event.target);
@@ -60,26 +60,27 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Close menu when switching to desktop width.
+    // Close when switching to desktop width.
 
     window.addEventListener("resize", function () {
       if (window.innerWidth > 850) {
         closeMenu();
       }
     });
+
   }
 
 
   // 2. AUTOMATIC COPYRIGHT YEAR
 
-  const yearElement = document.getElementById("current-year");
+  const yearElement = document.getElementById("year");
 
   if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
   }
 
 
-  // 3. CONTACT FORM BASIC VALIDATION
+  // 3. CONTACT FORM VALIDATION
 
   const contactForm = document.querySelector(".contact-form");
 
@@ -94,11 +95,17 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       const submitButton = contactForm.querySelector(
-        'button[type="submit"]'
+        'button[type="submit"], input[type="submit"]'
       );
 
       if (submitButton) {
-        submitButton.textContent = "Submitting...";
+
+        if (submitButton.tagName === "INPUT") {
+          submitButton.value = "Submitting...";
+        } else {
+          submitButton.textContent = "Submitting...";
+        }
+
         submitButton.disabled = true;
       }
 
@@ -119,19 +126,29 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      const targetElement = document.querySelector(targetId);
+      let targetElement;
+
+      try {
+        targetElement = document.querySelector(targetId);
+      } catch (error) {
+        return;
+      }
 
       if (targetElement) {
+
         event.preventDefault();
 
         targetElement.scrollIntoView({
-          behavior: "smooth",
+          behavior: window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+          ).matches ? "auto" : "smooth",
           block: "start"
         });
 
         if (window.history && window.history.replaceState) {
           window.history.replaceState(null, "", targetId);
         }
+
       }
 
     });
