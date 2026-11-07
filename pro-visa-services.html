@@ -1,0 +1,529 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DUCES Consultancy Services provides UAE PRO coordination, visa documentation support, Emirates ID process guidance and renewal assistance for businesses and individuals.">
+  <meta name="theme-color" content="#123B70">
+  <title>PRO & Visa Services | DUCES Consultancy Services</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    .page-hero {
+      background: linear-gradient(115deg, rgba(18,59,112,.97), rgba(25,118,185,.88));
+      color: #fff;
+      padding: 82px 0 76px;
+    }
+    .page-hero .eyebrow { color: #D9AD55; }
+    .page-hero h1 {
+      color: #fff;
+      max-width: 780px;
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.15;
+      margin: 14px 0 20px;
+    }
+    .page-hero p {
+      color: rgba(255,255,255,.88);
+      max-width: 700px;
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+    .page-hero .btn-outline {
+      border-color: rgba(255,255,255,.75);
+      color: #fff;
+    }
+    .breadcrumb {
+      font-size: .88rem;
+      margin-bottom: 24px;
+      color: rgba(255,255,255,.72);
+    }
+    .breadcrumb a { color: #fff; text-decoration: none; }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 22px;
+      margin-top: 34px;
+    }
+    .service-card {
+      background: #fff;
+      border: 1px solid #E5EBF1;
+      border-radius: 14px;
+      padding: 27px;
+      box-shadow: 0 8px 26px rgba(18,59,112,.045);
+    }
+    .service-card h3 {
+      color: #123B70;
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.12rem;
+      margin: 15px 0 9px;
+    }
+    .service-card p {
+      color: #566579;
+      font-size: .95rem;
+      line-height: 1.75;
+      margin: 0;
+    }
+    .service-number {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: #F5F7FA;
+      color: #1976B9;
+      font-weight: 800;
+    }
+    .split-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 38px;
+      align-items: start;
+    }
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 22px 0 0;
+    }
+    .check-list li {
+      position: relative;
+      padding: 0 0 15px 28px;
+      color: #566579;
+      line-height: 1.7;
+    }
+    .check-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #008F6B;
+      font-weight: 800;
+    }
+    .info-panel {
+      background: #F5F7FA;
+      border: 1px solid #E5EBF1;
+      border-radius: 16px;
+      padding: 30px;
+    }
+    .info-panel h3 {
+      color: #123B70;
+      font-family: 'Manrope', sans-serif;
+      margin-top: 0;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 18px;
+      margin-top: 32px;
+    }
+    .process-step {
+      border-top: 3px solid #D9AD55;
+      background: #fff;
+      padding: 22px;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 6px 22px rgba(18,59,112,.05);
+    }
+    .process-step span {
+      color: #1976B9;
+      font-weight: 800;
+      font-size: .85rem;
+    }
+    .process-step h3 {
+      color: #123B70;
+      font-size: 1.02rem;
+      margin: 10px 0;
+      font-family: 'Manrope', sans-serif;
+    }
+    .process-step p {
+      color: #566579;
+      font-size: .9rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+    .faq-list {
+      max-width: 900px;
+      margin: 30px auto 0;
+    }
+    .faq-list details {
+      background: #fff;
+      border: 1px solid #E5EBF1;
+      border-radius: 10px;
+      padding: 19px 22px;
+      margin-bottom: 12px;
+    }
+    .faq-list summary {
+      color: #123B70;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Manrope', sans-serif;
+    }
+    .faq-list details p {
+      color: #566579;
+      line-height: 1.75;
+      margin: 14px 0 0;
+    }
+    .notice-panel {
+      background: #F5F7FA;
+      border-left: 4px solid #D9AD55;
+      padding: 19px 22px;
+      border-radius: 0 10px 10px 0;
+      color: #566579;
+      line-height: 1.75;
+      margin-top: 28px;
+    }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown summary {
+      list-style: none;
+      cursor: pointer;
+    }
+    .nav-dropdown summary::-webkit-details-marker { display: none; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 230px;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #E5EBF1;
+      border-radius: 10px;
+      box-shadow: 0 12px 30px rgba(18,59,112,.12);
+      z-index: 100;
+    }
+    .nav-dropdown[open] .dropdown-menu { display: grid; }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 7px;
+      color: #123B70;
+      text-decoration: none;
+      font-size: .92rem;
+    }
+    .dropdown-menu a:hover,
+    .dropdown-menu a.active {
+      background: #F5F7FA;
+      color: #1976B9;
+    }
+    @media(max-width: 900px) {
+      .service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .process-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    }
+    @media(max-width: 650px) {
+      .page-hero { padding: 60px 0; }
+      .service-grid,
+      .process-grid,
+      .split-panel { grid-template-columns: 1fr; }
+      .nav-dropdown { width: 100%; }
+      .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: 0;
+        padding-left: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topline">
+    <div class="container top-inner">
+      <span>UAE Business & Documentation Consultancy</span>
+      <a href="https://wa.me/971505356966" target="_blank" rel="noopener">WhatsApp: +971 50 535 6966</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="DUCES Consultancy Services Home">
+        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services">
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+
+        <details class="nav-dropdown">
+          <summary>Banking & Finance ▾</summary>
+          <div class="dropdown-menu">
+            <a href="business-bank-account.html">Business Bank Account</a>
+            <a href="business-loan.html">Business Finance</a>
+            <a href="mortgage-loan.html">Mortgage Finance</a>
+          </div>
+        </details>
+
+        <details class="nav-dropdown">
+          <summary>Accounting & Tax ▾</summary>
+          <div class="dropdown-menu">
+            <a href="accounting-bookkeeping.html">Accounting & Bookkeeping</a>
+            <a href="vat-corporate-tax.html">VAT & Corporate Tax</a>
+          </div>
+        </details>
+
+        <a href="business-setup.html">Business Setup</a>
+        <a class="active" href="pro-visa-services.html">PRO & Visa Services</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a> / PRO & Visa Services</div>
+        <span class="eyebrow">DOCUMENTATION & PROCESS COORDINATION</span>
+        <h1>PRO & Visa Services in the UAE</h1>
+        <p>
+          Practical documentation support and process coordination for businesses
+          and individuals navigating UAE visa, Emirates ID and related administrative
+          requirements.
+        </p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Discuss Your Requirements</a>
+          <a href="https://wa.me/971505356966" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">OUR SUPPORT</span>
+          <h2>Documentation Support for Your UAE Requirements</h2>
+          <p>
+            Administrative requirements can involve several documents, appointments
+            and follow-ups. We help you understand the process and coordinate the
+            relevant steps with the appropriate service providers and authorities.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-number">01</div>
+            <h3>Visa Documentation Support</h3>
+            <p>Guidance on document checklists, application preparation and coordination for applicable UAE visa processes.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">02</div>
+            <h3>Emirates ID Coordination</h3>
+            <p>Assistance with understanding Emirates ID requirements and coordinating the relevant application and appointment steps.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">03</div>
+            <h3>Medical Fitness Coordination</h3>
+            <p>Guidance on medical fitness requirements and coordination of appointments with the relevant authorised centres.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">04</div>
+            <h3>Establishment & Labour Documentation</h3>
+            <p>Documentation checklist and coordination support for applicable establishment, labour and immigration-related processes.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">05</div>
+            <h3>Visa Renewal Follow-up</h3>
+            <p>Assistance with renewal planning, document reminders and follow-up coordination to help businesses stay organised.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">06</div>
+            <h3>Business Administration Support</h3>
+            <p>Administrative coordination related to company documentation, employee records and relevant business formalities.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container split-panel">
+        <div>
+          <span class="eyebrow">FOR BUSINESSES & INDIVIDUALS</span>
+          <h2>Organised Support at Every Step</h2>
+          <p>
+            Whether you are setting up a company, onboarding employees or managing
+            an upcoming renewal, clear documentation and timely coordination can
+            make the process easier to manage.
+          </p>
+
+          <ul class="check-list">
+            <li>Initial requirement discussion and process overview</li>
+            <li>Document checklist based on the applicable process</li>
+            <li>Application preparation and coordination support</li>
+            <li>Appointment and submission follow-up where applicable</li>
+            <li>Updates on pending documents and process milestones</li>
+            <li>Renewal reminders and administrative follow-up</li>
+          </ul>
+        </div>
+
+        <aside class="info-panel">
+          <h3>Who Can Approach Us?</h3>
+          <p>Our coordination support may be relevant to:</p>
+          <ul class="check-list">
+            <li>New UAE business owners</li>
+            <li>Existing companies and employers</li>
+            <li>Businesses onboarding employees</li>
+            <li>Individuals reviewing visa documentation requirements</li>
+            <li>Companies planning renewals and administrative follow-ups</li>
+          </ul>
+          <p>
+            The exact requirements depend on the visa category, jurisdiction,
+            applicant profile and applicable authority procedures.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">OUR APPROACH</span>
+          <h2>A Clear and Structured Coordination Process</h2>
+          <p>We aim to keep requirements, responsibilities and next steps clear from the beginning.</p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-step">
+            <span>STEP 01</span>
+            <h3>Understand</h3>
+            <p>Discuss your requirement, applicant category and relevant business details.</p>
+          </article>
+          <article class="process-step">
+            <span>STEP 02</span>
+            <h3>Prepare</h3>
+            <p>Review the applicable document checklist and identify information that may be required.</p>
+          </article>
+          <article class="process-step">
+            <span>STEP 03</span>
+            <h3>Coordinate</h3>
+            <p>Coordinate the relevant submission, appointment or service-provider steps as agreed.</p>
+          </article>
+          <article class="process-step">
+            <span>STEP 04</span>
+            <h3>Follow Up</h3>
+            <p>Help track pending requirements and communicate available process updates.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FREQUENTLY ASKED QUESTIONS</span>
+          <h2>PRO & Visa Support – FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Does DUCES issue UAE visas?</summary>
+            <p>No. DUCES provides consultancy, documentation support and coordination. Visa decisions and issuance are handled by the relevant UAE government authorities.</p>
+          </details>
+
+          <details>
+            <summary>Can you help with Emirates ID procedures?</summary>
+            <p>We can explain the general process, help organise the relevant document checklist and coordinate applicable appointment or application steps with the appropriate channels.</p>
+          </details>
+
+          <details>
+            <summary>Can you assist companies with employee visa requirements?</summary>
+            <p>We can discuss the company's requirements and provide documentation and coordination support for applicable employee-related processes. Requirements depend on the company, jurisdiction and applicant category.</p>
+          </details>
+
+          <details>
+            <summary>How early should I plan a visa renewal?</summary>
+            <p>It is sensible to review expiry dates in advance. The appropriate timeline depends on the visa category and current authority procedures. Contact us with the relevant details so we can help identify the next steps.</p>
+          </details>
+
+          <details>
+            <summary>Can you guarantee visa approval?</summary>
+            <p>No. Approval, processing time and final decisions are determined by the relevant government authorities. We do not guarantee approvals or processing outcomes.</p>
+          </details>
+        </div>
+
+        <div class="notice-panel">
+          <strong>Important:</strong> DUCES Consultancy Services provides consultancy,
+          documentation assistance and coordination support. We are not a government
+          authority and do not represent that applications will be approved. All
+          applications remain subject to the applicable laws, eligibility criteria
+          and decisions of the relevant UAE authorities.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">LET'S DISCUSS YOUR REQUIREMENT</span>
+          <h2>Need Help Organising Your UAE Documentation?</h2>
+          <p>
+            Share your requirement with our team. We will help you understand the
+            documentation and coordination steps that may apply.
+          </p>
+          <div class="hero-actions" style="justify-content:center; margin-top:24px;">
+            <a href="contact.html" class="btn btn-primary">Send an Enquiry</a>
+            <a href="https://wa.me/971505356966" class="btn btn-outline" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-about">
+        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services" style="max-width:170px; height:auto;">
+        <p>
+          Business consultancy and coordination support for entrepreneurs,
+          professionals and businesses across the UAE.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="business-setup.html">Business Setup</a>
+        <a href="business-bank-account.html">Banking Support</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="footer-links">
+        <h3>Our Services</h3>
+        <a href="business-loan.html">Business Finance</a>
+        <a href="mortgage-loan.html">Mortgage Finance</a>
+        <a href="accounting-bookkeeping.html">Accounting & Bookkeeping</a>
+        <a href="vat-corporate-tax.html">VAT & Corporate Tax</a>
+        <a href="pro-visa-services.html">PRO & Visa Services</a>
+      </div>
+
+      <div class="footer-links">
+        <h3>Contact</h3>
+        <a href="https://wa.me/971505356966" target="_blank" rel="noopener">+971 50 535 6966</a>
+        <a href="mailto:chetanpatil.2798@gmail.com">Email DUCES</a>
+        <a href="contact.html">Send an Enquiry</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> DUCES Consultancy Services. All rights reserved.</p>
+      <p><a href="privacy-policy.html">Privacy Policy</a></p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/971505356966" target="_blank" rel="noopener" aria-label="Chat with DUCES on WhatsApp">WhatsApp</a>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
