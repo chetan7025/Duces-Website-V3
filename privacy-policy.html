@@ -5,11 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Thank You | DUCES Consultancy Services</title>
-  <meta name="description" content="Thank you for contacting DUCES Consultancy Services. Our team will review your enquiry and contact you.">
-
-  <link rel="icon" href="assets/duces-logo.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="assets/style.css">
+  <title>Privacy Policy | DUCES Consultancy Services</title>
+  <meta name="description" content="Read the privacy policy of DUCES Consultancy Services to understand how personal information is collected, used and protected.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,219 +16,211 @@
     :root {
       --royal-blue: #123B70;
       --corporate-blue: #1976B9;
-      --emerald-green: #008F6B;
-      --champagne-gold: #D9AD55;
+      --emerald: #008F6B;
+      --gold: #D9AD55;
       --white: #FFFFFF;
-      --light-background: #F5F7FA;
-      --soft-silver: #E5EBF1;
+      --light-bg: #F5F7FA;
+      --silver: #E5EBF1;
+      --text: #334155;
+      --muted: #64748B;
     }
 
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: "DM Sans", sans-serif;
-      color: var(--royal-blue);
-      background: var(--light-background);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .thank-you-header {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
       background: var(--white);
-      border-bottom: 1px solid var(--soft-silver);
-      padding: 17px 6%;
+      line-height: 1.75;
     }
 
-    .thank-you-header-inner {
-      max-width: 1180px;
+    a {
+      color: var(--corporate-blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--royal-blue);
+    }
+
+    .privacy-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--silver);
+    }
+
+    .privacy-header-inner {
+      max-width: 1160px;
       margin: auto;
+      padding: 17px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
     }
 
-    .thank-you-logo img {
+    .privacy-logo img {
       display: block;
       width: 175px;
-      max-height: 65px;
+      max-height: 70px;
       object-fit: contain;
     }
 
-    .header-label {
-      color: var(--royal-blue);
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .thank-you-main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 65px 20px;
-    }
-
-    .thank-you-card {
-      width: 100%;
-      max-width: 680px;
-      padding: 55px 48px;
-      background: var(--white);
-      border: 1px solid var(--soft-silver);
-      border-radius: 16px;
-      text-align: center;
-      box-shadow: 0 14px 40px rgba(18, 59, 112, 0.07);
-    }
-
-    .success-mark {
-      width: 76px;
-      height: 76px;
-      margin: 0 auto 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: rgba(0, 143, 107, 0.10);
-      color: var(--emerald-green);
-      font-size: 38px;
-      font-weight: 700;
-      border: 1px solid rgba(0, 143, 107, 0.2);
-    }
-
-    .thank-you-card h1 {
-      margin: 0 0 17px;
-      color: var(--royal-blue);
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(29px, 5vw, 39px);
-      font-weight: 800;
-      line-height: 1.2;
-    }
-
-    .thank-you-card .intro {
-      max-width: 510px;
-      margin: 0 auto 18px;
-      color: #52657A;
-      font-size: 16px;
-      line-height: 1.8;
-    }
-
-    .thank-you-note {
-      margin: 28px 0;
-      padding: 17px 20px;
-      background: var(--light-background);
-      border-left: 3px solid var(--emerald-green);
+    .back-home {
+      display: inline-block;
+      padding: 10px 19px;
+      border: 1px solid var(--royal-blue);
       border-radius: 5px;
       color: var(--royal-blue);
       font-size: 14px;
-      line-height: 1.7;
-      text-align: left;
-    }
-
-    .thank-you-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 13px;
-      margin-top: 30px;
-    }
-
-    .thank-you-btn {
-      min-height: 48px;
-      padding: 13px 23px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14px;
       font-weight: 700;
-      transition: 0.2s ease;
+      transition: .2s ease;
     }
 
-    .primary-btn {
+    .back-home:hover {
       background: var(--royal-blue);
       color: var(--white);
-      border: 1px solid var(--royal-blue);
     }
 
-    .primary-btn:hover {
-      background: var(--corporate-blue);
-      border-color: var(--corporate-blue);
-    }
-
-    .secondary-btn {
-      background: var(--white);
-      color: var(--royal-blue);
-      border: 1px solid var(--soft-silver);
-    }
-
-    .secondary-btn:hover {
-      border-color: var(--corporate-blue);
-      color: var(--corporate-blue);
-    }
-
-    .thank-you-contact {
-      margin-top: 29px;
-      color: #65778A;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .thank-you-contact a {
-      color: var(--corporate-blue);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .thank-you-footer {
-      padding: 20px;
-      background: var(--royal-blue);
-      color: rgba(255, 255, 255, 0.82);
+    .privacy-banner {
+      background: var(--light-bg);
+      border-bottom: 1px solid var(--silver);
+      padding: 65px 24px;
       text-align: center;
-      font-size: 12px;
-      line-height: 1.8;
     }
 
-    .thank-you-footer a {
+    .privacy-banner .eyebrow {
+      color: var(--emerald);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .privacy-banner h1 {
+      font-family: 'Manrope', sans-serif;
+      color: var(--royal-blue);
+      font-size: clamp(30px, 5vw, 44px);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .privacy-banner p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .privacy-container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 55px 24px 75px;
+    }
+
+    .privacy-intro {
+      font-size: 16px;
+      margin-bottom: 35px;
+    }
+
+    .privacy-section {
+      margin-bottom: 32px;
+      padding-bottom: 27px;
+      border-bottom: 1px solid var(--silver);
+    }
+
+    .privacy-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .privacy-section h2 {
+      font-family: 'Manrope', sans-serif;
+      color: var(--royal-blue);
+      font-size: 21px;
+      line-height: 1.4;
+      margin-bottom: 13px;
+    }
+
+    .privacy-section p {
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .privacy-section ul {
+      padding-left: 23px;
+      margin: 10px 0 14px;
+    }
+
+    .privacy-section li {
+      padding-left: 4px;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .privacy-contact {
+      background: var(--light-bg);
+      border: 1px solid var(--silver);
+      border-left: 4px solid var(--emerald);
+      border-radius: 6px;
+      padding: 24px;
+      margin-top: 25px;
+    }
+
+    .privacy-contact h2 {
+      color: var(--royal-blue);
+      font-family: 'Manrope', sans-serif;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .privacy-contact p {
+      margin-bottom: 7px;
+      font-size: 15px;
+    }
+
+    .privacy-footer {
+      background: var(--royal-blue);
       color: var(--white);
-      text-decoration: none;
+      padding: 25px 24px;
+      text-align: center;
+    }
+
+    .privacy-footer p {
+      font-size: 13px;
+      opacity: .9;
+    }
+
+    .privacy-footer a {
+      color: var(--white);
+      text-decoration: underline;
     }
 
     @media (max-width: 600px) {
-      .thank-you-header {
-        padding: 14px 20px;
+      .privacy-header-inner {
+        padding: 13px 17px;
       }
 
-      .thank-you-logo img {
-        width: 145px;
+      .privacy-logo img {
+        width: 135px;
       }
 
-      .header-label {
-        font-size: 11px;
+      .back-home {
+        padding: 8px 12px;
+        font-size: 12px;
       }
 
-      .thank-you-main {
-        padding: 35px 15px;
+      .privacy-banner {
+        padding: 45px 18px;
       }
 
-      .thank-you-card {
-        padding: 38px 22px;
+      .privacy-container {
+        padding: 38px 19px 55px;
       }
 
-      .thank-you-card .intro {
-        font-size: 14px;
-      }
-
-      .thank-you-actions {
-        flex-direction: column;
-      }
-
-      .thank-you-btn {
-        width: 100%;
+      .privacy-section h2 {
+        font-size: 19px;
       }
     }
   </style>
@@ -239,67 +228,234 @@
 
 <body>
 
-  <header class="thank-you-header">
-    <div class="thank-you-header-inner">
-      <a class="thank-you-logo" href="index.html" aria-label="DUCES Home">
+  <header class="privacy-header">
+    <div class="privacy-header-inner">
+      <a class="privacy-logo" href="index.html" aria-label="DUCES Home">
         <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services">
       </a>
-      <span class="header-label">Business Consultancy | UAE</span>
+
+      <a class="back-home" href="index.html">Back to Home</a>
     </div>
   </header>
 
-  <main class="thank-you-main">
-    <section class="thank-you-card">
+  <section class="privacy-banner">
+    <div class="eyebrow">DUCES Consultancy Services</div>
+    <h1>Privacy Policy</h1>
+    <p>Last updated: 7 November 2026</p>
+  </section>
 
-      <div class="success-mark" aria-hidden="true">✓</div>
+  <main class="privacy-container">
 
-      <h1>Thank You for Contacting Us</h1>
+    <p class="privacy-intro">
+      At DUCES Consultancy Services, we respect your privacy and take the
+      protection of personal information seriously. This Privacy Policy
+      explains what information may be collected when you visit our website
+      or contact us, how that information may be used, and the choices
+      available to you.
+    </p>
 
-      <p class="intro">
-        Your enquiry has been submitted. Our team will review the details
-        and contact you using the information provided.
+    <section class="privacy-section">
+      <h2>1. Information We Collect</h2>
+      <p>
+        When you submit an enquiry or contact us through our website, we may
+        collect information such as:
       </p>
+      <ul>
+        <li>Your name and contact details.</li>
+        <li>Your email address and telephone number.</li>
+        <li>The service or consultancy assistance you are interested in.</li>
+        <li>Information and documents you voluntarily provide in your message.</li>
+        <li>Other information necessary to respond to your enquiry.</li>
+      </ul>
+      <p>
+        Our website hosting or technical services may also process basic
+        technical information, such as browser type, device information,
+        IP address and website usage data, where applicable.
+      </p>
+    </section>
 
-      <div class="thank-you-note">
-        <strong>What happens next?</strong><br>
-        We will review your requirements and get in touch to discuss
-        the appropriate consultancy support for your business needs.
-      </div>
+    <section class="privacy-section">
+      <h2>2. How We Use Your Information</h2>
+      <p>We may use the information you provide to:</p>
+      <ul>
+        <li>Respond to enquiries and requests for information.</li>
+        <li>Understand your business and consultancy requirements.</li>
+        <li>Communicate about services you have requested.</li>
+        <li>Coordinate relevant consultancy or support services.</li>
+        <li>Maintain website security and improve our services.</li>
+        <li>Meet applicable legal and regulatory requirements.</li>
+      </ul>
+      <p>
+        We do not use your enquiry information for unrelated purposes
+        without an appropriate basis or permission where required.
+      </p>
+    </section>
 
-      <div class="thank-you-actions">
-        <a href="index.html" class="thank-you-btn primary-btn">
-          Back to Homepage
-        </a>
+    <section class="privacy-section">
+      <h2>3. Website Enquiry Forms</h2>
+      <p>
+        Information submitted through our website enquiry form is intended
+        to be routed to our designated business email address:
+        <a href="mailto:chetanpatil.2798@gmail.com">chetanpatil.2798@gmail.com</a>.
+      </p>
+      <p>
+        The form may use a third-party form-processing service, such as
+        FormSubmit, to transmit submissions. Such services may process
+        information under their own terms and privacy practices. Please
+        review the relevant provider's privacy information before submitting
+        personal or confidential information.
+      </p>
+      <p>
+        Please do not submit passwords, banking login credentials, card
+        security codes or other highly sensitive information through a
+        general website enquiry form.
+      </p>
+    </section>
 
-        <a href="https://wa.me/971505356966"
-           class="thank-you-btn secondary-btn"
-           target="_blank"
-           rel="noopener noreferrer">
-          Contact Us on WhatsApp
-        </a>
-      </div>
+    <section class="privacy-section">
+      <h2>4. WhatsApp and Direct Communication</h2>
+      <p>
+        Our website may provide a separate WhatsApp contact link for your
+        convenience. If you choose to contact us through WhatsApp, your
+        conversation will be handled through WhatsApp and is also subject
+        to WhatsApp's own terms and privacy policy.
+      </p>
+      <p>
+        Contacting us through WhatsApp is optional. You may also contact us
+        by email or telephone.
+      </p>
+    </section>
 
-      <div class="thank-you-contact">
-        Need immediate assistance?<br>
+    <section class="privacy-section">
+      <h2>5. Sharing of Information</h2>
+      <p>
+        We do not sell personal information submitted through our website.
+        We may share relevant information only where reasonably necessary,
+        including:
+      </p>
+      <ul>
+        <li>With service providers who help operate or support our website.</li>
+        <li>
+          With relevant third parties when you request assistance that
+          requires their involvement, subject to applicable requirements.
+        </li>
+        <li>With competent authorities where required by law or regulation.</li>
+      </ul>
+      <p>
+        We aim to limit information shared to what is reasonably necessary
+        for the relevant purpose.
+      </p>
+    </section>
+
+    <section class="privacy-section">
+      <h2>6. Data Retention and Security</h2>
+      <p>
+        We retain personal information only for as long as reasonably
+        necessary for the purpose for which it was collected, or as required
+        by applicable legal obligations.
+      </p>
+      <p>
+        We take reasonable steps to protect information against unauthorised
+        access, disclosure, alteration or loss. However, no method of
+        electronic transmission or storage can be guaranteed to be
+        completely secure.
+      </p>
+    </section>
+
+    <section class="privacy-section">
+      <h2>7. Your Choices and Requests</h2>
+      <p>
+        Subject to applicable laws and legal obligations, you may contact us
+        to request access to, correction of, or deletion of personal
+        information you have provided to us.
+      </p>
+      <p>
+        You may also contact us if you wish to raise a privacy concern or
+        ask how your information is being handled. We may need to verify
+        your identity before acting on certain requests.
+      </p>
+    </section>
+
+    <section class="privacy-section">
+      <h2>8. Cookies and Website Technologies</h2>
+      <p>
+        Our website may use essential technical features required for
+        operation. If analytics, advertising or other non-essential
+        tracking technologies are introduced, this policy should be
+        updated to explain their use and any applicable choices.
+      </p>
+      <p>
+        You can manage cookies through your browser settings. Disabling
+        certain cookies may affect website functionality.
+      </p>
+    </section>
+
+    <section class="privacy-section">
+      <h2>9. External Websites</h2>
+      <p>
+        Our website may contain links to external websites or services.
+        We are not responsible for the privacy practices, content or
+        security of third-party websites. We encourage you to review
+        their privacy policies before sharing information with them.
+      </p>
+    </section>
+
+    <section class="privacy-section">
+      <h2>10. Children's Privacy</h2>
+      <p>
+        Our website and consultancy services are intended for business
+        users and adults. We do not knowingly seek to collect personal
+        information from children through this website.
+      </p>
+    </section>
+
+    <section class="privacy-section">
+      <h2>11. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy when our website, services or
+        applicable requirements change. The revised version will be
+        published on this page with an updated date.
+      </p>
+    </section>
+
+    <div class="privacy-contact">
+      <h2>12. Contact Us</h2>
+      <p>
+        If you have any questions or requests relating to this Privacy
+        Policy, please contact:
+      </p>
+      <p><strong>DUCES Consultancy Services</strong></p>
+      <p>
         Email:
         <a href="mailto:chetanpatil.2798@gmail.com">
           chetanpatil.2798@gmail.com
-        </a><br>
-        Phone:
-        <a href="tel:+971505356966">+971 50 535 6966</a>
-      </div>
+        </a>
+      </p>
+      <p>
+        Phone / WhatsApp:
+        <a href="https://wa.me/971505356966" target="_blank" rel="noopener noreferrer">
+          +971 50 535 6966
+        </a>
+      </p>
+      <p>
+        Website:
+        <a href="index.html">DUCES Consultancy Services</a>
+      </p>
+    </div>
 
-    </section>
   </main>
 
-  <footer class="thank-you-footer">
-    © <span id="year"></span> DUCES Consultancy Services. All rights reserved.
-    <br>
-    <a href="privacy-policy.html">Privacy Policy</a>
+  <footer class="privacy-footer">
+    <p>
+      © <span id="year">2026</span> DUCES Consultancy Services.
+      All Rights Reserved.
+      <a href="index.html">Home</a>
+    </p>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
   </script>
 
 </body>
