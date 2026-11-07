@@ -1589,3 +1589,180 @@ footer {
     animation-duration: 0.01ms !important;
   }
 }
+
+/* =========================================================
+   DUCES V3 - HOMEPAGE COMPATIBILITY PATCH
+   Append this section to the END of assets/style.css
+   ========================================================= */
+
+/* Hero section */
+.hero-section {
+  padding: 76px 0 88px;
+  background: linear-gradient(135deg, #F5F7FA 0%, #FFFFFF 72%);
+  overflow: hidden;
+}
+
+.hero-section .hero-grid {
+  align-items: center;
+}
+
+/* Alternate section background */
+.section-light {
+  background: #F5F7FA;
+}
+
+/* Banking institutions */
+.banking-grid-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.banking-grid-list span {
+  display: block;
+  padding: 13px 15px;
+  background: #FFFFFF;
+  border: 1px solid #E5EBF1;
+  border-radius: 8px;
+  color: #123B70;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* Company structure comparison */
+.comparison-card {
+  padding: 26px;
+  background: #FFFFFF;
+  border: 1px solid #E5EBF1;
+  border-radius: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.comparison-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(18, 59, 112, 0.08);
+}
+
+.comparison-card h3 {
+  margin: 0 0 12px;
+  color: #123B70;
+  font-family: "Manrope", sans-serif;
+}
+
+.comparison-card p {
+  margin: 0;
+  color: #526174;
+  line-height: 1.7;
+}
+
+/* Readiness checklist container */
+.readiness-box {
+  margin-top: 36px;
+  padding: 30px;
+  background: #FFFFFF;
+  border: 1px solid #E5EBF1;
+  border-radius: 12px;
+}
+
+.readiness-box h3 {
+  margin: 0 0 22px;
+  color: #123B70;
+  font-family: "Manrope", sans-serif;
+}
+
+/* Contact introduction */
+.contact-copy {
+  min-width: 0;
+}
+
+.contact-copy h2 {
+  color: #123B70;
+}
+
+.contact-copy > p {
+  color: #526174;
+  line-height: 1.8;
+}
+
+/* Process cards */
+.process-card {
+  height: 100%;
+  padding: 25px;
+  background: #FFFFFF;
+  border: 1px solid #E5EBF1;
+  border-radius: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(18, 59, 112, 0.08);
+}
+
+.process-card > span {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: #1976B9;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.process-card h3 {
+  margin: 0 0 10px;
+  color: #123B70;
+  font-family: "Manrope", sans-serif;
+}
+
+.process-card p {
+  margin: 0;
+  color: #526174;
+  line-height: 1.7;
+}
+
+/* Gold accent */
+.visual-icon.gold {
+  background: #D9AD55;
+  color: #FFFFFF;
+}
+
+/* Responsive adjustments */
+@media (max-width: 850px) {
+  .hero-section {
+    padding: 55px 0 65px;
+  }
+
+  .comparison-card {
+    padding: 22px;
+  }
+
+  .readiness-box {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    padding: 42px 0 52px;
+  }
+
+  .banking-grid-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  .banking-grid-list span {
+    padding: 11px;
+    font-size: 13px;
+  }
+
+  .comparison-card,
+  .process-card {
+    padding: 20px;
+  }
+
+  .readiness-box {
+    padding: 20px;
+  }
+}
