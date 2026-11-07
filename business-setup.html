@@ -1,0 +1,891 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>UAE Business Setup & Company Formation | DUCES</title>
+  <meta name="description" content="Explore UAE business setup and company formation options with DUCES Consultancy Services. Get guidance on free zone, mainland, licensing and documentation.">
+  <meta name="theme-color" content="#123B70">
+
+  <link rel="icon" href="assets/duces-logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="assets/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    .page-hero {
+      padding: 85px 0;
+      background: linear-gradient(115deg, #F5F7FA 0%, #FFFFFF 65%);
+    }
+
+    .page-hero-inner {
+      width: min(1160px, calc(100% - 48px));
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .page-hero h1 {
+      margin-bottom: 22px;
+      color: #123B70;
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(36px, 5vw, 55px);
+      line-height: 1.15;
+      letter-spacing: -1.8px;
+    }
+
+    .page-hero h1 span {
+      color: #1976B9;
+    }
+
+    .page-hero p {
+      max-width: 650px;
+      margin-bottom: 25px;
+      line-height: 1.9;
+    }
+
+    .page-hero-panel {
+      padding: 35px;
+      background: #FFFFFF;
+      border: 1px solid #E5EBF1;
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(18,59,112,.07);
+    }
+
+    .page-hero-panel h3 {
+      margin-bottom: 20px;
+      color: #123B70;
+    }
+
+    .setup-points {
+      display: grid;
+      gap: 15px;
+    }
+
+    .setup-point {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #E5EBF1;
+    }
+
+    .setup-point:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .setup-point strong {
+      display: block;
+      color: #123B70;
+      font-size: 14px;
+    }
+
+    .setup-point span {
+      display: block;
+      margin-top: 4px;
+      color: #64748B;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .setup-number {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      color: #FFFFFF;
+      background: #123B70;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .setup-options {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .setup-card {
+      padding: 30px;
+      background: #FFFFFF;
+      border: 1px solid #E5EBF1;
+      border-radius: 13px;
+      transition: .25s ease;
+    }
+
+    .setup-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(18,59,112,.08);
+      border-color: #1976B9;
+    }
+
+    .setup-card .card-number {
+      color: #008F6B;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .setup-card h3 {
+      margin: 18px 0 12px;
+      color: #123B70;
+    }
+
+    .setup-card p {
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .setup-card ul {
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .setup-card li {
+      position: relative;
+      padding-left: 20px;
+      color: #334155;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .setup-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #008F6B;
+      font-weight: 800;
+    }
+
+    .setup-process {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .setup-process article {
+      padding: 25px;
+      background: #FFFFFF;
+      border: 1px solid #E5EBF1;
+      border-radius: 12px;
+    }
+
+    .setup-process article > span {
+      color: #1976B9;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .setup-process h3 {
+      margin: 15px 0 10px;
+      color: #123B70;
+      font-size: 17px;
+    }
+
+    .setup-process p {
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .setup-note {
+      margin-top: 25px;
+      padding: 20px 22px;
+      background: #F5F7FA;
+      border-left: 4px solid #D9AD55;
+      border-radius: 5px;
+      color: #526174;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .setup-cta {
+      padding: 65px 0;
+      color: #FFFFFF;
+      background: #123B70;
+    }
+
+    .setup-cta-inner {
+      width: min(1160px, calc(100% - 48px));
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .setup-cta h2 {
+      max-width: 650px;
+      margin-bottom: 12px;
+      color: #FFFFFF;
+    }
+
+    .setup-cta p {
+      color: rgba(255,255,255,.8);
+      font-size: 14px;
+    }
+
+    .setup-cta .btn {
+      flex-shrink: 0;
+      background: #FFFFFF;
+      color: #123B70;
+      border-color: #FFFFFF;
+    }
+
+    /* Navigation dropdowns */
+
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown summary {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 0;
+      color: #123B70;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .nav-dropdown summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .nav-dropdown summary::after {
+      content: "⌄";
+      font-size: 15px;
+    }
+
+    .nav-dropdown[open] summary {
+      color: #1976B9;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      width: 245px;
+      padding: 9px;
+      background: #FFFFFF;
+      border: 1px solid #E5EBF1;
+      border-radius: 9px;
+      box-shadow: 0 12px 30px rgba(18,59,112,.12);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 12px;
+      color: #123B70;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .dropdown-menu a:hover {
+      color: #1976B9;
+      background: #F5F7FA;
+    }
+
+    @media (max-width: 1000px) {
+      .nav-dropdown {
+        width: 100%;
+      }
+
+      .nav-dropdown summary {
+        padding: 13px 5px;
+        border-bottom: 1px solid #E5EBF1;
+        font-size: 13px;
+      }
+
+      .dropdown-menu {
+        position: static;
+        width: 100%;
+        padding: 4px 0 8px 12px;
+        border: 0;
+        box-shadow: none;
+      }
+
+      .dropdown-menu a {
+        padding: 11px;
+      }
+
+      .page-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .setup-options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .setup-process {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .page-hero {
+        padding: 60px 0;
+      }
+
+      .page-hero-inner,
+      .setup-cta-inner {
+        width: calc(100% - 36px);
+      }
+
+      .page-hero-panel {
+        padding: 24px 19px;
+      }
+
+      .setup-options,
+      .setup-process {
+        grid-template-columns: 1fr;
+      }
+
+      .setup-card {
+        padding: 25px;
+      }
+
+      .setup-cta-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .setup-cta .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP CONTACT BAR -->
+  <div class="topline">
+    <div class="top-inner">
+      <span class="top-message">Your Business. Our Consultancy.</span>
+      <div class="top-contact">
+        <a href="mailto:chetanpatil.2798@gmail.com">chetanpatil.2798@gmail.com</a>
+        <span class="top-separator">|</span>
+        <a href="tel:+971505356966">+971 50 535 6966</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="nav-wrap">
+
+      <a href="index.html" class="brand" aria-label="DUCES Homepage">
+        <img src="assets/duces-logo.jpg"
+             alt="DUCES Consultancy Services"
+             class="logo-image">
+      </a>
+
+      <button class="menu-toggle"
+              type="button"
+              aria-label="Open navigation menu"
+              aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Main navigation">
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+
+        <details class="nav-dropdown">
+          <summary>Banking & Finance</summary>
+          <div class="dropdown-menu">
+            <a href="business-bank-account.html">Business Bank Account</a>
+            <a href="business-loan.html">Business Finance</a>
+            <a href="mortgage-loan.html">Mortgage Finance</a>
+          </div>
+        </details>
+
+        <details class="nav-dropdown">
+          <summary>Accounting & Tax</summary>
+          <div class="dropdown-menu">
+            <a href="accounting-bookkeeping.html">Accounting & Bookkeeping</a>
+            <a href="vat-corporate-tax.html">VAT & Corporate Tax</a>
+          </div>
+        </details>
+
+        <a href="business-setup.html" aria-current="page">Business Setup</a>
+        <a href="pro-visa-services.html">PRO & Visa</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero-inner">
+
+        <div>
+          <span class="eyebrow">UAE BUSINESS SETUP CONSULTANCY</span>
+
+          <h1>
+            Establish Your Business in the UAE,
+            <span>With the Right Guidance.</span>
+          </h1>
+
+          <p>
+            Starting a business involves more than selecting a licence.
+            Understand the available company structures, business
+            activities, jurisdiction options and documentation
+            requirements before taking the next step.
+          </p>
+
+          <div class="hero-actions">
+            <a href="contact.html" class="btn btn-primary">
+              Discuss Your Business Setup
+            </a>
+
+            <a href="https://wa.me/971505356966"
+               class="btn btn-outline"
+               target="_blank"
+               rel="noopener noreferrer">
+              WhatsApp Us
+            </a>
+          </div>
+        </div>
+
+        <div class="page-hero-panel">
+          <span class="eyebrow">BUSINESS SETUP SUPPORT</span>
+          <h3>Plan Your Company Formation</h3>
+
+          <div class="setup-points">
+            <div class="setup-point">
+              <span class="setup-number">01</span>
+              <div>
+                <strong>Business Activity</strong>
+                <span>Understand the activity and licensing requirements.</span>
+              </div>
+            </div>
+
+            <div class="setup-point">
+              <span class="setup-number">02</span>
+              <div>
+                <strong>Jurisdiction Options</strong>
+                <span>Compare suitable free zone and mainland routes.</span>
+              </div>
+            </div>
+
+            <div class="setup-point">
+              <span class="setup-number">03</span>
+              <div>
+                <strong>Licence & Documentation</strong>
+                <span>Understand the documents and process involved.</span>
+              </div>
+            </div>
+
+            <div class="setup-point">
+              <span class="setup-number">04</span>
+              <div>
+                <strong>Next-Step Coordination</strong>
+                <span>Coordinate relevant setup and administrative steps.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="section">
+      <div class="two-col">
+
+        <div>
+          <span class="eyebrow">COMPANY FORMATION IN UAE</span>
+          <h2>Choose a Business Structure That Fits Your Requirements</h2>
+        </div>
+
+        <div>
+          <p>
+            The right business setup route depends on your intended
+            activity, ownership structure, customer base, location,
+            visa requirements and operational plans.
+          </p>
+
+          <p>
+            DUCES provides consultancy and coordination support to
+            help entrepreneurs and business owners understand the
+            available options and prepare for the company formation
+            process.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SETUP OPTIONS -->
+    <section class="section section-light">
+      <div class="section-head">
+        <span class="eyebrow">UAE COMPANY STRUCTURES</span>
+        <h2>Explore Your Business Setup Options</h2>
+        <p>
+          Understand the main routes available before selecting
+          a jurisdiction and proceeding with licensing.
+        </p>
+      </div>
+
+      <div class="setup-options">
+
+        <article class="setup-card">
+          <span class="card-number">01 / FREE ZONE</span>
+          <h3>Free Zone Company Formation</h3>
+          <p>
+            Explore free zone licensing options based on your
+            business activity, ownership needs and operational plans.
+          </p>
+          <ul>
+            <li>Free zone selection guidance</li>
+            <li>Business activity assessment</li>
+            <li>Licence package comparison</li>
+            <li>Visa package guidance</li>
+            <li>Documentation coordination</li>
+          </ul>
+        </article>
+
+        <article class="setup-card">
+          <span class="card-number">02 / MAINLAND</span>
+          <h3>Mainland Company Formation</h3>
+          <p>
+            Understand mainland licensing routes and the
+            requirements relevant to your intended business activity.
+          </p>
+          <ul>
+            <li>Activity and structure guidance</li>
+            <li>Licence requirement overview</li>
+            <li>Initial documentation checklist</li>
+            <li>Relevant process coordination</li>
+            <li>Renewal requirement guidance</li>
+          </ul>
+        </article>
+
+        <article class="setup-card">
+          <span class="card-number">03 / BUSINESS PLANNING</span>
+          <h3>Business Setup Consultation</h3>
+          <p>
+            Discuss your proposed business model and understand
+            the factors that may influence your setup decision.
+          </p>
+          <ul>
+            <li>Business requirement discussion</li>
+            <li>Jurisdiction comparison</li>
+            <li>Activity selection guidance</li>
+            <li>Estimated setup cost discussion</li>
+            <li>Next-step planning</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow">OUR SUPPORT</span>
+        <h2>Business Setup Assistance</h2>
+        <p>
+          Consultancy and coordination support at relevant stages
+          of your company formation journey.
+        </p>
+      </div>
+
+      <div class="comparison">
+
+        <article class="comparison-card">
+          <div class="service-icon">01</div>
+          <h3>Activity & Licence Guidance</h3>
+          <p>
+            Understand potential business activities and the
+            licence categories relevant to your proposed operations.
+          </p>
+        </article>
+
+        <article class="comparison-card">
+          <div class="service-icon">02</div>
+          <h3>Jurisdiction Selection</h3>
+          <p>
+            Compare available setup routes according to business
+            activity, ownership, location and operational needs.
+          </p>
+        </article>
+
+        <article class="comparison-card">
+          <div class="service-icon">03</div>
+          <h3>Documentation Support</h3>
+          <p>
+            Understand the documents and information generally
+            required for the relevant application process.
+          </p>
+        </article>
+
+        <article class="comparison-card">
+          <div class="service-icon">04</div>
+          <h3>Visa & PRO Coordination</h3>
+          <p>
+            Guidance and coordination for applicable visa,
+            Emirates ID and administrative requirements.
+          </p>
+        </article>
+
+        <article class="comparison-card">
+          <div class="service-icon">05</div>
+          <h3>Banking Readiness</h3>
+          <p>
+            Understand common business banking documentation
+            and profile requirements after company formation.
+          </p>
+        </article>
+
+        <article class="comparison-card">
+          <div class="service-icon">06</div>
+          <h3>Renewal Guidance</h3>
+          <p>
+            Understand relevant licence renewal timelines and
+            ongoing administrative requirements.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section section-light">
+      <div class="section-head">
+        <span class="eyebrow">HOW IT WORKS</span>
+        <h2>A Structured Business Setup Process</h2>
+        <p>
+          A clear sequence to help you understand your options
+          and prepare for the relevant steps.
+        </p>
+      </div>
+
+      <div class="setup-process">
+
+        <article>
+          <span>STEP 01</span>
+          <h3>Initial Discussion</h3>
+          <p>
+            Share your proposed activity, ownership requirements
+            and business objectives.
+          </p>
+        </article>
+
+        <article>
+          <span>STEP 02</span>
+          <h3>Option Assessment</h3>
+          <p>
+            Review relevant jurisdiction, licensing and
+            documentation options.
+          </p>
+        </article>
+
+        <article>
+          <span>STEP 03</span>
+          <h3>Documentation</h3>
+          <p>
+            Understand the required documents and coordinate
+            the relevant application steps.
+          </p>
+        </article>
+
+        <article>
+          <span>STEP 04</span>
+          <h3>Next-Step Support</h3>
+          <p>
+            Discuss applicable post-setup requirements such as
+            banking, visa and compliance support.
+          </p>
+        </article>
+
+      </div>
+
+      <div class="setup-note">
+        <strong>Important:</strong> Licence availability, activity
+        permissions, government fees, visa eligibility and processing
+        timelines depend on the relevant authority and individual
+        application. Final decisions are made by the competent
+        authorities and service providers.
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow">FREQUENTLY ASKED QUESTIONS</span>
+        <h2>Business Setup in the UAE</h2>
+      </div>
+
+      <div class="insight-grid">
+
+        <article class="insight-card">
+          <h3>What is the difference between free zone and mainland?</h3>
+          <p>
+            They are different licensing and operating structures.
+            The suitable route depends on your business activity,
+            customer base and operational requirements.
+          </p>
+        </article>
+
+        <article class="insight-card">
+          <h3>Can a foreign investor own a UAE company?</h3>
+          <p>
+            Foreign ownership is permitted for many business
+            activities, subject to the applicable legal framework,
+            activity and licensing authority requirements.
+          </p>
+        </article>
+
+        <article class="insight-card">
+          <h3>Does every company setup include a residence visa?</h3>
+          <p>
+            No. Visa eligibility and allocation depend on the
+            licence package, jurisdiction, immigration rules
+            and applicable requirements.
+          </p>
+        </article>
+
+        <article class="insight-card">
+          <h3>Can DUCES help with business bank account enquiries?</h3>
+          <p>
+            DUCES can provide consultancy and documentation
+            coordination support. Account opening remains subject
+            to the bank's independent assessment.
+          </p>
+        </article>
+
+        <article class="insight-card">
+          <h3>What documents may be required?</h3>
+          <p>
+            Requirements vary. Common examples include passport
+            copies, contact details, proposed activity information
+            and relevant shareholder documents.
+          </p>
+        </article>
+
+        <article class="insight-card">
+          <h3>How much does company formation cost?</h3>
+          <p>
+            Costs vary by authority, activity, licence type,
+            visa allocation and other selected services.
+            A quotation should be based on your requirements.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="setup-cta">
+      <div class="setup-cta-inner">
+
+        <div>
+          <span class="eyebrow">START WITH A DISCUSSION</span>
+          <h2>Planning to Establish Your Business in the UAE?</h2>
+          <p>
+            Tell us about your proposed business. We can help
+            you understand the relevant setup options and next steps.
+          </p>
+        </div>
+
+        <a href="contact.html" class="btn">
+          Enquire About Business Setup
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-main">
+
+      <div class="footer-about">
+        <a href="index.html" class="footer-brand">
+          <img src="assets/duces-logo.jpg"
+               alt="DUCES Consultancy Services"
+               class="logo-image">
+        </a>
+
+        <p>
+          Business consultancy and coordination support
+          for entrepreneurs and companies in the UAE.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="business-setup.html">Business Setup</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Banking & Finance</h4>
+        <a href="business-bank-account.html">Business Bank Account</a>
+        <a href="business-loan.html">Business Finance</a>
+        <a href="mortgage-loan.html">Mortgage Finance</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Accounting & Tax</h4>
+        <a href="accounting-bookkeeping.html">Accounting & Bookkeeping</a>
+        <a href="vat-corporate-tax.html">VAT & Corporate Tax</a>
+        <a href="pro-visa-services.html">PRO & Visa Services</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> DUCES Consultancy Services. All rights reserved.</p>
+      <p>United Arab Emirates</p>
+    </div>
+
+    <div class="container disclaimer">
+      DUCES provides consultancy and coordination support.
+      Licensing, visa, banking, finance and other approvals are
+      subject to the relevant authorities and service providers.
+      No approval or outcome is guaranteed.
+    </div>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/971505356966"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contact DUCES on WhatsApp">
+    WhatsApp Us
+  </a>
+
+  <script src="assets/script.js"></script>
+
+</body>
+</html>
