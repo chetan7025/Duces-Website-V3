@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Thank You | DUCES Consultancy Services</title>
-
-  <meta name="description" content="Thank you for contacting DUCES Consultancy Services. Our team will review your enquiry and get back to you.">
+  <meta name="description" content="Thank you for contacting DUCES Consultancy Services. Our team will review your enquiry and contact you.">
 
   <link rel="icon" href="assets/duces-logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="assets/style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
@@ -22,34 +22,32 @@
       --emerald-green: #008F6B;
       --champagne-gold: #D9AD55;
       --white: #FFFFFF;
-      --light-bg: #F5F7FA;
+      --light-background: #F5F7FA;
       --soft-silver: #E5EBF1;
-      --body-text: #536273;
     }
 
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
 
     body {
+      margin: 0;
       min-height: 100vh;
+      font-family: "DM Sans", sans-serif;
+      color: var(--royal-blue);
+      background: var(--light-background);
       display: flex;
       flex-direction: column;
-      font-family: "DM Sans", sans-serif;
-      background: var(--light-bg);
-      color: var(--royal-blue);
     }
 
-    header {
+    .thank-you-header {
       background: var(--white);
       border-bottom: 1px solid var(--soft-silver);
-      padding: 16px 6%;
+      padding: 17px 6%;
     }
 
-    .header-inner {
-      max-width: 1200px;
+    .thank-you-header-inner {
+      max-width: 1180px;
       margin: auto;
       display: flex;
       align-items: center;
@@ -57,40 +55,39 @@
       gap: 20px;
     }
 
-    .logo img {
+    .thank-you-logo img {
       display: block;
-      width: 165px;
+      width: 175px;
       max-height: 65px;
       object-fit: contain;
     }
 
-    .header-contact {
+    .header-label {
       color: var(--royal-blue);
-      text-decoration: none;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
     }
 
-    main {
+    .thank-you-main {
       flex: 1;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       padding: 65px 20px;
     }
 
-    .confirmation-card {
+    .thank-you-card {
       width: 100%;
-      max-width: 650px;
+      max-width: 680px;
+      padding: 55px 48px;
       background: var(--white);
       border: 1px solid var(--soft-silver);
       border-radius: 16px;
-      padding: 55px 45px;
       text-align: center;
-      box-shadow: 0 15px 45px rgba(18, 59, 112, 0.07);
+      box-shadow: 0 14px 40px rgba(18, 59, 112, 0.07);
     }
 
-    .success-icon {
+    .success-mark {
       width: 76px;
       height: 76px;
       margin: 0 auto 25px;
@@ -102,65 +99,52 @@
       color: var(--emerald-green);
       font-size: 38px;
       font-weight: 700;
+      border: 1px solid rgba(0, 143, 107, 0.2);
     }
 
-    .eyebrow {
-      color: var(--emerald-green);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    h1 {
-      font-family: "Manrope", sans-serif;
+    .thank-you-card h1 {
+      margin: 0 0 17px;
       color: var(--royal-blue);
-      font-size: clamp(28px, 5vw, 38px);
-      line-height: 1.25;
-      margin-bottom: 18px;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(29px, 5vw, 39px);
+      font-weight: 800;
+      line-height: 1.2;
     }
 
-    .message {
-      color: var(--body-text);
+    .thank-you-card .intro {
+      max-width: 510px;
+      margin: 0 auto 18px;
+      color: #52657A;
       font-size: 16px;
       line-height: 1.8;
-      margin-bottom: 30px;
     }
 
-    .next-step {
-      background: var(--light-bg);
-      border: 1px solid var(--soft-silver);
-      border-left: 4px solid var(--corporate-blue);
-      border-radius: 8px;
-      padding: 18px 20px;
-      margin-bottom: 30px;
+    .thank-you-note {
+      margin: 28px 0;
+      padding: 17px 20px;
+      background: var(--light-background);
+      border-left: 3px solid var(--emerald-green);
+      border-radius: 5px;
+      color: var(--royal-blue);
+      font-size: 14px;
+      line-height: 1.7;
       text-align: left;
     }
 
-    .next-step strong {
-      display: block;
-      color: var(--royal-blue);
-      margin-bottom: 6px;
-      font-size: 15px;
-    }
-
-    .next-step p {
-      color: var(--body-text);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .actions {
+    .thank-you-actions {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 13px;
+      margin-top: 30px;
     }
 
-    .btn {
-      display: inline-block;
+    .thank-you-btn {
+      min-height: 48px;
       padding: 13px 23px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 6px;
       text-decoration: none;
       font-size: 14px;
@@ -168,70 +152,85 @@
       transition: 0.2s ease;
     }
 
-    .btn-primary {
+    .primary-btn {
       background: var(--royal-blue);
       color: var(--white);
       border: 1px solid var(--royal-blue);
     }
 
-    .btn-primary:hover {
+    .primary-btn:hover {
       background: var(--corporate-blue);
       border-color: var(--corporate-blue);
     }
 
-    .btn-secondary {
+    .secondary-btn {
       background: var(--white);
-      color: var(--emerald-green);
-      border: 1px solid var(--emerald-green);
+      color: var(--royal-blue);
+      border: 1px solid var(--soft-silver);
     }
 
-    .btn-secondary:hover {
-      background: var(--emerald-green);
-      color: var(--white);
+    .secondary-btn:hover {
+      border-color: var(--corporate-blue);
+      color: var(--corporate-blue);
     }
 
-    footer {
-      background: var(--royal-blue);
-      color: rgba(255, 255, 255, 0.8);
-      text-align: center;
-      padding: 22px 15px;
+    .thank-you-contact {
+      margin-top: 29px;
+      color: #65778A;
       font-size: 13px;
+      line-height: 1.8;
     }
 
-    footer strong {
+    .thank-you-contact a {
+      color: var(--corporate-blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .thank-you-footer {
+      padding: 20px;
+      background: var(--royal-blue);
+      color: rgba(255, 255, 255, 0.82);
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .thank-you-footer a {
       color: var(--white);
+      text-decoration: none;
     }
 
     @media (max-width: 600px) {
-      header {
-        padding: 14px 5%;
+      .thank-you-header {
+        padding: 14px 20px;
       }
 
-      .logo img {
-        width: 135px;
+      .thank-you-logo img {
+        width: 145px;
       }
 
-      .header-contact {
-        font-size: 12px;
+      .header-label {
+        font-size: 11px;
       }
 
-      main {
+      .thank-you-main {
         padding: 35px 15px;
       }
 
-      .confirmation-card {
+      .thank-you-card {
         padding: 38px 22px;
       }
 
-      .message {
+      .thank-you-card .intro {
         font-size: 14px;
       }
 
-      .actions {
+      .thank-you-actions {
         flex-direction: column;
       }
 
-      .btn {
+      .thank-you-btn {
         width: 100%;
       }
     }
@@ -240,71 +239,68 @@
 
 <body>
 
-  <header>
-    <div class="header-inner">
-      <a href="index.html" class="logo" aria-label="DUCES Homepage">
+  <header class="thank-you-header">
+    <div class="thank-you-header-inner">
+      <a class="thank-you-logo" href="index.html" aria-label="DUCES Home">
         <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services">
       </a>
-
-      <a href="tel:+971505356966" class="header-contact">
-        +971 50 535 6966
-      </a>
+      <span class="header-label">Business Consultancy | UAE</span>
     </div>
   </header>
 
-  <main>
-    <section class="confirmation-card">
+  <main class="thank-you-main">
+    <section class="thank-you-card">
 
-      <div class="success-icon" aria-hidden="true">✓</div>
+      <div class="success-mark" aria-hidden="true">✓</div>
 
-      <p class="eyebrow">Enquiry Submitted</p>
+      <h1>Thank You for Contacting Us</h1>
 
-      <h1>Thank You for Contacting DUCES</h1>
-
-      <p class="message">
-        Your enquiry has been submitted successfully.
-        We appreciate your interest in DUCES Consultancy Services.
-        Our team will review your request and contact you using
-        the details you provided.
+      <p class="intro">
+        Your enquiry has been submitted. Our team will review the details
+        and contact you using the information provided.
       </p>
 
-      <div class="next-step">
-        <strong>What happens next?</strong>
-        <p>
-          Our team will review your enquiry and get in touch
-          to understand your requirements and discuss the
-          appropriate consultancy support.
-        </p>
+      <div class="thank-you-note">
+        <strong>What happens next?</strong><br>
+        We will review your requirements and get in touch to discuss
+        the appropriate consultancy support for your business needs.
       </div>
 
-      <div class="actions">
-        <a href="index.html" class="btn btn-primary">
+      <div class="thank-you-actions">
+        <a href="index.html" class="thank-you-btn primary-btn">
           Back to Homepage
         </a>
 
-        <a
-          href="https://wa.me/971505356966"
-          class="btn btn-secondary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://wa.me/971505356966"
+           class="thank-you-btn secondary-btn"
+           target="_blank"
+           rel="noopener noreferrer">
           Contact Us on WhatsApp
         </a>
+      </div>
+
+      <div class="thank-you-contact">
+        Need immediate assistance?<br>
+        Email:
+        <a href="mailto:chetanpatil.2798@gmail.com">
+          chetanpatil.2798@gmail.com
+        </a><br>
+        Phone:
+        <a href="tel:+971505356966">+971 50 535 6966</a>
       </div>
 
     </section>
   </main>
 
-  <footer>
-    <strong>DUCES Consultancy Services</strong>
-    <p>Professional Consultancy & Business Support in the UAE</p>
-    <p>© <span id="year"></span> DUCES. All Rights Reserved.</p>
+  <footer class="thank-you-footer">
+    © <span id="year"></span> DUCES Consultancy Services. All rights reserved.
+    <br>
+    <a href="privacy-policy.html">Privacy Policy</a>
   </footer>
 
   <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
 </body>
-  </html>
+</html>
