@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DUCES Consultancy Services provides UAE mortgage finance consultancy, property finance guidance and application coordination.">
+  <meta name="theme-color" content="#123B70">
+  <title>Mortgage Finance | DUCES Consultancy Services</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    :root {
+      --blue: #123B70;
+      --corporate: #1976B9;
+      --green: #008F6B;
+      --gold: #D9AD55;
+      --white: #FFFFFF;
+      --bg: #F5F7FA;
+      --border: #E5EBF1;
+      --text: #475569;
+    }
+
+    body { font-family: "DM Sans", sans-serif; color: var(--text); }
+    h1,h2,h3,h4 { font-family: "Manrope", sans-serif; color: var(--blue); }
+
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown summary { list-style: none; cursor: pointer; }
+    .nav-dropdown summary::-webkit-details-marker { display: none; }
+    .dropdown-label { display: inline-flex; align-items: center; gap: 7px; }
+    .dropdown-label::after { content: "⌄"; font-size: 15px; }
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 12px); left: 0; z-index: 1000;
+      min-width: 235px; padding: 9px; background: var(--white);
+      border: 1px solid var(--border); border-radius: 10px;
+      box-shadow: 0 14px 35px rgba(18,59,112,.13);
+    }
+    .dropdown-menu a {
+      display: block; padding: 11px 13px; color: var(--blue);
+      text-decoration: none; border-radius: 7px; font-size: 14px; font-weight: 600;
+    }
+    .dropdown-menu a:hover,.dropdown-menu a.active { color: var(--corporate); background: var(--bg); }
+
+    .mortgage-hero {
+      padding: 88px 0; position: relative; overflow: hidden;
+      background: radial-gradient(circle at 88% 18%, rgba(25,118,185,.12), transparent 28%),
+      linear-gradient(120deg, #F5F7FA 0%, #FFFFFF 62%, #EDF4FA 100%);
+    }
+    .mortgage-hero-grid {
+      display: grid; grid-template-columns: 1.15fr .85fr;
+      align-items: center; gap: 55px; position: relative; z-index: 1;
+    }
+    .eyebrow {
+      display: inline-block; margin-bottom: 17px; padding: 8px 13px;
+      color: var(--green); background: rgba(0,143,107,.08);
+      border-radius: 30px; font-size: 12px; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .mortgage-hero h1 {
+      max-width: 680px; margin: 0 0 20px;
+      font-size: clamp(36px,5vw,54px); line-height: 1.15; letter-spacing: -1.5px;
+    }
+    .mortgage-hero h1 span { color: var(--corporate); }
+    .mortgage-hero p {
+      max-width: 620px; margin: 0 0 27px; color: #526276;
+      font-size: 17px; line-height: 1.8;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
+    .hero-actions .btn { padding: 13px 22px; border-radius: 6px; font-weight: 700; }
+    .hero-actions .btn-primary { background: var(--blue); border: 1px solid var(--blue); color: var(--white); }
+    .hero-actions .btn-primary:hover { background: var(--corporate); border-color: var(--corporate); }
+    .hero-actions .btn-outline { color: var(--blue); border: 1px solid var(--blue); background: transparent; }
+    .hero-actions .btn-outline:hover { color: var(--white); background: var(--blue); }
+
+    .hero-panel {
+      padding: 30px; background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; box-shadow: 0 18px 45px rgba(18,59,112,.09);
+    }
+    .hero-panel h3 { margin: 0 0 8px; font-size: 21px; }
+    .hero-panel > p { margin: 0 0 22px; font-size: 14px; line-height: 1.7; }
+    .panel-item { display: flex; gap: 13px; align-items: flex-start; padding: 14px 0; border-top: 1px solid var(--border); }
+    .panel-icon {
+      display: flex; flex: 0 0 38px; align-items: center; justify-content: center;
+      width: 38px; height: 38px; color: var(--green);
+      background: rgba(0,143,107,.09); border-radius: 9px; font-weight: 800;
+    }
+    .panel-item strong { display: block; margin-bottom: 3px; color: var(--blue); font-size: 14px; }
+    .panel-item span { color: #64748B; font-size: 13px; line-height: 1.5; }
+
+    .mortgage-section { padding: 76px 0; }
+    .mortgage-section.light { background: var(--bg); }
+    .section-heading { max-width: 730px; margin: 0 auto 42px; text-align: center; }
+    .section-heading .small-label {
+      color: var(--green); font-size: 12px; font-weight: 700;
+      letter-spacing: 1.2px; text-transform: uppercase;
+    }
+    .section-heading h2 { margin: 12px 0; font-size: clamp(27px,4vw,36px); line-height: 1.25; }
+    .section-heading p { margin: 0; color: #64748B; line-height: 1.8; }
+
+    .mortgage-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .mortgage-card {
+      padding: 27px; background: var(--white);
+      border: 1px solid var(--border); border-radius: 11px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .mortgage-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(18,59,112,.08); }
+    .card-icon {
+      display: flex; align-items: center; justify-content: center;
+      width: 46px; height: 46px; margin-bottom: 18px;
+      color: var(--corporate); background: #EAF3FA; border-radius: 10px;
+      font-size: 21px; font-weight: 800;
+    }
+    .mortgage-card h3 { margin: 0 0 10px; font-size: 19px; }
+    .mortgage-card p { margin: 0; color: #64748B; font-size: 14px; line-height: 1.75; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: start; }
+    .copy h2 { margin: 0 0 16px; font-size: clamp(27px,4vw,35px); line-height: 1.25; }
+    .copy p { color: #64748B; line-height: 1.8; }
+    .checklist { display: grid; gap: 13px; margin-top: 23px; }
+    .check { display: flex; gap: 11px; align-items: flex-start; color: #475569; font-size: 14px; line-height: 1.6; }
+    .check b { color: var(--green); font-size: 17px; }
+
+    .info-panel {
+      padding: 27px; background: var(--white); border: 1px solid var(--border);
+      border-left: 4px solid var(--green); border-radius: 9px;
+    }
+    .info-panel h3 { margin: 0 0 12px; font-size: 20px; }
+    .info-panel p { margin: 0 0 12px; color: #64748B; font-size: 14px; line-height: 1.8; }
+    .info-panel p:last-child { margin-bottom: 0; }
+
+    .process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+    .process-card { padding: 24px 20px; background: var(--white); border: 1px solid var(--border); border-radius: 10px; }
+    .process-number {
+      display: flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; margin-bottom: 16px;
+      color: var(--white); background: var(--blue); border-radius: 50%;
+      font-family: "Manrope",sans-serif; font-weight: 800;
+    }
+    .process-card h3 { margin: 0 0 9px; font-size: 17px; }
+    .process-card p { margin: 0; color: #64748B; font-size: 13px; line-height: 1.7; }
+
+    .faq { max-width: 850px; margin: 0 auto; }
+    .faq details {
+      margin-bottom: 12px; padding: 18px 20px; background: var(--white);
+      border: 1px solid var(--border); border-radius: 9px;
+    }
+    .faq summary { color: var(--blue); cursor: pointer; font-weight: 700; line-height: 1.5; }
+    .faq details p { margin: 13px 0 0; color: #64748B; font-size: 14px; line-height: 1.8; }
+
+    .cta {
+      padding: 62px 25px; color: var(--white); background: var(--blue);
+      border-radius: 13px; text-align: center;
+    }
+    .cta h2 { margin: 0 0 12px; color: var(--white); font-size: clamp(26px,4vw,35px); }
+    .cta p { max-width: 650px; margin: 0 auto 24px; color: rgba(255,255,255,.82); line-height: 1.8; }
+    .cta .btn {
+      display: inline-block; padding: 13px 23px; color: var(--blue);
+      background: var(--white); border-radius: 6px; font-weight: 700; text-decoration: none;
+    }
+    .cta .btn:hover { background: #EDF4FA; }
+    .disclaimer {
+      margin-top: 25px; padding: 15px 18px; color: #64748B;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; font-size: 12px; line-height: 1.7;
+    }
+
+    @media(max-width:900px) {
+      .mortgage-hero-grid,.two-col { grid-template-columns: 1fr; }
+      .mortgage-grid { grid-template-columns: repeat(2,1fr); }
+      .process-grid { grid-template-columns: repeat(2,1fr); }
+      .hero-panel { max-width: 650px; }
+    }
+    @media(max-width:600px) {
+      .mortgage-hero { padding: 58px 0; }
+      .mortgage-grid,.process-grid { grid-template-columns: 1fr; }
+      .mortgage-section { padding: 55px 0; }
+      .hero-panel { padding: 22px; }
+      .mortgage-hero p { font-size: 15px; }
+      .dropdown-menu { position: static; min-width: 100%; margin-top: 8px; box-shadow: none; }
+      .nav-dropdown[open] { display: block; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topline">
+    <div class="container top-inner">
+      <span>UAE Business &amp; Financial Consultancy</span>
+      <span>Call / WhatsApp: +971 50 535 6966</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="DUCES Consultancy Services Home">
+        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services" class="logo">
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+
+        <details class="nav-dropdown" open>
+          <summary><span class="dropdown-label">Banking &amp; Finance</span></summary>
+          <div class="dropdown-menu">
+            <a href="business-bank-account.html">Business Bank Account</a>
+            <a href="business-loan.html">Business Finance</a>
+            <a href="mortgage-loan.html" class="active">Mortgage Finance</a>
+          </div>
+        </details>
+
+        <details class="nav-dropdown">
+          <summary><span class="dropdown-label">Accounting &amp; Tax</span></summary>
+          <div class="dropdown-menu">
+            <a href="accounting-bookkeeping.html">Accounting &amp; Bookkeeping</a>
+            <a href="vat-corporate-tax.html">VAT &amp; Corporate Tax</a>
+          </div>
+        </details>
+
+        <a href="business-setup.html">Business Setup</a>
+        <a href="pro-visa-services.html">PRO &amp; Visa</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="mortgage-hero">
+      <div class="container mortgage-hero-grid">
+        <div>
+          <span class="eyebrow">Banking &amp; Finance Consultancy</span>
+          <h1>Mortgage Finance Guidance for <span>UAE Property Buyers</span></h1>
+          <p>
+            Planning to purchase a home or explore property finance in the UAE?
+            DUCES provides consultancy, document-readiness guidance and
+            application coordination to help you understand the mortgage process.
+          </p>
+          <div class="hero-actions">
+            <a href="contact.html" class="btn btn-primary">Discuss Your Property Plans</a>
+            <a href="https://wa.me/971505356966" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp Us</a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <h3>Mortgage Consultancy Support</h3>
+          <p>Guidance to help you prepare for discussions with relevant financial institutions.</p>
+
+          <div class="panel-item">
+            <div class="panel-icon">01</div>
+            <div>
+              <strong>Requirement Review</strong>
+              <span>Understand your property objective and finance requirements.</span>
+            </div>
+          </div>
+
+          <div class="panel-item">
+            <div class="panel-icon">02</div>
+            <div>
+              <strong>Document Preparation</strong>
+              <span>Organise income, identity and property-related documents.</span>
+            </div>
+          </div>
+
+          <div class="panel-item">
+            <div class="panel-icon">03</div>
+            <div>
+              <strong>Application Coordination</strong>
+              <span>Coordinate the application process with the relevant institution.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mortgage-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="small-label">Property Finance</span>
+          <h2>Explore Your Mortgage Finance Requirements</h2>
+          <p>
+            Property finance depends on your income profile, property details,
+            residency status, existing liabilities and the lender's assessment.
+            Our role is to help you understand the process and prepare the relevant information.
+          </p>
+        </div>
+
+        <div class="mortgage-grid">
+          <article class="mortgage-card">
+            <div class="card-icon">⌂</div>
+            <h3>Residential Property</h3>
+            <p>Guidance for individuals exploring finance for eligible residential property purchases in the UAE.</p>
+          </article>
+
+          <article class="mortgage-card">
+            <div class="card-icon">▦</div>
+            <h3>Ready Property</h3>
+            <p>Understand common documentation and assessment stages for completed property purchases.</p>
+          </article>
+
+          <article class="mortgage-card">
+            <div class="card-icon">⌛</div>
+            <h3>Off-Plan Property</h3>
+            <p>Discuss the finance process and relevant requirements for eligible off-plan property enquiries.</p>
+          </article>
+
+          <article class="mortgage-card">
+            <div class="card-icon">↻</div>
+            <h3>Mortgage Buyout</h3>
+            <p>Explore the documentation and assessment process when considering a transfer of an existing mortgage.</p>
+          </article>
+
+          <article class="mortgage-card">
+            <div class="card-icon">▤</div>
+            <h3>Property Equity Enquiry</h3>
+            <p>Understand the requirements that may apply when enquiring about finance against an eligible property.</p>
+          </article>
+
+          <article class="mortgage-card">
+            <div class="card-icon">⌂</div>
+            <h3>Investment Property</h3>
+            <p>Guidance for property investors reviewing potential finance options and lender requirements.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mortgage-section light">
+      <div class="container two-col">
+        <div class="copy">
+          <span class="small-label">Document Readiness</span>
+          <h2>Documents Commonly Required for a Mortgage Enquiry</h2>
+          <p>
+            The exact documents depend on the applicant's employment or business
+            profile, residency status, property type and financial institution.
+            The following are common examples, not a fixed approval checklist.
+          </p>
+
+          <div class="checklist">
+            <div class="check"><b>✓</b><span>Passport and valid UAE residency documents, where applicable</span></div>
+            <div class="check"><b>✓</b><span>Emirates ID, where applicable</span></div>
+            <div class="check"><b>✓</b><span>Salary certificate and recent payslips for salaried applicants</span></div>
+            <div class="check"><b>✓</b><span>Personal bank statements for the requested period</span></div>
+            <div class="check"><b>✓</b><span>Business licence and financial records for self-employed applicants</span></div>
+            <div class="check"><b>✓</b><span>Property details, quotation, sale agreement or other relevant documents</span></div>
+            <div class="check"><b>✓</b><span>Details of existing loans and financial commitments</span></div>
+          </div>
+        </div>
+
+        <aside class="info-panel">
+          <h3>Factors That May Influence Eligibility</h3>
+          <p><strong>Income profile:</strong> Salary, business income and consistency of earnings.</p>
+          <p><strong>Existing commitments:</strong> Current loans, credit card obligations and other liabilities.</p>
+          <p><strong>Applicant profile:</strong> Residency, employment or business history and lender-specific criteria.</p>
+          <p><strong>Property details:</strong> Property value, location, type, status and valuation.</p>
+          <p><strong>Down payment:</strong> The applicant's available contribution and applicable lender requirements.</p>
+          <p><strong>Credit assessment:</strong> Credit history and the institution's internal risk assessment.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="mortgage-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="small-label">How It Works</span>
+          <h2>A Clearer Mortgage Enquiry Process</h2>
+          <p>Our consultancy process is designed to organise your enquiry and help you understand the next steps.</p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <div class="process-number">1</div>
+            <h3>Consultation</h3>
+            <p>Discuss the property, applicant profile and intended finance requirement.</p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">2</div>
+            <h3>Document Review</h3>
+            <p>Review the available information and identify documents that may be required.</p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">3</div>
+            <h3>Coordination</h3>
+            <p>Coordinate the enquiry and documentation with the relevant financial institution.</p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">4</div>
+            <h3>Follow-Up</h3>
+            <p>Assist with communication and document follow-up during the assessment process.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mortgage-section light">
+      <div class="container">
+        <div class="section-heading">
+          <span class="small-label">Frequently Asked Questions</span>
+          <h2>Mortgage Finance – Common Questions</h2>
+          <p>Some important points to consider before starting your property finance enquiry.</p>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>Does DUCES provide mortgage loans directly?</summary>
+            <p>No. DUCES provides consultancy, document-readiness guidance and application coordination. Mortgage finance is provided and assessed by the relevant financial institution.</p>
+          </details>
+
+          <details>
+            <summary>Can DUCES guarantee mortgage approval?</summary>
+            <p>No. Approval is not guaranteed. The financial institution independently assesses the applicant, income, liabilities, property and its own lending criteria.</p>
+          </details>
+
+          <details>
+            <summary>Can salaried and self-employed applicants enquire?</summary>
+            <p>Both salaried and self-employed applicants may enquire. Their documentation and eligibility requirements can differ depending on the institution and finance product.</p>
+          </details>
+
+          <details>
+            <summary>Can non-residents enquire about UAE property finance?</summary>
+            <p>Some institutions may consider non-resident applicants under specific criteria. Availability, eligible properties, down payment and other conditions must be confirmed directly with the relevant institution.</p>
+          </details>
+
+          <details>
+            <summary>How much down payment is required?</summary>
+            <p>Down payment requirements vary according to applicant profile, property value, property type, residency status and applicable regulations and lender policies. No fixed percentage should be assumed for every applicant.</p>
+          </details>
+
+          <details>
+            <summary>How long does the mortgage process take?</summary>
+            <p>Timelines vary according to document readiness, valuation, property status, lender assessment and other parties involved. A specific completion date cannot be guaranteed.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="mortgage-section">
+      <div class="container">
+        <div class="cta">
+          <h2>Planning to Purchase Property in the UAE?</h2>
+          <p>
+            Share your property objective and applicant profile.
+            DUCES can help you understand the documentation and coordination
+            process for your mortgage enquiry.
+          </p>
+          <a href="contact.html" class="btn">Send an Enquiry</a>
+        </div>
+
+        <div class="disclaimer">
+          <strong>Important Notice:</strong> DUCES Consultancy Services operates as a consultancy and coordination service.
+          It is not a bank, mortgage lender or financial institution. All mortgage products, rates, fees,
+          eligibility criteria, down payment requirements, valuations and approvals are determined by the
+          relevant financial institution and other applicable parties. Information on this page is general
+          in nature and does not constitute a guarantee of finance, financial advice or an offer of credit.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-about">
+        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services" class="footer-logo">
+        <p>Business consultancy and coordination support for entrepreneurs and companies across the UAE.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="business-setup.html">Business Setup</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Banking &amp; Finance</h4>
+        <a href="business-bank-account.html">Business Bank Account</a>
+        <a href="business-loan.html">Business Finance</a>
+        <a href="mortgage-loan.html">Mortgage Finance</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Accounting &amp; Tax</h4>
+        <a href="accounting-bookkeeping.html">Accounting &amp; Bookkeeping</a>
+        <a href="vat-corporate-tax.html">VAT &amp; Corporate Tax</a>
+        <a href="pro-visa-services.html">PRO &amp; Visa Services</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> DUCES Consultancy Services. All rights reserved.</p>
+      <div>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span> | </span>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/971505356966"
+     target="_blank"
+     rel="noopener"
+     aria-label="Chat with DUCES on WhatsApp">WhatsApp</a>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
