@@ -2,10 +2,11 @@
 /* =========================================================
    DUCES CONSULTANCY SERVICES
    Website JavaScript
-   Version: 3.0
+   Version: 3.1
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
 
   /* 01. MOBILE NAVIGATION */
 
@@ -18,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     navigation.classList.remove("is-open");
     menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open navigation");
+    menuToggle.setAttribute("aria-label", "Open navigation menu");
   }
 
   function openMenu() {
@@ -26,16 +27,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     navigation.classList.add("is-open");
     menuToggle.setAttribute("aria-expanded", "true");
-    menuToggle.setAttribute("aria-label", "Close navigation");
+    menuToggle.setAttribute("aria-label", "Close navigation menu");
   }
 
   if (menuToggle && navigation) {
 
     menuToggle.addEventListener("click", function () {
-      const isOpen =
+      const expanded =
         menuToggle.getAttribute("aria-expanded") === "true";
 
-      if (isOpen) {
+      if (expanded) {
         closeMenu();
       } else {
         openMenu();
@@ -47,13 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.addEventListener("click", function (event) {
-      const clickedInsideNavigation =
-        navigation.contains(event.target);
-
-      const clickedMenuButton =
-        menuToggle.contains(event.target);
-
-      if (!clickedInsideNavigation && !clickedMenuButton) {
+      if (
+        !navigation.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
         closeMenu();
       }
     });
@@ -61,16 +59,16 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
         closeMenu();
+        menuToggle.focus();
       }
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 850) {
+      if (window.innerWidth > 1000) {
         closeMenu();
       }
     });
   }
-
 
   /* 02. AUTOMATIC COPYRIGHT YEAR */
 
@@ -79,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
   }
-
 
   /* 03. CONTACT FORM VALIDATION */
 
@@ -96,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       const emailField =
-        contactForm.querySelector('input[name="email"]');
+        contactForm.querySelector("#email");
 
       if (emailField && !emailField.validity.valid) {
         event.preventDefault();
@@ -105,9 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
     });
-
   }
-
 
   /* 04. PREVENT EMPTY ANCHOR NAVIGATION */
 
@@ -116,6 +111,5 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault();
     });
   });
-
 
 });
