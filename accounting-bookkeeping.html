@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DUCES Consultancy Services offers accounting and bookkeeping support for businesses in the UAE, including transaction recording, reconciliations and financial reporting coordination.">
+  <meta name="theme-color" content="#123B70">
+  <title>Accounting &amp; Bookkeeping | DUCES Consultancy Services</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    :root {
+      --blue: #123B70;
+      --corporate: #1976B9;
+      --green: #008F6B;
+      --gold: #D9AD55;
+      --white: #FFFFFF;
+      --bg: #F5F7FA;
+      --border: #E5EBF1;
+      --text: #475569;
+    }
+
+    body { font-family: "DM Sans", sans-serif; color: var(--text); }
+    h1,h2,h3,h4 { font-family: "Manrope", sans-serif; color: var(--blue); }
+
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown summary { list-style: none; cursor: pointer; }
+    .nav-dropdown summary::-webkit-details-marker { display: none; }
+    .dropdown-label { display: inline-flex; align-items: center; gap: 7px; }
+    .dropdown-label::after { content: "⌄"; font-size: 15px; }
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 12px); left: 0; z-index: 1000;
+      min-width: 235px; padding: 9px; background: var(--white);
+      border: 1px solid var(--border); border-radius: 10px;
+      box-shadow: 0 14px 35px rgba(18,59,112,.13);
+    }
+    .dropdown-menu a {
+      display: block; padding: 11px 13px; color: var(--blue);
+      text-decoration: none; border-radius: 7px; font-size: 14px; font-weight: 600;
+    }
+    .dropdown-menu a:hover,.dropdown-menu a.active { color: var(--corporate); background: var(--bg); }
+
+    .accounting-hero {
+      padding: 88px 0; position: relative; overflow: hidden;
+      background: radial-gradient(circle at 88% 18%, rgba(25,118,185,.12), transparent 28%),
+      linear-gradient(120deg, #F5F7FA 0%, #FFFFFF 62%, #EDF4FA 100%);
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.15fr .85fr;
+      align-items: center; gap: 55px; position: relative; z-index: 1;
+    }
+    .eyebrow {
+      display: inline-block; margin-bottom: 17px; padding: 8px 13px;
+      color: var(--green); background: rgba(0,143,107,.08);
+      border-radius: 30px; font-size: 12px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .accounting-hero h1 {
+      max-width: 680px; margin: 0 0 20px;
+      font-size: clamp(36px,5vw,54px); line-height: 1.15; letter-spacing: -1.5px;
+    }
+    .accounting-hero h1 span { color: var(--corporate); }
+    .accounting-hero p {
+      max-width: 620px; margin: 0 0 27px; color: #526276;
+      font-size: 17px; line-height: 1.8;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
+    .hero-actions .btn { padding: 13px 22px; border-radius: 6px; font-weight: 700; }
+    .hero-actions .btn-primary { background: var(--blue); border: 1px solid var(--blue); color: var(--white); }
+    .hero-actions .btn-primary:hover { background: var(--corporate); border-color: var(--corporate); }
+    .hero-actions .btn-outline { color: var(--blue); border: 1px solid var(--blue); background: transparent; }
+    .hero-actions .btn-outline:hover { color: var(--white); background: var(--blue); }
+
+    .hero-panel {
+      padding: 30px; background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; box-shadow: 0 18px 45px rgba(18,59,112,.09);
+    }
+    .hero-panel h3 { margin: 0 0 8px; font-size: 21px; }
+    .hero-panel > p { margin: 0 0 22px; font-size: 14px; line-height: 1.7; }
+    .panel-item { display: flex; gap: 13px; align-items: flex-start; padding: 14px 0; border-top: 1px solid var(--border); }
+    .panel-icon {
+      display: flex; flex: 0 0 38px; align-items: center; justify-content: center;
+      width: 38px; height: 38px; color: var(--green);
+      background: rgba(0,143,107,.09); border-radius: 9px; font-weight: 800;
+    }
+    .panel-item strong { display: block; margin-bottom: 3px; color: var(--blue); font-size: 14px; }
+    .panel-item span { color: #64748B; font-size: 13px; line-height: 1.5; }
+
+    .section { padding: 76px 0; }
+    .section.light { background: var(--bg); }
+    .section-heading { max-width: 730px; margin: 0 auto 42px; text-align: center; }
+    .section-heading .small-label {
+      color: var(--green); font-size: 12px; font-weight: 700;
+      letter-spacing: 1.2px; text-transform: uppercase;
+    }
+    .section-heading h2 { margin: 12px 0; font-size: clamp(27px,4vw,36px); line-height: 1.25; }
+    .section-heading p { margin: 0; color: #64748B; line-height: 1.8; }
+
+    .service-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .service-card {
+      padding: 27px; background: var(--white);
+      border: 1px solid var(--border); border-radius: 11px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(18,59,112,.08); }
+    .card-icon {
+      display: flex; align-items: center; justify-content: center;
+      width: 46px; height: 46px; margin-bottom: 18px;
+      color: var(--corporate); background: #EAF3FA;
+      border-radius: 10px; font-size: 21px; font-weight: 800;
+    }
+    .service-card h3 { margin: 0 0 10px; font-size: 19px; }
+    .service-card p { margin: 0; color: #64748B; font-size: 14px; line-height: 1.75; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: start; }
+    .copy h2 { margin: 0 0 16px; font-size: clamp(27px,4vw,35px); line-height: 1.25; }
+    .copy p { color: #64748B; line-height: 1.8; }
+    .checklist { display: grid; gap: 13px; margin-top: 23px; }
+    .check { display: flex; gap: 11px; align-items: flex-start; color: #475569; font-size: 14px; line-height: 1.6; }
+    .check b { color: var(--green); font-size: 17px; }
+
+    .info-panel {
+      padding: 27px; background: var(--white); border: 1px solid var(--border);
+      border-left: 4px solid var(--green); border-radius: 9px;
+    }
+    .info-panel h3 { margin: 0 0 12px; font-size: 20px; }
+    .info-panel p { margin: 0 0 12px; color: #64748B; font-size: 14px; line-height: 1.8; }
+    .info-panel p:last-child { margin-bottom: 0; }
+
+    .process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+    .process-card { padding: 24px 20px; background: var(--white); border: 1px solid var(--border); border-radius: 10px; }
+    .process-number {
+      display: flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; margin-bottom: 16px;
+      color: var(--white); background: var(--blue); border-radius: 50%;
+      font-family: "Manrope",sans-serif; font-weight: 800;
+    }
+    .process-card h3 { margin: 0 0 9px; font-size: 17px; }
+    .process-card p { margin: 0; color: #64748B; font-size: 13px; line-height: 1.7; }
+
+    .faq { max-width: 850px; margin: 0 auto; }
+    .faq details {
+      margin-bottom: 12px; padding: 18px 20px; background: var(--white);
+      border: 1px solid var(--border); border-radius: 9px;
+    }
+    .faq summary { color: var(--blue); cursor: pointer; font-weight: 700; line-height: 1.5; }
+    .faq details p { margin: 13px 0 0; color: #64748B; font-size: 14px; line-height: 1.8; }
+
+    .cta {
+      padding: 62px 25px; color: var(--white); background: var(--blue);
+      border-radius: 13px; text-align: center;
+    }
+    .cta h2 { margin: 0 0 12px; color: var(--white); font-size: clamp(26px,4vw,35px); }
+    .cta p { max-width: 650px; margin: 0 auto 24px; color: rgba(255,255,255,.82); line-height: 1.8; }
+    .cta .btn {
+      display: inline-block; padding: 13px 23px; color: var(--blue);
+      background: var(--white); border-radius: 6px; font-weight: 700; text-decoration: none;
+    }
+    .cta .btn:hover { background: #EDF4FA; }
+    .disclaimer {
+      margin-top: 25px; padding: 15px 18px; color: #64748B;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; font-size: 12px; line-height: 1.7;
+    }
+
+    @media(max-width:900px) {
+      .hero-grid,.two-col { grid-template-columns: 1fr; }
+      .service-grid { grid-template-columns: repeat(2,1fr); }
+      .process-grid { grid-template-columns: repeat(2,1fr); }
+      .hero-panel { max-width: 650px; }
+    }
+    @media(max-width:600px) {
+      .accounting-hero { padding: 58px 0; }
+      .service-grid,.process-grid { grid-template-columns: 1fr; }
+      .section { padding: 55px 0; }
+      .hero-panel { padding: 22px; }
+      .accounting-hero p { font-size: 15px; }
+      .dropdown-menu { position: static; min-width: 100%; margin-top: 8px; box-shadow: none; }
+      .nav-dropdown[open] { display: block; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topline">
+    <div class="container top-inner">
+      <span>UAE Business &amp; Financial Consultancy</span>
+      <span>Call / WhatsApp: +971 50 535 6966</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="DUCES Consultancy Services Home">
+        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services" class="logo">
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+
+        <details class="nav-dropdown">
+          <summary><span class="dropdown-label">Banking &amp; Finance</span></summary>
+          <div class="dropdown-menu">
+            <a href="business-bank-account.html">Business Bank Account</a>
+            <a href="business-loan.html">Business Finance</a>
+            <a href="mortgage-loan.html">Mortgage Finance</a>
+          </div>
+        </details>
+
+        <details class="nav-dropdown" open>
+          <summary><span class="dropdown-label">Accounting &amp; Tax</span></summary>
+          <div class="dropdown-menu">
+            <a href="accounting-bookkeeping.html" class="active">Accounting &amp; Bookkeeping</a>
+            <a href="vat-corporate-tax.html">VAT &amp; Corporate Tax</a>
+          </div>
+        </details>
+
+        <a href="business-setup.html">Business Setup</a>
+        <a href="pro-visa-services.html">PRO &amp; Visa</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="accounting-hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Accounting &amp; Tax Support</span>
+          <h1>Accounting &amp; Bookkeeping for <span>UAE Businesses</span></h1>
+          <p>
+            Keep your business records organised with practical bookkeeping
+            support, transaction recording, account reconciliations and
+            management reporting coordination. DUCES helps businesses build
+            better financial visibility and maintain organised records.
+          </p>
+          <div class="hero-actions">
+            <a href="contact.html" class="btn btn-primary">Discuss Your Requirements</a>
+            <a href="https://wa.me/971505356966" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp Us</a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <h3>Organised Financial Records</h3>
+          <p>Structured accounting support for everyday business operations.</p>
+
+          <div class="panel-item">
+            <div class="panel-icon">01</div>
+            <div>
+              <strong>Transaction Recording</strong>
+              <span>Organise income, expenses and supporting records.</span>
+            </div>
+          </div>
+
+          <div class="panel-item">
+            <div class="panel-icon">02</div>
+            <div>
+              <strong>Account Reconciliation</strong>
+              <span>Compare financial records with bank transactions.</span>
+            </div>
+          </div>
+
+          <div class="panel-item">
+            <div class="panel-icon">03</div>
+            <div>
+              <strong>Financial Reporting</strong>
+              <span>Prepare organised reports to support business decisions.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="small-label">Our Services</span>
+          <h2>Bookkeeping &amp; Accounting Support</h2>
+          <p>
+            Clear records help business owners understand financial performance,
+            monitor expenses and prepare for reporting and compliance requirements.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="card-icon">▤</div>
+            <h3>Bookkeeping</h3>
+            <p>Organising and recording day-to-day business income, expenses and transactions.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="card-icon">↔</div>
+            <h3>Bank Reconciliation</h3>
+            <p>Comparing accounting records with bank statements and identifying differences for review.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="card-icon">▧</div>
+            <h3>Accounts Payable &amp; Receivable</h3>
+            <p>Organising supplier invoices, customer invoices, payment records and outstanding balances.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="card-icon">◫</div>
+            <h3>Financial Statements Support</h3>
+            <p>Organising financial information for preparation and review of business financial statements.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="card-icon">▥</div>
+            <h3>Management Reports</h3>
+            <p>Supporting the preparation of income, expense and performance summaries for management review.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="card-icon">◎</div>
+            <h3>Accounting Records Review</h3>
+            <p>Reviewing the organisation of available records and identifying missing or inconsistent information.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light">
+      <div class="container two-col">
+        <div class="copy">
+          <span class="small-label">Business Record Management</span>
+          <h2>Build a More Organised Accounting Process</h2>
+          <p>
+            Reliable bookkeeping depends on complete source documents,
+            consistent transaction recording and regular review.
+            We help organise the information needed for clearer financial records.
+          </p>
+
+          <div class="checklist">
+            <div class="check"><b>✓</b><span>Sales invoices and customer receipts</span></div>
+            <div class="check"><b>✓</b><span>Purchase invoices and supplier bills</span></div>
+            <div class="check"><b>✓</b><span>Business bank statements</span></div>
+            <div class="check"><b>✓</b><span>Expense claims and payment records</span></div>
+            <div class="check"><b>✓</b><span>Payroll-related records, where applicable</span></div>
+            <div class="check"><b>✓</b><span>VAT records and supporting documentation, where applicable</span></div>
+          </div>
+        </div>
+
+        <aside class="info-panel">
+          <h3>Who Can Benefit?</h3>
+          <p><strong>Start-ups:</strong> Establish organised bookkeeping practices from the beginning.</p>
+          <p><strong>Small businesses:</strong> Maintain clear records of income, expenses and payments.</p>
+          <p><strong>Trading companies:</strong> Organise purchase, sales, supplier and customer transactions.</p>
+          <p><strong>Service providers:</strong> Track client invoices, receipts and operating expenses.</p>
+          <p><strong>Growing companies:</strong> Improve financial visibility as transaction volumes increase.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="small-label">Our Process</span>
+          <h2>How We Organise Your Accounting Support</h2>
+          <p>A structured process to understand your current records and ongoing requirements.</p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <div class="process-number">1</div>
+            <h3>Understand</h3>
+            <p>Discuss your business activity, transaction volume and current accounting process.</p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">2</div>
+            <h3>Collect</h3>
+            <p>Identify the relevant invoices, bank statements and supporting documents.</p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">3</div>
+            <h3>Organise</h3>
+            <p>Support transaction recording, reconciliation and preparation of organised records.</p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">4</div>
+            <h3>Review</h3>
+            <p>Help review available reports and identify items requiring further attention.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light">
+      <div class="container">
+        <div class="section-heading">
+          <span class="small-label">Frequently Asked Questions</span>
+          <h2>Accounting &amp; Bookkeeping – Common Questions</h2>
+          <p>Answers to common questions about maintaining business records in the UAE.</p>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>What is the difference between accounting and bookkeeping?</summary>
+            <p>Bookkeeping focuses on recording and organising financial transactions. Accounting involves reviewing, classifying and interpreting financial information and preparing relevant reports.</p>
+          </details>
+
+          <details>
+            <summary>Can a newly established company use bookkeeping services?</summary>
+            <p>Yes. A new company can establish a record-keeping process from the beginning, including organising invoices, receipts, bank transactions and expenses.</p>
+          </details>
+
+          <details>
+            <summary>How often should bookkeeping be updated?</summary>
+            <p>The appropriate frequency depends on transaction volume, business activity and reporting needs. Regular updates generally make financial records easier to review.</p>
+          </details>
+
+          <details>
+            <summary>Do you support VAT and Corporate Tax requirements?</summary>
+            <p>DUCES can help organise accounting records and coordinate relevant VAT and Corporate Tax consultancy enquiries. The specific service and any required regulated or specialist work should be confirmed before engagement.</p>
+          </details>
+
+          <details>
+            <summary>Do you provide statutory audits?</summary>
+            <p>This page describes bookkeeping and accounting support, not statutory audit services. Where an audit is required, the company should engage an appropriately authorised audit firm.</p>
+          </details>
+
+          <details>
+            <summary>What documents should a business maintain?</summary>
+            <p>Businesses should maintain relevant invoices, receipts, bank statements, contracts, payment records and other supporting documents according to their activities and applicable record-retention requirements.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <h2>Need Accounting Support for Your Business?</h2>
+          <p>
+            Tell us about your company, transaction volume and accounting requirements.
+            We can discuss a suitable bookkeeping and record-management approach.
+          </p>
+          <a href="contact.html" class="btn">Send an Enquiry</a>
+        </div>
+
+        <div class="disclaimer">
+          <strong>Important Notice:</strong> Services are subject to the agreed scope of engagement
+          and applicable UAE requirements. This page describes general accounting and bookkeeping
+          support and does not represent statutory audit, legal advice or a guarantee of regulatory
+          compliance. Any specialist or regulated service must be provided by an appropriately
+          qualified or authorised professional where required.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-about">
+        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services" class="footer-logo">
+        <p>Business consultancy and coordination support for entrepreneurs and companies across the UAE.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="business-setup.html">Business Setup</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Banking &amp; Finance</h4>
+        <a href="business-bank-account.html">Business Bank Account</a>
+        <a href="business-loan.html">Business Finance</a>
+        <a href="mortgage-loan.html">Mortgage Finance</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Accounting &amp; Tax</h4>
+        <a href="accounting-bookkeeping.html">Accounting &amp; Bookkeeping</a>
+        <a href="vat-corporate-tax.html">VAT &amp; Corporate Tax</a>
+        <a href="pro-visa-services.html">PRO &amp; Visa Services</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> DUCES Consultancy Services. All rights reserved.</p>
+      <div>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span> | </span>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/971505356966"
+     target="_blank"
+     rel="noopener"
+     aria-label="Chat with DUCES on WhatsApp">WhatsApp</a>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
