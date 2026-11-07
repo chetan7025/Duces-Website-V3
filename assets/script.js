@@ -1,32 +1,39 @@
 
 /* =========================================================
    DUCES CONSULTANCY SERVICES
-   Website JavaScript - V3
+   Website JavaScript
+   Version: 3.0
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  // 1. MOBILE NAVIGATION
+  /* 01. MOBILE NAVIGATION */
 
   const menuToggle = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
+  const navigation = document.querySelector(".nav-links");
+  const navigationLinks = document.querySelectorAll(".nav-links a");
 
-  if (menuToggle && navLinks) {
+  function closeMenu() {
+    if (!menuToggle || !navigation) return;
 
-    function closeMenu() {
-      navLinks.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Open navigation");
-    }
+    navigation.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation");
+  }
 
-    function openMenu() {
-      navLinks.classList.add("open");
-      menuToggle.setAttribute("aria-expanded", "true");
-      menuToggle.setAttribute("aria-label", "Close navigation");
-    }
+  function openMenu() {
+    if (!menuToggle || !navigation) return;
+
+    navigation.classList.add("is-open");
+    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "Close navigation");
+  }
+
+  if (menuToggle && navigation) {
 
     menuToggle.addEventListener("click", function () {
-      const isOpen = navLinks.classList.contains("open");
+      const isOpen =
+        menuToggle.getAttribute("aria-expanded") === "true";
 
       if (isOpen) {
         closeMenu();
@@ -35,13 +42,21 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Close after selecting a navigation link.
-
-    navLinks.querySelectorAll("a").forEach(function (link) {
+    navigationLinks.forEach(function (link) {
       link.addEventListener("click", closeMenu);
     });
 
-    // Close when Escape is pressed.
+    document.addEventListener("click", function (event) {
+      const clickedInsideNavigation =
+        navigation.contains(event.target);
+
+      const clickedMenuButton =
+        menuToggle.contains(event.target);
+
+      if (!clickedInsideNavigation && !clickedMenuButton) {
+        closeMenu();
+      }
+    });
 
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
@@ -49,29 +64,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Close when clicking outside the navigation.
-
-    document.addEventListener("click", function (event) {
-      const clickedInsideMenu = navLinks.contains(event.target);
-      const clickedToggle = menuToggle.contains(event.target);
-
-      if (!clickedInsideMenu && !clickedToggle) {
-        closeMenu();
-      }
-    });
-
-    // Close when switching to desktop width.
-
     window.addEventListener("resize", function () {
       if (window.innerWidth > 850) {
         closeMenu();
       }
     });
-
   }
 
 
-  // 2. AUTOMATIC COPYRIGHT YEAR
+  /* 02. AUTOMATIC COPYRIGHT YEAR */
 
   const yearElement = document.getElementById("year");
 
@@ -80,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  // 3. CONTACT FORM VALIDATION
+  /* 03. CONTACT FORM VALIDATION */
 
   const contactForm = document.querySelector(".contact-form");
 
@@ -94,19 +95,13 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      const submitButton = contactForm.querySelector(
-        'button[type="submit"], input[type="submit"]'
-      );
+      const emailField =
+        contactForm.querySelector('input[name="email"]');
 
-      if (submitButton) {
-
-        if (submitButton.tagName === "INPUT") {
-          submitButton.value = "Submitting...";
-        } else {
-          submitButton.textContent = "Submitting...";
-        }
-
-        submitButton.disabled = true;
+      if (emailField && !emailField.validity.valid) {
+        event.preventDefault();
+        emailField.focus();
+        emailField.reportValidity();
       }
 
     });
@@ -114,45 +109,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  // 4. SMOOTH INTERNAL NAVIGATION
+  /* 04. PREVENT EMPTY ANCHOR NAVIGATION */
 
-  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-
+  document.querySelectorAll('a[href="#"]').forEach(function (link) {
     link.addEventListener("click", function (event) {
-
-      const targetId = link.getAttribute("href");
-
-      if (!targetId || targetId === "#") {
-        return;
-      }
-
-      let targetElement;
-
-      try {
-        targetElement = document.querySelector(targetId);
-      } catch (error) {
-        return;
-      }
-
-      if (targetElement) {
-
-        event.preventDefault();
-
-        targetElement.scrollIntoView({
-          behavior: window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-          ).matches ? "auto" : "smooth",
-          block: "start"
-        });
-
-        if (window.history && window.history.replaceState) {
-          window.history.replaceState(null, "", targetId);
-        }
-
-      }
-
+      event.preventDefault();
     });
-
   });
+
 
 });
