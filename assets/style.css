@@ -1,9 +1,11 @@
 
 /* =========================================================
    DUCES CONSULTANCY SERVICES
-   V3 — Homepage stylesheet
-   Approved corporate brand system
+   V3 — Complete responsive website stylesheet
+   Approved corporate brand palette
    ========================================================= */
+
+/* 1. BRAND VARIABLES */
 
 :root {
   --royal-blue: #123B70;
@@ -18,11 +20,10 @@
   --heading-font: "Manrope", sans-serif;
   --body-font: "DM Sans", sans-serif;
   --container: 1180px;
-  --radius: 12px;
-  --shadow: 0 12px 35px rgba(18, 59, 112, 0.09);
+  --shadow: 0 12px 35px rgba(18,59,112,.09);
 }
 
-/* 1. RESET */
+/* 2. RESET AND GLOBAL */
 
 * {
   margin: 0;
@@ -65,6 +66,11 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+:focus-visible {
+  outline: 3px solid var(--champagne-gold);
+  outline-offset: 3px;
+}
+
 .container {
   width: min(var(--container), calc(100% - 48px));
   margin: 0 auto;
@@ -87,12 +93,11 @@ p {
   color: var(--muted);
 }
 
-:focus-visible {
-  outline: 3px solid var(--champagne-gold);
-  outline-offset: 3px;
+.section-light {
+  background: var(--light-bg);
 }
 
-/* 2. TOP CONTACT BAR */
+/* 3. TOP CONTACT BAR */
 
 .topline {
   background: var(--royal-blue);
@@ -116,7 +121,7 @@ p {
 
 .topline a {
   color: var(--white);
-  transition: color 0.2s ease;
+  transition: color .2s ease;
 }
 
 .topline a:hover {
@@ -124,16 +129,16 @@ p {
 }
 
 .top-sep {
-  opacity: 0.5;
+  opacity: .5;
 }
 
-/* 3. HEADER AND NAVIGATION */
+/* 4. HEADER AND NAVIGATION */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.97);
+  background: rgba(255,255,255,.97);
   border-bottom: 1px solid var(--soft-silver);
   backdrop-filter: blur(12px);
 }
@@ -162,7 +167,7 @@ p {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 21px;
+  gap: 18px;
 }
 
 .nav-links a {
@@ -170,7 +175,7 @@ p {
   font-size: 12px;
   font-weight: 600;
   white-space: nowrap;
-  transition: color 0.2s ease;
+  transition: color .2s ease;
 }
 
 .nav-links a:hover {
@@ -180,7 +185,7 @@ p {
 .nav-links .nav-cta {
   color: var(--white);
   background: var(--royal-blue);
-  padding: 11px 17px;
+  padding: 11px 16px;
   border-radius: 6px;
 }
 
@@ -203,7 +208,7 @@ p {
   justify-content: center;
 }
 
-/* 4. BUTTONS */
+/* 5. BUTTONS */
 
 .btn {
   display: inline-flex;
@@ -218,7 +223,7 @@ p {
   font-weight: 700;
   text-align: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all .2s ease;
 }
 
 .btn-primary {
@@ -255,7 +260,7 @@ p {
   color: var(--white);
 }
 
-/* 5. COMMON SECTION HEADINGS */
+/* 6. COMMON HEADINGS */
 
 .eyebrow {
   display: inline-block;
@@ -274,7 +279,7 @@ p {
 }
 
 .section-head h2 {
-  font-size: clamp(27px, 3.5vw, 39px);
+  font-size: clamp(27px,3.5vw,39px);
   letter-spacing: -1.2px;
   margin-bottom: 14px;
 }
@@ -290,46 +295,38 @@ p {
   margin-bottom: 23px;
 }
 
-/* 6. HERO */
+/* 7. HERO SECTION */
 
-.hero {
-  position: relative;
+.hero-section {
+  padding: 76px 0 88px;
+  background: linear-gradient(
+    135deg,
+    #F5F7FA 0%,
+    #FFFFFF 72%
+  );
   overflow: hidden;
-  padding: 85px 0 90px;
-  background: var(--light-bg);
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 480px;
-  height: 480px;
-  right: -220px;
-  top: -200px;
-  border: 1px solid rgba(25, 118, 185, 0.10);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.hero-grid {
-  position: relative;
-  z-index: 1;
+.hero-section .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
   align-items: center;
-  gap: 65px;
+  gap: 52px;
+}
+
+.hero-copy {
+  min-width: 0;
 }
 
 .hero-copy h1 {
-  font-size: clamp(36px, 4.4vw, 55px);
+  font-size: clamp(36px,4.2vw,55px);
   letter-spacing: -2px;
   line-height: 1.15;
   margin-bottom: 22px;
 }
 
-.hero-copy h1 em {
+.hero-copy h1 span {
   color: var(--corporate-blue);
-  font-style: normal;
 }
 
 .hero-copy > p {
@@ -346,136 +343,88 @@ p {
 }
 
 .hero-note {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin-top: 30px;
+  margin-top: 28px;
   color: var(--muted);
   font-size: 12px;
+  line-height: 1.7;
 }
 
-.note-check {
-  display: inline-flex;
-  width: 22px;
-  height: 22px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(0, 143, 107, 0.10);
-  color: var(--emerald-green);
-  font-weight: 800;
-}
-
-/* Hero visual card */
+/* Hero image container */
 
 .hero-visual {
   position: relative;
-  min-height: 430px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  height: 460px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--soft-silver);
+  box-shadow: 0 20px 50px rgba(18,59,112,.14);
 }
 
-.visual-orbit {
+.hero-image {
   position: absolute;
-  border: 1px solid rgba(25, 118, 185, 0.18);
-  border-radius: 50%;
-  pointer-events: none;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
 }
 
-.orbit-one {
-  width: 390px;
-  height: 390px;
-}
+/* Floating information panel */
 
-.orbit-two {
-  width: 315px;
-  height: 315px;
-  border-color: rgba(0, 143, 107, 0.18);
-}
-
-.visual-card {
-  position: relative;
+.hero-info-card {
+  position: absolute;
   z-index: 2;
-  width: min(100%, 390px);
-  padding: 32px;
+  left: 22px;
+  bottom: 22px;
+  width: min(340px,calc(100% - 44px));
+  padding: 20px 22px;
+  background: rgba(255,255,255,.96);
   border: 1px solid var(--soft-silver);
-  border-radius: 14px;
-  background: var(--white);
-  box-shadow: 0 22px 60px rgba(18, 59, 112, 0.13);
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(18,59,112,.16);
 }
 
-.visual-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 32px;
+.hero-info-card .visual-row {
+  padding: 10px 0;
 }
 
-.mini-label {
-  color: var(--muted);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-}
-
-.status-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--emerald-green);
-  box-shadow: 0 0 0 5px rgba(0, 143, 107, 0.10);
-}
-
-.visual-title {
-  color: var(--royal-blue);
-  font-family: var(--heading-font);
-  font-size: 34px;
-  line-height: 1.2;
-  font-weight: 500;
-}
-
-.visual-title strong {
-  color: var(--corporate-blue);
-}
-
-.visual-rule {
-  width: 55px;
-  height: 3px;
-  margin: 22px 0;
-  background: var(--champagne-gold);
+.hero-info-card .visual-row + .visual-row {
+  border-top: 1px solid var(--soft-silver);
 }
 
 .visual-row {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 14px 0;
-  border-top: 1px solid var(--soft-silver);
+  gap: 13px;
 }
 
 .visual-icon {
   display: flex;
   width: 38px;
   height: 38px;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  background: rgba(25, 118, 185, 0.09);
+  background: rgba(25,118,185,.09);
   color: var(--corporate-blue);
   font-size: 12px;
   font-weight: 800;
-  flex-shrink: 0;
 }
 
 .visual-icon.green {
-  background: rgba(0, 143, 107, 0.10);
+  background: rgba(0,143,107,.10);
   color: var(--emerald-green);
 }
 
 .visual-icon.gold {
-  background: rgba(217, 173, 85, 0.15);
-  color: #98712A;
+  background: var(--champagne-gold);
+  color: var(--white);
 }
 
 .visual-row b,
@@ -493,75 +442,37 @@ p {
   font-size: 11px;
 }
 
-.floating-tag {
-  position: absolute;
-  z-index: 3;
-  right: -10px;
-  bottom: 30px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 13px 18px;
-  background: var(--white);
-  border: 1px solid var(--soft-silver);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-}
-
-.floating-tag span {
-  color: var(--emerald-green);
-  font-family: var(--heading-font);
-  font-size: 19px;
-  font-weight: 800;
-}
-
-.floating-tag small {
-  color: var(--muted);
-  font-size: 10px;
-}
-
-/* 7. TRUST BAND */
+/* 8. TRUST STRIP */
 
 .trust-band {
   background: var(--white);
-  border-bottom: 1px solid var(--soft-silver);
   border-top: 1px solid var(--soft-silver);
+  border-bottom: 1px solid var(--soft-silver);
 }
 
 .trust-items {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4,minmax(0,1fr));
 }
 
-.trust-items > div {
+.trust-items > span {
   display: flex;
   align-items: center;
-  gap: 13px;
-  padding: 24px 18px;
+  justify-content: center;
+  min-height: 76px;
+  padding: 15px;
   border-right: 1px solid var(--soft-silver);
+  color: var(--royal-blue);
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
 }
 
-.trust-items > div:first-child {
-  padding-left: 0;
-}
-
-.trust-items > div:last-child {
+.trust-items > span:last-child {
   border-right: 0;
 }
 
-.trust-items strong {
-  color: var(--corporate-blue);
-  font-family: var(--heading-font);
-  font-size: 20px;
-}
-
-.trust-items span {
-  color: var(--royal-blue);
-  font-size: 11px;
-  font-weight: 600;
-}
-
-/* 8. INTRODUCTION */
+/* 9. ABOUT SECTION */
 
 .intro-section {
   background: var(--white);
@@ -569,17 +480,17 @@ p {
 
 .two-col {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: .9fr 1.1fr;
   align-items: start;
   gap: 70px;
 }
 
 .two-col h2 {
-  font-size: clamp(28px, 3.5vw, 40px);
+  font-size: clamp(28px,3.5vw,40px);
   letter-spacing: -1.2px;
 }
 
-.intro-text p {
+.intro-section p {
   font-size: 14px;
   line-height: 1.95;
   margin-bottom: 18px;
@@ -599,15 +510,11 @@ p {
   color: var(--emerald-green);
 }
 
-/* 9. SERVICES */
-
-.services-section {
-  background: var(--light-bg);
-}
+/* 10. SERVICES */
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,minmax(0,1fr));
   gap: 20px;
 }
 
@@ -618,16 +525,12 @@ p {
   background: var(--white);
   border: 1px solid var(--soft-silver);
   border-radius: 10px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform .2s ease,box-shadow .2s ease;
 }
 
 .service-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow);
-}
-
-.service-card.featured {
-  border-top: 3px solid var(--emerald-green);
 }
 
 .service-num {
@@ -647,7 +550,7 @@ p {
   justify-content: center;
   margin-bottom: 20px;
   border-radius: 9px;
-  background: rgba(25, 118, 185, 0.08);
+  background: rgba(25,118,185,.08);
   color: var(--corporate-blue);
   font-size: 20px;
 }
@@ -673,23 +576,24 @@ p {
   color: var(--emerald-green);
 }
 
-/* 10. BUSINESS BANKING */
-
-.banking-section {
-  background: var(--white);
-}
+/* 11. BANKING SECTION */
 
 .banking-grid {
   display: grid;
-  grid-template-columns: 1fr 0.95fr;
+  grid-template-columns: 1fr .95fr;
   align-items: center;
   gap: 65px;
 }
 
 .banking-grid h2 {
-  font-size: clamp(28px, 3.5vw, 40px);
+  font-size: clamp(28px,3.5vw,40px);
   letter-spacing: -1.2px;
   margin-bottom: 18px;
+}
+
+.banking-grid > div > p {
+  font-size: 14px;
+  line-height: 1.9;
 }
 
 .check-list {
@@ -714,24 +618,89 @@ p {
   font-weight: 800;
 }
 
-.banking-panel {
-  padding: 32px;
+.feature-box {
+  padding: 30px;
   background: var(--light-bg);
+  border: 1px solid var(--soft-silver);
+  border-radius: 10px;
+}
+
+.feature-box h3 {
+  font-size: 21px;
+  margin-bottom: 15px;
+}
+
+.feature-box > p {
+  font-size: 13px;
+}
+
+.banking-grid-list {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.banking-grid-list span {
+  display: block;
+  padding: 13px 15px;
+  background: var(--white);
+  border: 1px solid var(--soft-silver);
+  border-radius: 8px;
+  color: var(--royal-blue);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.feature-box > small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* 12. BUSINESS SETUP */
+
+.comparison {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+}
+
+.comparison-card {
+  padding: 26px;
+  background: var(--white);
+  border: 1px solid var(--soft-silver);
+  border-radius: 12px;
+  transition: transform .25s ease,box-shadow .25s ease;
+}
+
+.comparison-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.comparison-card h3 {
+  margin-bottom: 12px;
+  font-size: 19px;
+}
+
+.comparison-card p {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.readiness-box {
+  margin-top: 36px;
+  padding: 30px;
+  background: var(--white);
   border: 1px solid var(--soft-silver);
   border-radius: 12px;
 }
 
-.panel-label {
-  color: var(--emerald-green);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  margin-bottom: 14px;
-}
-
-.banking-panel h3 {
-  font-size: 23px;
-  margin-bottom: 20px;
+.readiness-box h3 {
+  margin-bottom: 22px;
+  font-size: 20px;
 }
 
 .readiness-item {
@@ -764,163 +733,53 @@ p {
   font-size: 11px;
 }
 
-.panel-footnote {
-  margin-top: 17px;
-  padding-top: 15px;
-  border-top: 1px solid var(--soft-silver);
-  font-size: 10px;
-  line-height: 1.8;
-}
-
-/* 11. COMPANY SETUP COMPARISON */
-
-.soft-section {
-  background: var(--light-bg);
-}
-
-.comparison-wrap {
-  overflow-x: auto;
-  background: var(--white);
-  border: 1px solid var(--soft-silver);
-  border-radius: 10px;
-}
-
-.comparison {
-  width: 100%;
-  min-width: 650px;
-  border-collapse: collapse;
-  text-align: left;
-}
-
-.comparison th,
-.comparison td {
-  padding: 17px 18px;
-  border-bottom: 1px solid var(--soft-silver);
-  font-size: 12px;
-  vertical-align: top;
-}
-
-.comparison th {
-  background: var(--royal-blue);
-  color: var(--white);
-  font-weight: 700;
-}
-
-.comparison td:first-child {
-  color: var(--royal-blue);
-  font-weight: 700;
-}
-
-.comparison td {
-  color: var(--muted);
-}
-
-.comparison tr:last-child td {
-  border-bottom: 0;
-}
-
-.table-note {
-  margin-top: 14px;
-  font-size: 11px;
-  line-height: 1.8;
-}
-
 .center-action {
   text-align: center;
   margin-top: 27px;
 }
 
-/* 12. BUSINESS FINANCE */
+/* 13. FINANCE AND TAX */
 
-.feature-box {
-  padding: 30px;
-  background: var(--light-bg);
-  border: 1px solid var(--soft-silver);
-  border-radius: 10px;
+.feature-box .check-list {
+  margin-bottom: 18px;
 }
 
-.feature-box h3 {
-  font-size: 21px;
-  margin-bottom: 15px;
-}
-
-.feature-line {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 15px 0;
-  border-top: 1px solid var(--soft-silver);
-}
-
-.feature-line b {
-  color: var(--emerald-green);
-  font-family: var(--heading-font);
-  font-size: 17px;
-}
-
-.feature-line span {
-  color: var(--text);
+.feature-box .check-list li {
   font-size: 12px;
-}
-
-/* 13. ACCOUNTING AND TAX */
-
-.tax-section {
-  background: var(--light-bg);
 }
 
 .tax-list {
-  padding: 25px 30px;
-  background: var(--white);
-  border: 1px solid var(--soft-silver);
-  border-radius: 10px;
+  padding: 0;
 }
 
-.tax-list > div {
-  padding: 17px 0;
-  border-bottom: 1px solid var(--soft-silver);
-}
-
-.tax-list > div:last-child {
-  border-bottom: 0;
-}
-
-.tax-list b,
-.tax-list span {
-  display: block;
-}
-
-.tax-list b {
-  color: var(--royal-blue);
-  font-size: 14px;
-  margin-bottom: 4px;
-}
-
-.tax-list span {
-  color: var(--muted);
-  font-size: 12px;
+.tax-list li {
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 /* 14. PROCESS */
 
-.process-section {
-  background: var(--white);
-}
-
 .process-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4,minmax(0,1fr));
   gap: 18px;
 }
 
-.process-grid > div {
+.process-card {
+  height: 100%;
   padding: 25px 21px;
   background: var(--light-bg);
   border: 1px solid var(--soft-silver);
   border-radius: 9px;
+  transition: transform .25s ease,box-shadow .25s ease;
 }
 
-.process-grid > div > span {
+.process-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.process-card > span {
   display: block;
   color: var(--emerald-green);
   font-family: var(--heading-font);
@@ -929,25 +788,21 @@ p {
   margin-bottom: 17px;
 }
 
-.process-grid h3 {
+.process-card h3 {
   font-size: 15px;
   margin-bottom: 9px;
 }
 
-.process-grid p {
+.process-card p {
   font-size: 11px;
   line-height: 1.8;
 }
 
-/* 15. INSIGHTS */
-
-.insight-section {
-  background: var(--light-bg);
-}
+/* 15. BUSINESS GUIDES */
 
 .insight-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,minmax(0,1fr));
   gap: 20px;
 }
 
@@ -982,7 +837,7 @@ p {
   font-weight: 700;
 }
 
-/* 16. CONTACT */
+/* 16. CONTACT SECTION */
 
 .contact-section {
   background: var(--white);
@@ -990,15 +845,24 @@ p {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: .9fr 1.1fr;
   align-items: start;
   gap: 65px;
 }
 
-.contact-grid h2 {
-  font-size: clamp(28px, 3.5vw, 40px);
+.contact-copy {
+  min-width: 0;
+}
+
+.contact-copy h2 {
+  font-size: clamp(28px,3.5vw,40px);
   letter-spacing: -1.2px;
   margin-bottom: 18px;
+}
+
+.contact-copy > p {
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 .contact-detail {
@@ -1016,7 +880,7 @@ p {
 }
 
 .contact-detail a,
-.contact-detail b {
+.contact-detail p {
   color: var(--royal-blue);
   font-size: 13px;
   font-weight: 700;
@@ -1027,9 +891,10 @@ p {
   color: var(--corporate-blue);
 }
 
-/* Contact form */
+/* 17. ENQUIRY FORM */
 
 .contact-form {
+  min-width: 0;
   padding: 32px;
   background: var(--light-bg);
   border: 1px solid var(--soft-silver);
@@ -1068,6 +933,7 @@ p {
 .contact-form textarea {
   display: block;
   width: 100%;
+  min-width: 0;
   margin-top: 7px;
   padding: 12px 13px;
   background: var(--white);
@@ -1076,14 +942,14 @@ p {
   color: var(--text);
   font-size: 12px;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color .2s ease,box-shadow .2s ease;
 }
 
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
   border-color: var(--corporate-blue);
-  box-shadow: 0 0 0 3px rgba(25, 118, 185, 0.09);
+  box-shadow: 0 0 0 3px rgba(25,118,185,.09);
 }
 
 .contact-form textarea {
@@ -1133,7 +999,7 @@ p {
   opacity: 0 !important;
 }
 
-/* 17. FOOTER */
+/* 18. FOOTER */
 
 footer {
   background: var(--royal-blue);
@@ -1161,7 +1027,7 @@ footer {
 
 .footer-main > div:first-child p {
   max-width: 270px;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255,255,255,.72);
   font-size: 12px;
 }
 
@@ -1173,10 +1039,10 @@ footer {
 
 .footer-main > div:not(:first-child) a {
   display: block;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255,255,255,.72);
   font-size: 11px;
   margin-bottom: 11px;
-  transition: color 0.2s ease;
+  transition: color .2s ease;
 }
 
 .footer-main a:hover {
@@ -1188,23 +1054,23 @@ footer {
   justify-content: space-between;
   gap: 20px;
   padding: 18px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1px solid rgba(255,255,255,.16);
 }
 
 .footer-bottom span {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255,255,255,.7);
   font-size: 10px;
 }
 
 .disclaimer {
   padding-top: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.10);
-  color: rgba(255, 255, 255, 0.58);
+  border-top: 1px solid rgba(255,255,255,.10);
+  color: rgba(255,255,255,.58);
   font-size: 10px;
   line-height: 1.8;
 }
 
-/* 18. FLOATING WHATSAPP */
+/* 19. FLOATING WHATSAPP */
 
 .whatsapp-float {
   position: fixed;
@@ -1219,10 +1085,10 @@ footer {
   background: var(--emerald-green);
   color: var(--white);
   border-radius: 30px;
-  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 7px 22px rgba(0,0,0,.18);
   font-size: 12px;
   font-weight: 700;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: transform .2s ease,background .2s ease;
 }
 
 .whatsapp-float:hover {
@@ -1230,19 +1096,23 @@ footer {
   transform: translateY(-3px);
 }
 
-/* 19. TABLET */
+/* 20. LARGE TABLETS AND SMALL DESKTOPS */
 
-@media (max-width: 1050px) {
+@media (max-width: 1100px) {
   .nav-links {
-    gap: 13px;
+    gap: 11px;
   }
 
   .nav-links a {
-    font-size: 11px;
+    font-size: 10px;
   }
 
-  .hero-grid {
-    gap: 35px;
+  .hero-section .hero-grid {
+    gap: 32px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(34px,4vw,46px);
   }
 
   .two-col,
@@ -1256,7 +1126,7 @@ footer {
   }
 }
 
-/* 20. MOBILE NAVIGATION */
+/* 21. TABLET AND MOBILE NAVIGATION */
 
 @media (max-width: 850px) {
   .container {
@@ -1307,17 +1177,26 @@ footer {
     border: 0;
   }
 
-  .hero-grid {
-    grid-template-columns: 1fr;
+  .hero-section {
+    padding: 55px 0 65px;
+  }
+
+  .hero-section .hero-grid {
+    grid-template-columns: minmax(0,1fr);
+    gap: 35px;
   }
 
   .hero-copy {
     max-width: 720px;
   }
 
+  .hero-copy h1 {
+    max-width: 720px;
+  }
+
   .hero-visual {
-    max-width: 650px;
-    width: 100%;
+    height: 420px;
+    max-width: 680px;
     margin: 0 auto;
   }
 
@@ -1329,32 +1208,36 @@ footer {
 
   .service-grid,
   .insight-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .comparison {
+    grid-template-columns: repeat(2,minmax(0,1fr));
   }
 
   .process-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,minmax(0,1fr));
   }
 
   .footer-main {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,minmax(0,1fr));
   }
 
   .trust-items {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,minmax(0,1fr));
   }
 
-  .trust-items > div:nth-child(2) {
+  .trust-items > span:nth-child(2) {
     border-right: 0;
   }
 
-  .trust-items > div:nth-child(3),
-  .trust-items > div:nth-child(4) {
+  .trust-items > span:nth-child(3),
+  .trust-items > span:nth-child(4) {
     border-top: 1px solid var(--soft-silver);
   }
 }
 
-/* 21. MOBILE PHONE */
+/* 22. MOBILE PHONES */
 
 @media (max-width: 560px) {
   .container {
@@ -1387,12 +1270,16 @@ footer {
     max-width: 145px;
   }
 
-  .hero {
-    padding: 58px 0 65px;
+  .hero-section {
+    padding: 42px 0 52px;
+  }
+
+  .hero-section .hero-grid {
+    gap: 28px;
   }
 
   .hero-copy h1 {
-    font-size: 36px;
+    font-size: clamp(32px,8vw,38px);
     letter-spacing: -1.3px;
   }
 
@@ -1410,43 +1297,43 @@ footer {
   }
 
   .hero-visual {
-    min-height: 380px;
+    height: 390px;
+    border-radius: 13px;
   }
 
-  .visual-card {
-    padding: 24px;
+  .hero-info-card {
+    left: 12px;
+    bottom: 12px;
+    width: calc(100% - 24px);
+    padding: 15px;
   }
 
-  .visual-title {
-    font-size: 29px;
+  .hero-info-card .visual-row {
+    gap: 10px;
+    padding: 8px 0;
   }
 
-  .orbit-one {
-    width: 330px;
-    height: 330px;
+  .hero-info-card .visual-icon {
+    width: 34px;
+    height: 34px;
   }
 
-  .orbit-two {
-    width: 265px;
-    height: 265px;
+  .hero-info-card .visual-row b {
+    font-size: 12px;
   }
 
-  .floating-tag {
-    right: 0;
-    bottom: 5px;
+  .hero-info-card .visual-row small {
+    font-size: 10px;
   }
 
-  .trust-items > div {
-    padding: 17px 8px;
-    gap: 9px;
+  .hero-note {
+    font-size: 11px;
   }
 
-  .trust-items strong {
-    font-size: 16px;
-  }
-
-  .trust-items span {
-    font-size: 9px;
+  .trust-items > span {
+    min-height: 65px;
+    padding: 12px 8px;
+    font-size: 10px;
   }
 
   .section-head {
@@ -1463,11 +1350,11 @@ footer {
 
   .two-col h2,
   .banking-grid h2,
-  .contact-grid h2 {
+  .contact-copy h2 {
     font-size: 29px;
   }
 
-  .intro-text p,
+  .intro-section p,
   .section-copy {
     font-size: 13px;
   }
@@ -1483,43 +1370,60 @@ footer {
     padding: 23px;
   }
 
-  .banking-panel {
-    padding: 23px;
-  }
-
-  .banking-panel h3 {
-    font-size: 20px;
-  }
-
-  .comparison th,
-  .comparison td {
-    padding: 13px;
-    font-size: 11px;
+  .banking-grid {
+    gap: 28px;
   }
 
   .feature-box {
     padding: 23px;
   }
 
-  .tax-list {
-    padding: 20px;
+  .banking-grid-list {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 9px;
+  }
+
+  .banking-grid-list span {
+    padding: 11px;
+    font-size: 12px;
+  }
+
+  .comparison {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .comparison-card {
+    padding: 21px;
+  }
+
+  .readiness-box {
+    padding: 21px;
+  }
+
+  .readiness-box h3 {
+    font-size: 18px;
   }
 
   .process-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2,minmax(0,1fr));
     gap: 12px;
   }
 
-  .process-grid > div {
+  .process-card {
     padding: 19px 15px;
   }
 
-  .process-grid h3 {
+  .process-card h3 {
     font-size: 13px;
   }
 
-  .process-grid p {
+  .process-card p {
     font-size: 10px;
+  }
+
+  .contact-grid {
+    gap: 30px;
   }
 
   .contact-form {
@@ -1532,7 +1436,7 @@ footer {
   }
 
   .footer-main {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2,minmax(0,1fr));
     gap: 28px 18px;
   }
 
@@ -1554,15 +1458,27 @@ footer {
   }
 }
 
-/* 22. SMALL PHONE */
+/* 23. SMALL PHONES */
 
 @media (max-width: 360px) {
   .hero-copy h1 {
     font-size: 31px;
   }
 
-  .visual-card {
-    padding: 20px;
+  .hero-visual {
+    height: 350px;
+  }
+
+  .hero-info-card {
+    padding: 12px;
+  }
+
+  .hero-info-card .visual-row {
+    gap: 8px;
+  }
+
+  .hero-info-card .visual-row small {
+    font-size: 9px;
   }
 
   .process-grid {
@@ -1578,191 +1494,14 @@ footer {
   }
 }
 
-/* 23. REDUCED MOTION */
+/* 24. REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-  }
-}
-
-/* =========================================================
-   DUCES V3 - HOMEPAGE COMPATIBILITY PATCH
-   Append this section to the END of assets/style.css
-   ========================================================= */
-
-/* Hero section */
-.hero-section {
-  padding: 76px 0 88px;
-  background: linear-gradient(135deg, #F5F7FA 0%, #FFFFFF 72%);
-  overflow: hidden;
-}
-
-.hero-section .hero-grid {
-  align-items: center;
-}
-
-/* Alternate section background */
-.section-light {
-  background: #F5F7FA;
-}
-
-/* Banking institutions */
-.banking-grid-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin: 24px 0;
-}
-
-.banking-grid-list span {
-  display: block;
-  padding: 13px 15px;
-  background: #FFFFFF;
-  border: 1px solid #E5EBF1;
-  border-radius: 8px;
-  color: #123B70;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-/* Company structure comparison */
-.comparison-card {
-  padding: 26px;
-  background: #FFFFFF;
-  border: 1px solid #E5EBF1;
-  border-radius: 12px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.comparison-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(18, 59, 112, 0.08);
-}
-
-.comparison-card h3 {
-  margin: 0 0 12px;
-  color: #123B70;
-  font-family: "Manrope", sans-serif;
-}
-
-.comparison-card p {
-  margin: 0;
-  color: #526174;
-  line-height: 1.7;
-}
-
-/* Readiness checklist container */
-.readiness-box {
-  margin-top: 36px;
-  padding: 30px;
-  background: #FFFFFF;
-  border: 1px solid #E5EBF1;
-  border-radius: 12px;
-}
-
-.readiness-box h3 {
-  margin: 0 0 22px;
-  color: #123B70;
-  font-family: "Manrope", sans-serif;
-}
-
-/* Contact introduction */
-.contact-copy {
-  min-width: 0;
-}
-
-.contact-copy h2 {
-  color: #123B70;
-}
-
-.contact-copy > p {
-  color: #526174;
-  line-height: 1.8;
-}
-
-/* Process cards */
-.process-card {
-  height: 100%;
-  padding: 25px;
-  background: #FFFFFF;
-  border: 1px solid #E5EBF1;
-  border-radius: 12px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.process-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(18, 59, 112, 0.08);
-}
-
-.process-card > span {
-  display: inline-flex;
-  margin-bottom: 18px;
-  color: #1976B9;
-  font-family: "Manrope", sans-serif;
-  font-weight: 800;
-  font-size: 20px;
-}
-
-.process-card h3 {
-  margin: 0 0 10px;
-  color: #123B70;
-  font-family: "Manrope", sans-serif;
-}
-
-.process-card p {
-  margin: 0;
-  color: #526174;
-  line-height: 1.7;
-}
-
-/* Gold accent */
-.visual-icon.gold {
-  background: #D9AD55;
-  color: #FFFFFF;
-}
-
-/* Responsive adjustments */
-@media (max-width: 850px) {
-  .hero-section {
-    padding: 55px 0 65px;
-  }
-
-  .comparison-card {
-    padding: 22px;
-  }
-
-  .readiness-box {
-    padding: 24px;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-section {
-    padding: 42px 0 52px;
-  }
-
-  .banking-grid-list {
-    grid-template-columns: 1fr 1fr;
-    gap: 9px;
-  }
-
-  .banking-grid-list span {
-    padding: 11px;
-    font-size: 13px;
-  }
-
-  .comparison-card,
-  .process-card {
-    padding: 20px;
-  }
-
-  .readiness-box {
-    padding: 20px;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
   }
 }
