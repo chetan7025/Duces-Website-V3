@@ -16,38 +16,21 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --royal-blue: #123B70;
-      --corporate-blue: #1976B9;
-      --emerald-green: #008F6B;
-      --champagne-gold: #D9AD55;
-      --white: #FFFFFF;
-      --light-background: #F5F7FA;
-      --soft-silver: #E5EBF1;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      margin: 0;
       min-height: 100vh;
-      font-family: "DM Sans", sans-serif;
-      color: var(--royal-blue);
-      background: var(--light-background);
       display: flex;
       flex-direction: column;
+      background: var(--light-background);
     }
 
     .thank-you-header {
+      padding: 16px 24px;
       background: var(--white);
       border-bottom: 1px solid var(--soft-silver);
-      padding: 17px 6%;
     }
 
     .thank-you-header-inner {
-      max-width: 1180px;
+      max-width: 1200px;
       margin: auto;
       display: flex;
       align-items: center;
@@ -56,79 +39,77 @@
     }
 
     .thank-you-logo img {
-      display: block;
-      width: 175px;
+      width: 165px;
       max-height: 65px;
       object-fit: contain;
     }
 
     .header-label {
       color: var(--royal-blue);
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 12px;
+      font-weight: 700;
     }
 
     .thank-you-main {
       flex: 1;
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 65px 20px;
+      justify-content: center;
+      padding: 55px 20px;
     }
 
     .thank-you-card {
       width: 100%;
       max-width: 680px;
-      padding: 55px 48px;
+      padding: 52px 45px;
       background: var(--white);
       border: 1px solid var(--soft-silver);
-      border-radius: 16px;
+      border-radius: var(--radius-large);
+      box-shadow: var(--shadow-card);
       text-align: center;
-      box-shadow: 0 14px 40px rgba(18, 59, 112, 0.07);
     }
 
     .success-mark {
-      width: 76px;
-      height: 76px;
-      margin: 0 auto 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: rgba(0, 143, 107, 0.10);
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 24px;
+      display: grid;
+      place-items: center;
       color: var(--emerald-green);
-      font-size: 38px;
-      font-weight: 700;
-      border: 1px solid rgba(0, 143, 107, 0.2);
+      background: rgba(0,143,107,.10);
+      border: 1px solid rgba(0,143,107,.2);
+      border-radius: 50%;
+      font-size: 36px;
+      font-weight: 800;
     }
 
     .thank-you-card h1 {
-      margin: 0 0 17px;
-      color: var(--royal-blue);
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(29px, 5vw, 39px);
-      font-weight: 800;
-      line-height: 1.2;
+      margin-bottom: 18px;
+      font-size: clamp(29px,5vw,39px);
     }
 
     .thank-you-card .intro {
       max-width: 510px;
-      margin: 0 auto 18px;
-      color: #52657A;
-      font-size: 16px;
-      line-height: 1.8;
+      margin: 0 auto;
+      font-size: 15px;
+      line-height: 1.9;
     }
 
     .thank-you-note {
       margin: 28px 0;
-      padding: 17px 20px;
+      padding: 18px 20px;
+      color: var(--royal-blue);
       background: var(--light-background);
       border-left: 3px solid var(--emerald-green);
-      border-radius: 5px;
-      color: var(--royal-blue);
-      font-size: 14px;
-      line-height: 1.7;
+      border-radius: 6px;
+      font-size: 13px;
+      line-height: 1.8;
       text-align: left;
+    }
+
+    .thank-you-note strong {
+      display: block;
+      margin-bottom: 5px;
     }
 
     .thank-you-actions {
@@ -141,77 +122,77 @@
 
     .thank-you-btn {
       min-height: 48px;
-      padding: 13px 23px;
+      padding: 13px 22px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 6px;
-      text-decoration: none;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
-      transition: 0.2s ease;
+      transition: all .25s ease;
     }
 
     .primary-btn {
-      background: var(--royal-blue);
       color: var(--white);
+      background: var(--royal-blue);
       border: 1px solid var(--royal-blue);
     }
 
     .primary-btn:hover {
+      color: var(--white);
       background: var(--corporate-blue);
       border-color: var(--corporate-blue);
     }
 
     .secondary-btn {
-      background: var(--white);
       color: var(--royal-blue);
+      background: var(--white);
       border: 1px solid var(--soft-silver);
     }
 
     .secondary-btn:hover {
-      border-color: var(--corporate-blue);
       color: var(--corporate-blue);
+      border-color: var(--corporate-blue);
     }
 
     .thank-you-contact {
       margin-top: 29px;
-      color: #65778A;
-      font-size: 13px;
-      line-height: 1.8;
+      color: var(--text-secondary);
+      font-size: 12px;
+      line-height: 2;
     }
 
     .thank-you-contact a {
       color: var(--corporate-blue);
-      text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
+      overflow-wrap: anywhere;
     }
 
     .thank-you-footer {
       padding: 20px;
+      color: rgba(255,255,255,.82);
       background: var(--royal-blue);
-      color: rgba(255, 255, 255, 0.82);
       text-align: center;
-      font-size: 12px;
-      line-height: 1.8;
+      font-size: 11px;
+      line-height: 1.9;
     }
 
     .thank-you-footer a {
       color: var(--white);
-      text-decoration: none;
+      text-decoration: underline;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width:600px) {
       .thank-you-header {
-        padding: 14px 20px;
+        padding: 14px 18px;
       }
 
       .thank-you-logo img {
-        width: 145px;
+        width: 140px;
       }
 
       .header-label {
-        font-size: 11px;
+        font-size: 10px;
       }
 
       .thank-you-main {
@@ -219,11 +200,11 @@
       }
 
       .thank-you-card {
-        padding: 38px 22px;
+        padding: 36px 21px;
       }
 
       .thank-you-card .intro {
-        font-size: 14px;
+        font-size: 13px;
       }
 
       .thank-you-actions {
@@ -244,7 +225,10 @@
       <a class="thank-you-logo" href="index.html" aria-label="DUCES Home">
         <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services">
       </a>
-      <span class="header-label">Business Consultancy | UAE</span>
+
+      <span class="header-label">
+        Business Consultancy | UAE
+      </span>
     </div>
   </header>
 
@@ -256,14 +240,15 @@
       <h1>Thank You for Contacting Us</h1>
 
       <p class="intro">
-        Your enquiry has been submitted. Our team will review the details
-        and contact you using the information provided.
+        Your enquiry has been submitted. Our team will review the
+        information provided and contact you using your preferred
+        contact details.
       </p>
 
       <div class="thank-you-note">
-        <strong>What happens next?</strong><br>
-        We will review your requirements and get in touch to discuss
-        the appropriate consultancy support for your business needs.
+        <strong>What happens next?</strong>
+        We will review your requirements and contact you to discuss
+        suitable consultancy support for your business needs.
       </div>
 
       <div class="thank-you-actions">
@@ -271,10 +256,11 @@
           Back to Homepage
         </a>
 
-        <a href="https://wa.me/971505356966"
-           class="thank-you-btn secondary-btn"
-           target="_blank"
-           rel="noopener noreferrer">
+        <a
+          href="https://wa.me/971505356966"
+          class="thank-you-btn secondary-btn"
+          target="_blank"
+          rel="noopener noreferrer">
           Contact Us on WhatsApp
         </a>
       </div>
@@ -284,22 +270,27 @@
         Email:
         <a href="mailto:chetanpatil.2798@gmail.com">
           chetanpatil.2798@gmail.com
-        </a><br>
+        </a>
+        <br>
         Phone:
-        <a href="tel:+971505356966">+971 50 535 6966</a>
+        <a href="tel:+971505356966">
+          +971 50 535 6966
+        </a>
       </div>
 
     </section>
   </main>
 
   <footer class="thank-you-footer">
-    © <span id="year"></span> DUCES Consultancy Services. All rights reserved.
+    © <span id="year"></span> DUCES Consultancy Services.
+    All rights reserved.
     <br>
     <a href="privacy-policy.html">Privacy Policy</a>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
   </script>
 
 </body>
