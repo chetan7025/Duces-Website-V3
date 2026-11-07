@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact DUCES Consultancy Services for business banking, finance, company formation, accounting, tax and PRO coordination support in the UAE.">
+  <title>Contact Us | DUCES Consultancy Services</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    :root {
+      --royal: #123B70;
+      --blue: #1976B9;
+      --green: #008F6B;
+      --gold: #D9AD55;
+      --white: #FFFFFF;
+      --light: #F5F7FA;
+      --silver: #E5EBF1;
+      --text: #34445A;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Manrope", sans-serif;
+      color: var(--royal);
+    }
+
+    .contact-hero {
+      background: linear-gradient(120deg, rgba(18,59,112,.97), rgba(25,118,185,.91));
+      color: var(--white);
+      padding: 76px 20px;
+      text-align: center;
+    }
+
+    .contact-hero .eyebrow {
+      color: #E8C77F;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .contact-hero h1 {
+      color: var(--white);
+      font-size: clamp(32px, 5vw, 48px);
+      margin: 12px 0;
+    }
+
+    .contact-hero p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: rgba(255,255,255,.88);
+      line-height: 1.8;
+    }
+
+    .contact-section {
+      padding: 70px 20px;
+      background: var(--light);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .contact-intro h2 {
+      font-size: 30px;
+      margin: 0 0 14px;
+    }
+
+    .contact-intro > p {
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--silver);
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 15px;
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      border-radius: 10px;
+      background: #EAF2FA;
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+    }
+
+    .contact-card h3 {
+      font-size: 16px;
+      margin: 0 0 5px;
+    }
+
+    .contact-card p {
+      margin: 0;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-card a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-card a:hover {
+      color: var(--green);
+    }
+
+    .contact-form-wrap {
+      background: var(--white);
+      border: 1px solid var(--silver);
+      border-radius: 14px;
+      padding: 34px;
+      box-shadow: 0 12px 35px rgba(18,59,112,.06);
+    }
+
+    .contact-form-wrap h2 {
+      margin: 0 0 8px;
+      font-size: 26px;
+    }
+
+    .form-intro {
+      margin: 0 0 25px;
+      color: #64748B;
+      line-height: 1.7;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .form-field {
+      margin-bottom: 18px;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      display: block;
+      color: var(--royal);
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid var(--silver);
+      border-radius: 7px;
+      padding: 13px 14px;
+      background: #FFFFFF;
+      color: var(--text);
+      font: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(25,118,185,.10);
+    }
+
+    .form-field textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      display: inline-block;
+      border: 0;
+      border-radius: 7px;
+      background: var(--royal);
+      color: var(--white);
+      padding: 14px 25px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+
+    .form-submit:hover {
+      background: var(--blue);
+      transform: translateY(-1px);
+    }
+
+    .form-note {
+      color: #64748B;
+      font-size: 12px;
+      line-height: 1.6;
+      margin: 14px 0 0;
+    }
+
+    .whatsapp-card {
+      background: #EAF5F1;
+      border: 1px solid #CDE6DC;
+      border-radius: 12px;
+      padding: 22px;
+      margin-top: 22px;
+    }
+
+    .whatsapp-card h3 {
+      color: var(--royal);
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .whatsapp-card p {
+      line-height: 1.7;
+      margin: 0 0 15px;
+    }
+
+    .whatsapp-button {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white) !important;
+      padding: 11px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .whatsapp-button:hover {
+      background: var(--royal);
+    }
+
+    .contact-bottom {
+      padding: 55px 20px;
+      text-align: center;
+      background: var(--white);
+    }
+
+    .contact-bottom h2 {
+      font-size: 27px;
+      margin: 0 0 12px;
+    }
+
+    .contact-bottom p {
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 800px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form-wrap {
+        padding: 25px 20px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .contact-hero {
+        padding: 58px 18px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .form-field.full {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topline">
+    <div class="container top-inner">
+      <span>Business Consultancy & Support in the UAE</span>
+      <span>Call us: <a href="tel:+971505356966">+971 50 535 6966</a></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo">
+        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services" style="max-height:58px;width:auto;">
+      </a>
+
+      <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+
+        <div class="nav-dropdown">
+          <a href="business-bank-account.html">Banking &amp; Finance</a>
+          <div class="dropdown-menu">
+            <a href="business-bank-account.html">Business Bank Account</a>
+            <a href="business-loan.html">Business Finance</a>
+            <a href="mortgage-loan.html">Mortgage Finance</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="accounting-bookkeeping.html">Accounting &amp; Tax</a>
+          <div class="dropdown-menu">
+            <a href="accounting-bookkeeping.html">Accounting &amp; Bookkeeping</a>
+            <a href="vat-corporate-tax.html">VAT &amp; Corporate Tax</a>
+          </div>
+        </div>
+
+        <a href="business-setup.html">Business Setup</a>
+        <a href="pro-visa-services.html">PRO &amp; Visa</a>
+        <a href="contact.html" class="active">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero">
+      <div class="container">
+        <span class="eyebrow">Connect with DUCES</span>
+        <h1>Let's Discuss Your Business Requirements</h1>
+        <p>
+          Whether you are starting a business, exploring banking options,
+          arranging finance or managing accounting and tax requirements,
+          our team is ready to understand your needs and guide you on the next steps.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container contact-layout">
+
+        <div class="contact-intro">
+          <h2>Get in Touch</h2>
+          <p>
+            Tell us what support you are looking for. Share your requirements
+            and we will guide you on the relevant services, documentation
+            and possible next steps.
+          </p>
+
+          <div class="contact-card">
+            <div class="contact-icon">☎</div>
+            <div>
+              <h3>Call Us</h3>
+              <p><a href="tel:+971505356966">+971 50 535 6966</a></p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">✉</div>
+            <div>
+              <h3>Email Us</h3>
+              <p><a href="mailto:chetanpatil.2798@gmail.com">chetanpatil.2798@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">◷</div>
+            <div>
+              <h3>Business Enquiries</h3>
+              <p>Contact us to discuss your requirements and arrange a suitable follow-up.</p>
+            </div>
+          </div>
+
+          <div class="whatsapp-card">
+            <h3>Prefer WhatsApp?</h3>
+            <p>
+              For a direct conversation, contact us on WhatsApp.
+              This is a separate contact option from the enquiry form.
+            </p>
+            <a class="whatsapp-button"
+               href="https://wa.me/971505356966"
+               target="_blank"
+               rel="noopener">
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <h2>Send an Enquiry</h2>
+          <p class="form-intro">
+            Complete the details below so we can understand your requirements.
+          </p>
+
+          <form id="ducesContactForm">
+            <div class="form-grid">
+
+              <div class="form-field">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName"
+                       placeholder="Your full name" required>
+              </div>
+
+              <div class="form-field">
+                <label for="phone">Contact Number *</label>
+                <input type="tel" id="phone" name="phone"
+                       placeholder="+971 ..." required>
+              </div>
+
+              <div class="form-field">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email"
+                       placeholder="name@example.com" required>
+              </div>
+
+              <div class="form-field">
+                <label for="service">Service Required *</label>
+                <select id="service" name="service" required>
+                  <option value="">Select a service</option>
+                  <option>Business Bank Account</option>
+                  <option>Business Finance</option>
+                  <option>Mortgage Finance</option>
+                  <option>Business Setup / Company Formation</option>
+                  <option>PRO / Visa Coordination</option>
+                  <option>Accounting & Bookkeeping</option>
+                  <option>VAT & Corporate Tax</option>
+                  <option>Other Enquiry</option>
+                </select>
+              </div>
+
+              <div class="form-field full">
+                <label for="message">Tell Us About Your Requirements *</label>
+                <textarea id="message" name="message"
+                          placeholder="Please describe your requirements..."
+                          required></textarea>
+              </div>
+
+            </div>
+
+            <button type="submit" class="form-submit">
+              Prepare Enquiry Email
+            </button>
+
+            <p class="form-note">
+              Selecting this button opens your email application with your
+              enquiry details addressed to DUCES. Your email application must
+              be configured to send the message.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="contact-bottom">
+      <div class="container">
+        <h2>Clarity Before Your Next Business Decision</h2>
+        <p>
+          DUCES Consultancy Services provides consultancy, guidance and
+          coordination support across selected business and financial services
+          in the UAE. Service availability and third-party decisions depend
+          on the relevant provider and applicable requirements.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-about">
+        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services"
+             style="max-height:55px;width:auto;margin-bottom:15px;">
+        <p>
+          Business consultancy and coordination support for entrepreneurs
+          and businesses in the UAE.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="business-setup.html">Business Setup</a>
+        <a href="business-bank-account.html">Banking &amp; Finance</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="footer-links">
+        <h3>Our Services</h3>
+        <a href="accounting-bookkeeping.html">Accounting &amp; Bookkeeping</a>
+        <a href="vat-corporate-tax.html">VAT &amp; Corporate Tax</a>
+        <a href="pro-visa-services.html">PRO &amp; Visa Services</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+
+      <div class="footer-links">
+        <h3>Contact</h3>
+        <a href="tel:+971505356966">+971 50 535 6966</a>
+        <a href="mailto:chetanpatil.2798@gmail.com">Email DUCES</a>
+        <a href="https://wa.me/971505356966" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> DUCES Consultancy Services. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/971505356966"
+     target="_blank"
+     rel="noopener"
+     aria-label="Contact DUCES on WhatsApp">
+    WhatsApp
+  </a>
+
+  <script src="assets/script.js"></script>
+
+  <script>
+    document.getElementById("ducesContactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("fullName").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !phone || !email || !service || !message) {
+        alert("Please complete all required fields.");
+        return;
+      }
+
+      const subject = encodeURIComponent("Website Enquiry - " + service);
+      const body = encodeURIComponent(
+        "New enquiry from the DUCES website\n\n" +
+        "Name: " + name + "\n" +
+        "Contact Number: " + phone + "\n" +
+        "Email: " + email + "\n" +
+        "Service Required: " + service + "\n\n" +
+        "Requirements:\n" + message
+      );
+
+      window.location.href =
+        "mailto:chetanpatil.2798@gmail.com?subject=" + subject + "&body=" + body;
+    });
+  </script>
+
+</body>
+</html>
