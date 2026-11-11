@@ -27,24 +27,40 @@ img{max-width:100%;height:auto}
 .menu-toggle{border:1px solid var(--v3-silver)!important;border-radius:9px!important;background:#fff!important;color:var(--v3-royal)!important}
 .menu-toggle span{background:var(--v3-royal)!important}
 /* V3-style compact, consistent page introductions */
-.page-hero,.bank-page-hero,.contact-hero{
+/* Shared page-introduction system: preserve each page's content while aligning the visual treatment. */
+.page-hero,.bank-page-hero,.contact-hero,.accounting-hero,.tax-hero{
  background:linear-gradient(105deg,#F1F6FB 0%,#fff 72%)!important;
  padding:62px 0!important;text-align:left!important;position:relative;overflow:hidden
 }
-.page-hero:after,.bank-page-hero:after,.contact-hero:after{
+.page-hero:after,.bank-page-hero:after,.contact-hero:after,.accounting-hero:after,.tax-hero:after{
  content:"";position:absolute;left:0;bottom:0;width:100%;height:4px;
  background:linear-gradient(90deg,var(--v3-green),var(--v3-gold),transparent)
 }
-.page-hero h1,.bank-page-hero h1,.contact-hero h1{color:var(--v3-royal)!important;font-size:clamp(32px,4vw,46px)!important;letter-spacing:-1.5px!important;line-height:1.16!important;max-width:780px;margin:8px 0 14px!important}
-.page-hero p,.bank-page-hero p,.contact-hero p{color:var(--v3-muted)!important;font-size:14px!important;line-height:1.75!important;max-width:700px;margin:0 0 18px!important}
-.page-hero .eyebrow,.bank-page-hero .eyebrow,.contact-hero .eyebrow{color:var(--v3-blue)!important;font-size:11px!important;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
+.page-hero h1,.bank-page-hero h1,.contact-hero h1,.accounting-hero h1,.tax-hero h1{
+ color:var(--v3-royal)!important;font-size:clamp(32px,4vw,46px)!important;
+ letter-spacing:-1.5px!important;line-height:1.16!important;max-width:780px;margin:8px 0 14px!important
+}
+.page-hero p,.bank-page-hero p,.contact-hero p,.accounting-hero p,.tax-hero p{
+ color:var(--v3-muted)!important;font-size:14px!important;line-height:1.75!important;
+ max-width:700px;margin:0 0 18px!important
+}
+.page-hero .eyebrow,.bank-page-hero .eyebrow,.contact-hero .eyebrow,.accounting-hero .eyebrow,.tax-hero .eyebrow{
+ color:var(--v3-blue)!important;font-size:11px!important;font-weight:800;letter-spacing:1.2px;text-transform:uppercase
+}
 .breadcrumb{font-size:12px!important;color:#718197!important;margin-bottom:16px!important}
 .breadcrumb a{color:var(--v3-blue)!important}
-.page-hero-inner,.bank-hero-inner{width:min(1200px,calc(100% - 48px))!important;margin:auto!important;gap:36px!important}
-.page-hero-panel,.bank-hero-panel{border:1px solid var(--v3-silver)!important;border-radius:12px!important;box-shadow:var(--v3-shadow)!important;padding:25px!important;background:#fff!important}
-.page-hero-panel h3,.bank-hero-panel h3{font-size:18px!important}
+.page-hero-inner,.bank-hero-inner,.accounting-hero .hero-grid,.tax-hero .hero-grid{
+ width:min(1200px,calc(100% - 48px))!important;margin-inline:auto!important;gap:36px!important
+}
+.page-hero-panel,.bank-hero-panel,.accounting-hero .hero-panel,.tax-hero .hero-panel{
+ border:1px solid var(--v3-silver)!important;border-radius:12px!important;box-shadow:var(--v3-shadow)!important;
+ padding:25px!important;background:#fff!important
+}
+.page-hero-panel h3,.bank-hero-panel h3,.accounting-hero .hero-panel h3,.tax-hero .hero-panel h3{font-size:18px!important}
 .contact-hero{padding:58px max(24px,calc((100% - 1200px)/2))!important}
 .contact-hero p{margin-left:0!important;margin-right:0!important}
+.accounting-hero .hero-grid,.tax-hero .hero-grid{position:relative;z-index:1}
+.topline{display:none!important}
 /* Section rhythm mirrors the homepage: compact, readable, alternating white/soft backgrounds */
 .section{padding:54px 0!important}
 .section-light{background:var(--v3-light)!important}
@@ -151,4 +167,39 @@ form label,.contact-form label{font-size:12px!important;font-weight:700;color:va
  .nav-dropdown:hover>.dropdown-menu,.nav-dropdown:focus-within>.dropdown-menu{display:none}
  .nav-dropdown[open]>.dropdown-menu{display:block}
  .nav-links .wa-nav{margin-top:12px;width:100%;padding:13px!important;text-align:center}
+}
+
+
+/* Final shared-shell alignment for homepage and inner pages */
+.site-header,.header{
+ height:78px!important;min-height:78px!important;background:#fff!important;
+ position:sticky!important;top:0!important;z-index:1500!important
+}
+.site-header .nav-wrap,.header .nav{
+ height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative
+}
+.site-header .brand img,.site-header .logo-image,.site-header .logo,.header .logo{
+ width:auto;max-width:210px;max-height:60px;object-fit:contain
+}
+.nav-links{align-items:center}
+.nav-links>details>summary{list-style:none;cursor:pointer}
+.nav-links>details>summary::-webkit-details-marker{display:none}
+.nav-dropdown{position:relative}
+.nav-dropdown .dropdown-menu{display:none}
+.nav-dropdown[open]>.dropdown-menu,.nav-dropdown:hover>.dropdown-menu,.nav-dropdown:focus-within>.dropdown-menu{display:block}
+.nav-dropdown>summary:focus-visible,.nav-links>a:focus-visible{outline:2px solid var(--v3-blue);outline-offset:4px;border-radius:4px}
+@media(max-width:780px){
+ .site-header,.header{height:72px!important;min-height:72px!important}
+ .site-header .nav-wrap,.header .nav{width:calc(100% - 30px)}
+ .site-header .brand img,.site-header .logo-image,.site-header .logo,.header .logo{max-width:180px;max-height:56px}
+ .nav-links{top:71px!important;max-height:calc(100vh - 72px);overflow-y:auto;gap:0!important}
+ .nav-dropdown:hover>.dropdown-menu,.nav-dropdown:focus-within>.dropdown-menu{display:none}
+ .nav-dropdown[open]>.dropdown-menu{display:block}
+ .page-hero,.bank-page-hero,.contact-hero,.accounting-hero,.tax-hero{padding:42px 0!important}
+ .page-hero-inner,.bank-hero-inner,.accounting-hero .hero-grid,.tax-hero .hero-grid{grid-template-columns:1fr!important;gap:22px!important;width:calc(100% - 30px)!important}
+ .page-hero h1,.bank-page-hero h1,.contact-hero h1,.accounting-hero h1,.tax-hero h1{font-size:32px!important}
+}
+@media(max-width:480px){
+ .page-hero h1,.bank-page-hero h1,.contact-hero h1,.accounting-hero h1,.tax-hero h1{font-size:29px!important}
+ .page-hero p,.bank-page-hero p,.contact-hero p,.accounting-hero p,.tax-hero p{font-size:13px!important}
 }
