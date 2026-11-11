@@ -373,7 +373,7 @@
     <section class="contact-hero">
       <div class="container">
         <span class="eyebrow">Connect with DUCES</span>
-        <h1>Let's Discuss Your Business Requirements</h1>
+        <h1>How Can We Support Your Business?</h1>
         <p>
           Whether you are starting a business, exploring banking options,
           arranging finance or managing accounting and tax requirements,
@@ -454,22 +454,33 @@
             <div class="form-grid">
 
               <div class="form-field">
-                <label for="fullName">Full Name *</label>
+                <label for="firstName">First Name *</label>
                 <input
                   type="text"
-                  id="fullName"
-                  name="Full Name"
-                  placeholder="Your full name"
-                  autocomplete="name"
+                  id="firstName"
+                  name="First Name"
+                  placeholder="First name"
+                  autocomplete="given-name"
                   required>
               </div>
 
               <div class="form-field">
-                <label for="phone">Contact Number *</label>
+                <label for="lastName">Last Name *</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="Last Name"
+                  placeholder="Last name"
+                  autocomplete="family-name"
+                  required>
+              </div>
+
+              <div class="form-field">
+                <label for="mobile">Mobile Number *</label>
                 <input
                   type="tel"
-                  id="phone"
-                  name="Phone Number"
+                  id="mobile"
+                  name="Mobile Number"
                   placeholder="+971 ..."
                   autocomplete="tel"
                   required>
@@ -486,45 +497,27 @@
                   required>
               </div>
 
-              <div class="form-field">
-                <label for="service">Service Required *</label>
-                <select id="service" name="Service Required" required>
-                  <option value="">Select a service</option>
-                  <option>Business Bank Account</option>
-                  <option>Business Finance</option>
-                  <option>Mortgage Finance</option>
-                  <option>Business Setup / Company Formation</option>
-                  <option>PRO / Visa Coordination</option>
-                  <option>Accounting &amp; Bookkeeping</option>
-                  <option>VAT &amp; Corporate Tax</option>
-                  <option>Other Enquiry</option>
+              <div class="form-field full">
+                <label for="product">Product *</label>
+                <select id="product" name="Product" required>
+                  <option value="">Select a product</option>
+                  <option>Business Setup</option>
+                  <option>Banking &amp; Finance</option>
+                  <option>Accounting &amp; Tax</option>
+                  <option>PRO &amp; Visa Services</option>
                 </select>
               </div>
 
               <div class="form-field full">
-                <label for="message">Tell Us About Your Requirements *</label>
+                <label for="message">Description *</label>
                 <textarea
                   id="message"
-                  name="Message"
-                  placeholder="Please describe your requirements..."
+                  name="Description"
+                  placeholder="Please describe what support you need..."
                   required></textarea>
               </div>
 
             </div>
-
-            <label class="consent-field" for="privacyConsent">
-              <input
-                type="checkbox"
-                id="privacyConsent"
-                name="Privacy Consent"
-                value="Agreed"
-                required>
-              <span>
-                I agree that DUCES Consultancy Services may use the information
-                provided to respond to my enquiry, in accordance with its
-                <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.
-              </span>
-            </label>
 
             <button type="submit" class="form-submit">
               Submit Enquiry
