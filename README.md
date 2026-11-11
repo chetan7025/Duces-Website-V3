@@ -1,126 +1,75 @@
-
 # DUCES Consultancy Services — Website
 
-Official website project for DUCES Consultancy Services.
+Official static website for DUCES Consultancy Services.
 
-## About DUCES
-
-DUCES Consultancy Services provides consultancy and business support services in the UAE.
-
-Our service areas include:
-
-- Business Bank Account Assistance
-- Business Finance and Loan Consultancy
-- Mortgage Loan Consultancy
-- Business Setup Consultancy
-- Company Formation Support
-- PRO and Documentation Support
-- Accounting and Bookkeeping
-- VAT and Corporate Tax Consultancy
-
-## Brand Identity
-
-The website follows the approved DUCES corporate identity.
-
-| Colour | Hex Code | Usage |
-|---|---|---|
-| Royal Blue | #123B70 | Primary brand colour |
-| Corporate Blue | #1976B9 | Buttons and highlights |
-| Emerald Green | #008F6B | Accent colour |
-| Champagne Gold | #D9AD55 | Limited premium accents |
-| White | #FFFFFF | Main surfaces |
-| Light Background | #F5F7FA | Alternate backgrounds |
-| Soft Silver | #E5EBF1 | Borders and dividers |
-
-Typography:
-- Headings: Manrope
-- Body: DM Sans
-
-## Project Structure
-
-```text
-Duces-Website-V3/
-│
-├── index.html
-├── thank-you.html
-├── privacy-policy.html
-├── README.md
-│
-└── assets/
-    ├── style.css
-    ├── script.js
-    └── duces-logo.jpg
-```
-
-## Website Pages
-
-| File | Purpose |
-|---|---|
-| index.html | Main homepage |
-| thank-you.html | Enquiry submission confirmation |
-| privacy-policy.html | Privacy policy |
-| assets/style.css | Website styling |
-| assets/script.js | Website interactions |
-| assets/duces-logo.jpg | Official company logo |
-
-## Contact Information
-
-**Company:** DUCES Consultancy Services
-
-**Email:** chetanpatil.2798@gmail.com
-
-**Phone / WhatsApp:** +971 50 535 6966
-
-**WhatsApp:** https://wa.me/971505356966
-
-## Enquiry Form
-
-The homepage enquiry form is configured to use FormSubmit.
-
-Destination email:
-
-chetanpatil.2798@gmail.com
-
-Important:
-- Complete the initial FormSubmit email activation if requested.
-- Test the form after activation.
-- Confirm that the confirmation page opens after submission.
-- WhatsApp is a separate direct-contact option.
-
-## Website Images
-
-The current homepage uses externally hosted Unsplash images.
-
-An internet connection is required for those images to load.
-
-## Publishing with GitHub Pages
-
-1. Open the GitHub repository.
-2. Go to Settings.
-3. Open Pages.
-4. Under Build and deployment, select Deploy from a branch.
-5. Select the `main` branch.
-6. Select `/ (root)` as the folder.
-7. Save the settings.
-8. Wait for GitHub Pages to publish the website.
-
-Website address:
+## Website
 
 https://chetan7025.github.io/Duces-Website-V3/
 
-## Pre-Launch Checklist
+## Brand system
 
-- [ ] Homepage opens correctly.
-- [ ] Company logo loads correctly.
-- [ ] Navigation links work.
-- [ ] Mobile menu works.
-- [ ] All service sections display correctly.
-- [ ] Enquiry form submits successfully.
-- [ ] Enquiry email reaches the designated inbox.
-- [ ] Thank-you page opens after submission.
-- [ ] Privacy Policy link works.
-- [ ] WhatsApp button opens the correct number.
-- [ ] Website is checked on mobile and desktop.
+| Colour | Hex | Usage |
+|---|---|---|
+| Classic Royal Blue | #123B70 | Primary brand and footer |
+| Corporate Blue | #1976B9 | Supporting blue and links |
+| Emerald Green | #008F6B | Primary accent and actions |
+| Champagne Gold | #D9AD55 | Restrained premium accent |
+| White | #FFFFFF | Main surfaces |
+| Light Background | #F5F7FA | Soft section backgrounds |
+| Soft Silver | #E5EBF1 | Borders and dividers |
+
+Typography: Manrope for headings and DM Sans for body copy.
+
+## Site structure
+
+- `index.html` — Home
+- `about.html` — About DUCES
+- `business-setup.html` — Business setup
+- `business-bank-account.html` — Business bank accounts
+- `business-loan.html` — Business finance
+- `mortgage-loan.html` — Mortgage finance
+- `accounting-bookkeeping.html` — Accounting and bookkeeping
+- `vat-corporate-tax.html` — VAT and corporate tax
+- `pro-visa-services.html` — PRO and visa services
+- `contact.html` — Contact and enquiry form
+- `thank-you.html` — Enquiry confirmation
+- `privacy-policy.html` — Privacy policy
+- `terms.html` — Terms and conditions
+
+## Shared assets
+
+- `assets/script.js` — Shared navigation, dropdown, mobile menu and form interactions
+- `assets/style.css` — Base site styles
+- `assets/v3-system.css` — Shared visual system, header, dropdown and responsive page-introduction styles
+- `assets/duces-logo.jpg` — Company logo
+- `assets/duces-hero.jpg` — Homepage hero image
+
+All main content pages use the same navigation structure and shared interaction script. Keep global navigation and site-wide visual changes in the shared assets rather than introducing page-specific header variations.
+
+## Contact
+
+**Email:** chetanpatil.2798@gmail.com  
+**Phone / WhatsApp:** +971 50 535 6966  
+**WhatsApp:** https://wa.me/971505356966
+
+## Enquiry form
+
+The contact form uses FormSubmit and sends enquiries to the email address above. FormSubmit may require initial email activation. Test an enquiry after publishing and confirm both email delivery and the thank-you redirect.
+
+## GitHub Pages publishing
+
+The site is published from the `main` branch and repository root (`/ `). After code updates, check the GitHub Actions workflow named **pages build and deployment** before testing the live site.
+
+## Pre-launch checks
+
+- [ ] Home and all service pages open.
+- [ ] Header, dropdowns and mobile navigation work consistently.
+- [ ] Page introductions and hero panels display consistently.
+- [ ] All local links and images load.
+- [ ] Contact form submits and reaches the correct inbox.
+- [ ] Thank-you, privacy and terms pages open.
+- [ ] WhatsApp links open the correct number.
+- [ ] Check desktop, tablet and mobile layouts.
 
 ---
 
