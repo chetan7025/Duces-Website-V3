@@ -84,18 +84,18 @@ document.addEventListener("DOMContentLoaded", function () {
     if (summary) summary.setAttribute("aria-haspopup", "true");
 
     dropdown.addEventListener("mouseenter", function () {
-      if (window.innerWidth > 780) dropdown.setAttribute("open", "");
+      if (window.innerWidth > 1000) dropdown.setAttribute("open", "");
     });
     dropdown.addEventListener("mouseleave", function () {
-      if (window.innerWidth > 780 && !dropdown.contains(document.activeElement)) {
+      if (window.innerWidth > 1000 && !dropdown.contains(document.activeElement)) {
         dropdown.removeAttribute("open");
       }
     });
     dropdown.addEventListener("focusin", function () {
-      if (window.innerWidth > 780) dropdown.setAttribute("open", "");
+      if (window.innerWidth > 1000) dropdown.setAttribute("open", "");
     });
     dropdown.addEventListener("focusout", function (event) {
-      if (!dropdown.contains(event.relatedTarget) && window.innerWidth > 780) {
+      if (!dropdown.contains(event.relatedTarget) && window.innerWidth > 1000) {
         dropdown.removeAttribute("open");
       }
     });
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   window.addEventListener("resize", function () {
-    if (window.innerWidth > 780) closeMenu();
+    if (window.innerWidth > 1000) closeMenu();
   });
 
   const yearElement = document.getElementById("year");
