@@ -120,12 +120,13 @@ h1,h2,h3,h4{font-family:Manrope,sans-serif;color:var(--blue);line-height:1.18}h2
 @media(max-width:780px){.header{height:72px}.logo{width:190px;max-height:60px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:71px;left:0;right:0;background:#fff;padding:15px 22px 20px;box-shadow:0 12px 20px rgba(18,59,112,.12);align-items:stretch;flex-direction:column;gap:0}.nav-links.open{display:flex}.nav-links a{padding:11px 4px;border-bottom:1px solid #edf1f5;font-size:13px}.nav-links a.active:after{display:none}.nav-links .wa-nav{text-align:center;margin-top:10px}.hero{min-height:370px;background-position:58% center}.hero-inner{padding:36px 0}.hero-note{display:none}.hero h1{font-size:35px;max-width:460px}.hero-copy{max-width:350px}.shortcuts{grid-template-columns:repeat(2,1fr)}.shortcut:last-child{grid-column:1/-1}.about{grid-template-columns:1fr;gap:0}.about-visual{min-height:230px}.about-copy{padding:22px 0}.compare{grid-template-columns:1fr 1fr}.compare-intro{grid-column:1/-1}.service-tiles{grid-template-columns:repeat(2,1fr)}.service-tile:last-child{grid-column:1/-1}.process{grid-template-columns:repeat(2,1fr)}.process-intro{grid-column:1/-1}.step{padding:8px;border:0}.bottom-grid{grid-template-columns:1fr}.footer-main{grid-template-columns:1fr 1fr}.footer-about{grid-column:1/-1}.footer-logo{width:180px}}
 @media(max-width:480px){.container,.nav,.hero-inner{width:calc(100% - 30px)}.hero{min-height:390px;background-position:61% center}.hero h1{font-size:32px}.hero-copy{font-size:12px}.actions{gap:8px}.btn{font-size:11px;padding:10px 13px}.shortcuts{gap:9px}.shortcut{min-height:140px;padding:11px}.shortcut h3{font-size:12px}.shortcut p{font-size:9px}.trust-points{grid-template-columns:repeat(2,1fr)}.trust-point:nth-child(2){border:0}.compare{grid-template-columns:1fr}.compare-intro{grid-column:auto}.compare-card{min-height:0}.service-tiles{grid-template-columns:1fr 1fr}.service-tile{height:95px}.process{grid-template-columns:1fr 1fr}.approach-panel{grid-template-columns:1fr}.footer-main{grid-template-columns:1fr 1fr;gap:15px}.footer-col{padding-left:10px}.footer-bottom{flex-direction:column}.whatsapp-float{width:45px;height:45px}}
 </style>
+  <link rel="stylesheet" href="assets/v3-system.css">
 </head>
 <body>
 <header class="header">
  <div class="nav">
   <a href="index.html" aria-label="DUCES Home"><img class="logo" src="assets/duces-logo.jpg" alt="DUCES Consultancy Services"></a>
-  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="document.querySelector('.nav-links').classList.toggle('open');this.setAttribute('aria-expanded',document.querySelector('.nav-links').classList.contains('open'))">☰</button>
+  <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
   <nav class="nav-links" aria-label="Main navigation">
    <a class="active" href="index.html">Home</a><a href="about.html">About Us</a><a href="business-setup.html">Services⌄</a><a href="business-setup.html">Free Zones</a><a href="business-bank-account.html">Banking</a><a href="accounting-bookkeeping.html">Resources⌄</a><a href="contact.html">Contact</a><a class="wa-nav" href="https://wa.me/971505356966" target="_blank" rel="noopener">◉ WhatsApp Us</a>
   </nav>
@@ -137,7 +138,7 @@ h1,h2,h3,h4{font-family:Manrope,sans-serif;color:var(--blue);line-height:1.18}h2
   <div class="kicker">BUSINESS SETUP | BANKING | FINANCE | PRO SERVICES</div>
   <h1>Your Trusted Partner for <span>Business Growth</span> in UAE</h1>
   <p class="hero-copy">DUCES Consultancy Services helps entrepreneurs and businesses set up, manage and grow their operations in the UAE with end-to-end support.</p>
-  <div class="actions"><a class="btn btn-green" href="contact.html">Get Free Consultation&nbsp; →</a><a class="btn btn-outline" href="#services">Explore Our Services</a></div>
+  <div class="actions"><a class="btn btn-green" href="contact.html">Request a Consultation&nbsp; →</a><a class="btn btn-outline" href="#services">Explore Our Services</a></div>
  </div>
  <div class="hero-note">From<br>Business Setup<br>to Banking<br>We're With You</div>
 </section>
@@ -149,11 +150,11 @@ h1,h2,h3,h4{font-family:Manrope,sans-serif;color:var(--blue);line-height:1.18}h2
  <a class="shortcut" href="pro-visa-services.html"><div class="shortcut-icon">♧</div><h3>Business Support</h3><p>Visa | Ejari | Company Formation<br>Renewals</p><div class="arrow">→</div></a>
 </div></section>
 <section class="about">
- <div class="about-visual"><div class="about-visual-text">Your Business<br>Our Expertise<small>We provide professional guidance, trusted partnerships and practical solutions for your UAE business journey.</small></div></div>
+ <div class="about-visual"><div class="about-visual-text">Your Business<br>Our Expertise<small>We provide practical guidance and coordinated support throughout your UAE business journey.</small></div></div>
  <div class="about-copy"><div class="eyebrow">ABOUT DUCES</div><h2>More Than a Consultancy,<br><span>Your Business Partner</span></h2>
  <p>DUCES Consultancy Services is a UAE-focused consultancy supporting entrepreneurs and businesses with company setup, banking guidance, business finance and corporate services.</p>
  <p>We work with clients to understand their requirements, organise documentation and coordinate with relevant banks, free zones, authorities and professional service providers.</p>
- <div class="trust-points"><div class="trust-point">⬟<span>Trusted<br>Guidance</span></div><div class="trust-point">⇄<span>Banking<br>Network</span></div><div class="trust-point">◷<span>End-to-End<br>Support</span></div><div class="trust-point">♧<span>Client<br>Focused</span></div></div>
+ <div class="trust-points"><div class="trust-point">⬟<span>Trusted<br>Guidance</span></div><div class="trust-point">⇄<span>Banking<br>Guidance</span></div><div class="trust-point">◷<span>End-to-End<br>Support</span></div><div class="trust-point">♧<span>Client<br>Focused</span></div></div>
  </div>
 </section>
 <section class="compare-band"><div class="container compare">
@@ -190,12 +191,13 @@ h1,h2,h3,h4{font-family:Manrope,sans-serif;color:var(--blue);line-height:1.18}h2
 <footer class="footer">
  <div class="container footer-main">
   <div class="footer-about"><img class="footer-logo" src="assets/duces-logo.jpg" alt="DUCES Consultancy Services"><p>Your Business. Our Priority. Business setup, banking, finance and corporate consultancy support in the UAE.</p></div>
-  <div class="footer-col"><strong>LOCATION</strong><span>Dubai, UAE</span><span>Office Address</span></div>
+  <div class="footer-col"><strong>UAE BUSINESS SUPPORT</strong><span>Company setup guidance</span><span>Banking, finance and compliance</span></div>
   <div class="footer-col"><strong>EMAIL</strong><a href="mailto:chetanpatil.2798@gmail.com">chetanpatil.2798@gmail.com</a><strong style="margin-top:8px">PHONE / WHATSAPP</strong><a href="tel:+971505356966">+971 50 535 6966</a></div>
   <div class="footer-col"><strong>QUICK LINKS</strong><a href="about.html">About Us</a><a href="business-setup.html">Business Setup</a><a href="business-bank-account.html">Banking</a><a href="privacy-policy.html">Privacy Policy</a></div>
  </div>
  <div class="container footer-bottom"><span>© 2026 DUCES Consultancy Services. All rights reserved.</span><span>Privacy Policy&nbsp;&nbsp; | &nbsp;&nbsp;Terms & Conditions</span></div>
 </footer>
 <a class="whatsapp-float" href="https://wa.me/971505356966" target="_blank" rel="noopener" aria-label="Chat with DUCES on WhatsApp">◉</a>
+ <script src="assets/script.js"></script>
 </body>
 </html>
