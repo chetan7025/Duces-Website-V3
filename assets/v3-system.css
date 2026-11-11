@@ -203,3 +203,31 @@ form label,.contact-form label{font-size:12px!important;font-weight:700;color:va
  .page-hero h1,.bank-page-hero h1,.contact-hero h1,.accounting-hero h1,.tax-hero h1{font-size:29px!important}
  .page-hero p,.bank-page-hero p,.contact-hero p,.accounting-hero p,.tax-hero p{font-size:13px!important}
 }
+
+
+/* Unified tablet/mobile navigation breakpoint */
+.menu-toggle{display:none}
+@media(max-width:1000px){
+ .site-header,.header{height:72px!important;min-height:72px!important}
+ .site-header .nav-wrap,.header .nav{width:calc(100% - 30px)}
+ .menu-toggle{display:flex!important;align-items:center;justify-content:center}
+ .nav-links{
+  display:none!important;position:absolute!important;top:71px!important;left:0!important;right:0!important;
+  width:100%!important;max-height:calc(100vh - 72px);overflow-y:auto;background:#fff!important;
+  padding:10px 20px 18px!important;box-shadow:0 14px 22px rgba(18,59,112,.12)!important;
+  align-items:stretch!important;flex-direction:column!important;gap:0!important
+ }
+ .nav-links.is-open,.nav-links.open{display:flex!important}
+ .nav-links>a,.nav-links>details>summary{
+  display:flex!important;width:100%;justify-content:space-between;padding:12px 4px!important;
+  border-bottom:1px solid #edf1f5;font-size:13px!important
+ }
+ .nav-dropdown{width:100%;border-bottom:1px solid #edf1f5}
+ .nav-dropdown .dropdown-menu{
+  position:static!important;min-width:0!important;width:100%;box-shadow:none!important;
+  border:0!important;border-radius:0!important;padding:2px 0 8px 12px!important;background:#F8FAFC!important
+ }
+ .nav-dropdown:hover>.dropdown-menu,.nav-dropdown:focus-within>.dropdown-menu{display:none}
+ .nav-dropdown[open]>.dropdown-menu{display:block}
+ .nav-links .wa-nav{margin-top:12px;width:100%;padding:13px!important;text-align:center}
+}
