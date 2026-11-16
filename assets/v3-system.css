@@ -450,3 +450,7 @@ h1 em,h2 em,h3 em,.page-hero h1 em,.section h2 em,.section-heading h2 em,.sectio
 .page-hero-panel h3,.bank-hero-panel h3,.accounting-hero .hero-panel h3,.tax-hero .hero-panel h3{color:var(--v3-royal)!important}
 .page-hero-panel p,.bank-hero-panel p,.accounting-hero .hero-panel p,.tax-hero .hero-panel p{color:var(--v3-muted)!important}
 @media(max-width:780px){.page-hero,.bank-page-hero,.contact-hero,.accounting-hero,.tax-hero{background-position:58% center!important;padding:42px 0!important}.page-hero-inner,.bank-hero-inner,.accounting-hero .hero-grid,.tax-hero .hero-grid{width:calc(100% - 30px)!important;max-width:100%!important}.page-hero h1,.bank-page-hero h1,.contact-hero h1,.accounting-hero h1,.tax-hero h1{font-size:clamp(28px,8vw,36px)!important;line-height:1.15!important}}
+
+/* Remove handwritten display treatment; keep the homepage typography consistent. */
+.hero-note{font-family:"DM Sans",Arial,sans-serif!important;font-size:12px!important;font-weight:700!important;letter-spacing:0!important;line-height:1.5!important;transform:none!important;max-width:210px!important;padding:10px 13px!important;border-left:3px solid var(--v3-gold)!important;background:rgba(255,255,255,.92)!important;color:var(--v3-royal)!important;border-radius:0 5px 5px 0!important}
+.hero-note:after{display:none!important}
