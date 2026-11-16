@@ -427,3 +427,26 @@ form label,.contact-form label{font-size:12px!important;font-weight:700;color:va
 .setup-card-link{display:inline-block;margin-top:18px;color:var(--v3-blue);font-size:12px;font-weight:800;text-decoration:none}
 .setup-card-link:hover{color:var(--v3-green)}
 @media(max-width:760px){.activity-visual-section{padding:18px 0 8px}.activity-visual-inner{grid-template-columns:1fr;gap:14px}.activity-visual-inner img{height:210px}.activity-visual-copy{padding:5px 0}}
+
+
+/* DUCES V3 refinement: use the V6 hero image and restrained corporate typography. */
+html,body{max-width:100%;overflow-x:clip}
+body{font-family:"DM Sans",Arial,sans-serif!important;letter-spacing:normal!important}
+h1,h2,h3,h4,h5,h6,.page-hero h1,.section h2,.section-heading h2,.section-head h2{font-family:"Manrope","DM Sans",Arial,sans-serif!important;font-style:normal!important;letter-spacing:-.015em!important;font-weight:700!important}
+h1 em,h2 em,h3 em,.page-hero h1 em,.section h2 em,.section-heading h2 em,.section-head h2 em{font-family:inherit!important;font-style:normal!important;font-weight:700!important;color:inherit!important}
+.eyebrow,.kicker{font-family:"DM Sans",Arial,sans-serif!important;letter-spacing:.08em!important;font-weight:700!important}
+.page-hero,.bank-page-hero,.contact-hero,.accounting-hero,.tax-hero{
+ background:linear-gradient(90deg,rgba(18,59,112,.93) 0%,rgba(18,59,112,.82) 54%,rgba(18,59,112,.35) 100%),url("duces-hero.jpg") center 47%/cover no-repeat!important;
+ color:#fff!important;overflow:hidden!important
+}
+.page-hero h1,.bank-page-hero h1,.contact-hero h1,.accounting-hero h1,.tax-hero h1{color:#fff!important;letter-spacing:-.02em!important;font-weight:750!important}
+.page-hero p,.bank-page-hero p,.contact-hero p,.accounting-hero p,.tax-hero p{color:#edf3f8!important}
+.page-hero .eyebrow,.bank-page-hero .eyebrow,.contact-hero .eyebrow,.accounting-hero .eyebrow,.tax-hero .eyebrow{color:#f0d69f!important}
+.page-hero .breadcrumb,.bank-page-hero .breadcrumb,.contact-hero .breadcrumb{color:#e3ebf4!important}
+.page-hero .breadcrumb a,.bank-page-hero .breadcrumb a,.contact-hero .breadcrumb a{color:#fff!important;text-decoration:underline;text-underline-offset:3px}
+.page-hero:after,.bank-page-hero:after,.contact-hero:after,.accounting-hero:after,.tax-hero:after{display:none!important}
+.page-hero-inner,.bank-hero-inner,.accounting-hero .hero-grid,.tax-hero .hero-grid{position:relative;z-index:1;min-width:0}
+.page-hero-panel,.bank-hero-panel,.accounting-hero .hero-panel,.tax-hero .hero-panel{background:#fff!important;color:var(--v3-ink)!important}
+.page-hero-panel h3,.bank-hero-panel h3,.accounting-hero .hero-panel h3,.tax-hero .hero-panel h3{color:var(--v3-royal)!important}
+.page-hero-panel p,.bank-hero-panel p,.accounting-hero .hero-panel p,.tax-hero .hero-panel p{color:var(--v3-muted)!important}
+@media(max-width:780px){.page-hero,.bank-page-hero,.contact-hero,.accounting-hero,.tax-hero{background-position:58% center!important;padding:42px 0!important}.page-hero-inner,.bank-hero-inner,.accounting-hero .hero-grid,.tax-hero .hero-grid{width:calc(100% - 30px)!important;max-width:100%!important}.page-hero h1,.bank-page-hero h1,.contact-hero h1,.accounting-hero h1,.tax-hero h1{font-size:clamp(28px,8vw,36px)!important;line-height:1.15!important}}
