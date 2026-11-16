@@ -1,127 +1,76 @@
+# DUCES Consultancy Services — Website V3
 
-# DUCES Consultancy Services — Website
+Production website project for DUCES Consultancy Services, UAE.
 
-Official website project for DUCES Consultancy Services.
+## Core services
+- Business setup and company formation guidance
+- Business bank account assistance
+- Business finance and loan consultancy
+- Mortgage finance consultancy
+- PRO and visa coordination
+- Accounting, bookkeeping, VAT and corporate tax support
 
-## About DUCES
+## Brand system
+- Royal Blue: #123B70
+- Corporate Blue: #1976B9
+- Emerald Green: #008F6B
+- Champagne Gold: #D9AD55
+- White: #FFFFFF
+- Light Background: #F5F7FA
+- Soft Silver: #E5EBF1
 
-DUCES Consultancy Services provides consultancy and business support services in the UAE.
+Typography: Manrope headings and DM Sans body text.
 
-Our service areas include:
-
-- Business Bank Account Assistance
-- Business Finance and Loan Consultancy
-- Mortgage Loan Consultancy
-- Business Setup Consultancy
-- Company Formation Support
-- PRO and Documentation Support
-- Accounting and Bookkeeping
-- VAT and Corporate Tax Consultancy
-
-## Brand Identity
-
-The website follows the approved DUCES corporate identity.
-
-| Colour | Hex Code | Usage |
-|---|---|---|
-| Royal Blue | #123B70 | Primary brand colour |
-| Corporate Blue | #1976B9 | Buttons and highlights |
-| Emerald Green | #008F6B | Accent colour |
-| Champagne Gold | #D9AD55 | Limited premium accents |
-| White | #FFFFFF | Main surfaces |
-| Light Background | #F5F7FA | Alternate backgrounds |
-| Soft Silver | #E5EBF1 | Borders and dividers |
-
-Typography:
-- Headings: Manrope
-- Body: DM Sans
-
-## Project Structure
-
-```text
-Duces-Website-V3/
-│
-├── index.html
-├── thank-you.html
-├── privacy-policy.html
-├── README.md
-│
-└── assets/
-    ├── style.css
-    ├── script.js
-    └── duces-logo.jpg
-```
-
-## Website Pages
-
+## Website pages
 | File | Purpose |
 |---|---|
-| index.html | Main homepage |
-| thank-you.html | Enquiry submission confirmation |
-| privacy-policy.html | Privacy policy |
-| assets/style.css | Website styling |
-| assets/script.js | Website interactions |
-| assets/duces-logo.jpg | Official company logo |
+| index.html | Homepage |
+| about.html | About DUCES |
+| business-setup.html | Mainland, Free Zone and Offshore setup guidance |
+| calculator.html | Interactive business setup cost estimator |
+| business-bank-account.html | Business bank account assistance |
+| business-loan.html | Business finance |
+| mortgage-loan.html | Mortgage finance |
+| pro-visa-services.html | PRO and visa coordination |
+| accounting-bookkeeping.html | Accounting and bookkeeping |
+| vat-corporate-tax.html | VAT and corporate tax |
+| contact.html | Main enquiry form |
+| thank-you.html | Enquiry confirmation |
+| privacy-policy.html | Privacy notice |
+| terms.html | Terms and conditions |
+| assets/v3-system.css | Shared design and responsive navigation styles |
+| assets/script.js | Shared navigation, form helpers and estimator logic |
+| assets/duces-logo.jpg | Company logo |
+| assets/duces-hero.jpg | Homepage hero image |
 
-## Contact Information
+## Navigation and calculator
+The shared JavaScript builds the same navigation on each standard content page. Dropdowns support pointer, keyboard and touch interaction. The mobile menu has an accessible expanded state and closes on Escape, outside click or navigation.
 
-**Company:** DUCES Consultancy Services
+The calculator collects jurisdiction, package selection, licence term, activity count, shareholder count, visa requirements and optional support services. It passes the selected requirements into the single contact enquiry form.
 
-**Email:** chetanpatil.2798@gmail.com
+### Pricing disclosure
+The estimator references DUCES package starting prices of AED 4,888 (without visa) and AED 10,800 (with one visa). These are indicative DUCES package references, not live authority tariffs or an all-inclusive quotation. Mainland, Offshore, multi-year terms, additional visas and add-on services require a tailored quotation. Confirm current prices, package inclusions, VAT and authority charges in writing before publishing or accepting payment.
 
-**Phone / WhatsApp:** +971 50 535 6966
+## Contact
+Email: chetanpatil.2798@gmail.com  
+Phone / WhatsApp: +971 50 535 6966  
+WhatsApp: https://wa.me/971505356966
 
-**WhatsApp:** https://wa.me/971505356966
+The contact form uses FormSubmit and routes enquiries to the email above. Complete FormSubmit's initial email activation and test delivery before launch.
 
-## Enquiry Form
+## Publish with GitHub Pages
+Repository: https://github.com/chetan7025/Duces-Website-V3  
+Expected Pages URL: https://chetan7025.github.io/Duces-Website-V3/
 
-The homepage enquiry form is configured to use FormSubmit.
+GitHub Pages currently uses the repository's default branch (`main`). Merge the reviewed V3 production changes into `main` for them to become the live website, then confirm Settings → Pages is configured for the main branch and root folder.
 
-Destination email:
-
-chetanpatil.2798@gmail.com
-
-Important:
-- Complete the initial FormSubmit email activation if requested.
-- Test the form after activation.
-- Confirm that the confirmation page opens after submission.
-- WhatsApp is a separate direct-contact option.
-
-## Website Images
-
-The current homepage uses externally hosted Unsplash images.
-
-An internet connection is required for those images to load.
-
-## Publishing with GitHub Pages
-
-1. Open the GitHub repository.
-2. Go to Settings.
-3. Open Pages.
-4. Under Build and deployment, select Deploy from a branch.
-5. Select the `main` branch.
-6. Select `/ (root)` as the folder.
-7. Save the settings.
-8. Wait for GitHub Pages to publish the website.
-
-Website address:
-
-https://chetan7025.github.io/Duces-Website-V3/
-
-## Pre-Launch Checklist
-
-- [ ] Homepage opens correctly.
-- [ ] Company logo loads correctly.
-- [ ] Navigation links work.
-- [ ] Mobile menu works.
-- [ ] All service sections display correctly.
-- [ ] Enquiry form submits successfully.
-- [ ] Enquiry email reaches the designated inbox.
-- [ ] Thank-you page opens after submission.
-- [ ] Privacy Policy link works.
-- [ ] WhatsApp button opens the correct number.
-- [ ] Website is checked on mobile and desktop.
-
----
+## Pre-launch checks
+- [ ] Confirm current package prices and every package inclusion.
+- [ ] Confirm FormSubmit email activation and test a real enquiry.
+- [ ] Test all navigation dropdowns on desktop, Android and iOS.
+- [ ] Test calculator combinations and enquiry prefill.
+- [ ] Check all pages, links, images and forms on mobile and desktop.
+- [ ] Confirm privacy notice, consent wording and business disclosures.
+- [ ] Confirm GitHub Pages deployment and HTTPS after merge.
 
 © DUCES Consultancy Services. All Rights Reserved.
