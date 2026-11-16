@@ -1,115 +1,23 @@
-
-/* =========================================================
-   DUCES CONSULTANCY SERVICES
-   Website JavaScript
-   Version: 3.1
-   ========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-  "use strict";
-
-  /* 01. MOBILE NAVIGATION */
-
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navigation = document.querySelector(".nav-links");
-  const navigationLinks = document.querySelectorAll(".nav-links a");
-
-  function closeMenu() {
-    if (!menuToggle || !navigation) return;
-
-    navigation.classList.remove("is-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open navigation menu");
-  }
-
-  function openMenu() {
-    if (!menuToggle || !navigation) return;
-
-    navigation.classList.add("is-open");
-    menuToggle.setAttribute("aria-expanded", "true");
-    menuToggle.setAttribute("aria-label", "Close navigation menu");
-  }
-
-  if (menuToggle && navigation) {
-
-    menuToggle.addEventListener("click", function () {
-      const expanded =
-        menuToggle.getAttribute("aria-expanded") === "true";
-
-      if (expanded) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
-
-    navigationLinks.forEach(function (link) {
-      link.addEventListener("click", closeMenu);
-    });
-
-    document.addEventListener("click", function (event) {
-      if (
-        !navigation.contains(event.target) &&
-        !menuToggle.contains(event.target)
-      ) {
-        closeMenu();
-      }
-    });
-
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        closeMenu();
-        menuToggle.focus();
-      }
-    });
-
-    window.addEventListener("resize", function () {
-      if (window.innerWidth > 1000) {
-        closeMenu();
-      }
-    });
-  }
-
-  /* 02. AUTOMATIC COPYRIGHT YEAR */
-
-  const yearElement = document.getElementById("year");
-
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-  }
-
-  /* 03. CONTACT FORM VALIDATION */
-
-  const contactForm = document.querySelector(".contact-form");
-
-  if (contactForm) {
-
-    contactForm.addEventListener("submit", function (event) {
-
-      if (!contactForm.checkValidity()) {
-        event.preventDefault();
-        contactForm.reportValidity();
-        return;
-      }
-
-      const emailField =
-        contactForm.querySelector("#email");
-
-      if (emailField && !emailField.validity.valid) {
-        event.preventDefault();
-        emailField.focus();
-        emailField.reportValidity();
-      }
-
-    });
-  }
-
-  /* 04. PREVENT EMPTY ANCHOR NAVIGATION */
-
-  document.querySelectorAll('a[href="#"]').forEach(function (link) {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-    });
-  });
-
+/* DUCES V3 — shared navigation, enquiry helpers and setup estimator */
+document.addEventListener("DOMContentLoaded",()=>{"use strict";
+const path=(location.pathname.split("/").pop()||"index.html").toLowerCase(),nav=document.querySelector(".nav-links"),toggle=document.querySelector(".menu-toggle");
+const groups=[{label:"Business Setup",items:[["Business Setup","business-setup.html"],["Free Zone & Mainland","business-setup.html"],["Setup Cost Calculator","calculator.html"]]},{label:"Banking & Finance",items:[["Business Bank Account","business-bank-account.html"],["Business Finance","business-loan.html"],["Mortgage Finance","mortgage-loan.html"]]},{label:"Corporate Services",items:[["PRO & Visa Services","pro-visa-services.html"],["Accounting & Bookkeeping","accounting-bookkeeping.html"],["VAT & Corporate Tax","vat-corporate-tax.html"]]}];
+if(nav){const link=(label,href)=>'<a href="'+href+'"'+(path===href?' class="active" aria-current="page"':'')+'>'+label+'</a>';
+nav.innerHTML=link("Home","index.html")+link("About Us","about.html")+groups.map(g=>'<details class="nav-dropdown"'+(g.items.some(i=>path===i[1])?' data-current="true"':'')+'><summary>'+g.label+'</summary><div class="dropdown-menu">'+g.items.map(i=>link(i[0],i[1])).join("")+'</div></details>').join("")+link("Contact","contact.html")+'<a class="nav-cta" href="https://wa.me/971505356966" target="_blank" rel="noopener">WhatsApp Us</a>';
+nav.querySelectorAll(".nav-dropdown").forEach(d=>d.addEventListener("toggle",()=>{if(d.open)nav.querySelectorAll(".nav-dropdown").forEach(o=>{if(o!==d)o.open=false})}))}
+const close=()=>{if(!nav||!toggle)return;nav.classList.remove("is-open","open");toggle.setAttribute("aria-expanded","false");toggle.setAttribute("aria-label","Open navigation menu")};
+if(toggle&&nav){toggle.addEventListener("click",()=>{const open=toggle.getAttribute("aria-expanded")==="true";nav.classList.toggle("is-open",!open);nav.classList.toggle("open",!open);toggle.setAttribute("aria-expanded",String(!open));toggle.setAttribute("aria-label",open?"Open navigation menu":"Close navigation menu")});nav.addEventListener("click",e=>{if(e.target.closest("a"))close()});document.addEventListener("click",e=>{if(!nav.contains(e.target)&&!toggle.contains(e.target))close()});document.addEventListener("keydown",e=>{if(e.key==="Escape"){nav.querySelectorAll("details[open]").forEach(d=>d.open=false);close();toggle.focus()}});window.addEventListener("resize",()=>{if(innerWidth>780)close()})}
+const year=document.getElementById("year");if(year)year.textContent=new Date().getFullYear();
+const form=document.querySelector(".contact-form");if(form){const q=new URLSearchParams(location.search),p=form.querySelector('[name="Product"]'),m=form.querySelector('[name="Description"]');if(q.get("product")&&p)p.value=q.get("product");if(q.get("message")&&m)m.value=q.get("message");form.addEventListener("submit",e=>{if(!form.checkValidity()){e.preventDefault();form.reportValidity()}})}
+const est=document.getElementById("setup-estimator");if(est){const $=id=>document.getElementById(id),zone=$("jurisdiction"),pkg=$("package"),visas=$("visa-count"),term=$("duration"),acts=$("activity-count"),owners=$("shareholder-count"),total=$("estimate-total"),basis=$("estimate-basis"),rows=$("estimate-breakdown"),enquire=$("estimate-enquire");
+const fmt=n=>new Intl.NumberFormat("en-AE",{style:"currency",currency:"AED",maximumFractionDigits:0}).format(n);
+function update(){const z=zone.value;pkg.disabled=z!=="freezone";if(z!=="freezone")pkg.value="quote";else if(pkg.value==="quote")pkg.value="basic";
+const amount=z==="freezone"?(pkg.value==="visa"?10800:4888):null,requested=Number(visas.value),included=pkg.value==="visa"?1:0,quoteOnly=z!=="freezone"||term.value!=="1"||requested>included;
+total.textContent=amount===null?"Custom quote":fmt(amount);basis.textContent=amount===null?"Pricing depends on jurisdiction, activity and authority requirements.":"Published DUCES starting-package reference only; not an authority fee schedule.";
+rows.innerHTML=[["Setup route",z==="freezone"?"Free Zone":z==="mainland"?"Mainland":"Offshore"],["Package reference",amount===null?"On quotation":fmt(amount)],["Licence duration",term.options[term.selectedIndex].text],["Business activities",acts.value],["Shareholders",owners.value],["Visas requested",requested+" visa(s)"]].map(r=>"<div><span>"+r[0]+"</span><strong>"+r[1]+"</strong></div>").join("");
+$("visa-note").textContent=requested>included?(requested-included)+" additional visa(s) need separate pricing and eligibility confirmation.":"Visa eligibility and allocation depend on the selected authority and package.";
+$("quote-note").hidden=!quoteOnly;const extras=[...est.querySelectorAll('input[name="extras"]:checked')].map(x=>x.value);
+const details="Business setup enquiry: "+z+"; package: "+(amount===null?"Custom quotation":fmt(amount))+"; duration: "+term.value+" year(s); activities: "+acts.value+"; shareholders: "+owners.value+"; visas requested: "+requested+"; additional services: "+(extras.join(", ")||"None selected")+". Please confirm current authority fees, inclusions and additional charges.";
+enquire.href="contact.html?product="+encodeURIComponent("Business Setup")+"&message="+encodeURIComponent(details)}
+est.addEventListener("input",update);est.addEventListener("change",update);update()}
 });
