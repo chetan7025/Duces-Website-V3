@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const navItems = [
     { label: "Home", href: "index.html", pages: ["index.html"] },
     { label: "About Us", href: "about.html", pages: ["about.html"] },
-    { label: "Business Setup", href: "business-setup.html", pages: ["business-setup.html"] },
+    { label: "Business Setup", pages: ["business-setup.html", "calculator.html"], children: [["Business Setup Overview", "business-setup.html"], ["Setup Cost Calculator", "calculator.html"]] },
     {
       label: "Bank Account",
       pages: ["business-bank-account.html", "personal-bank-account.html", "offshore-bank-account.html"],
@@ -132,4 +132,33 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('a[href="#"]').forEach(function (link) {
     link.addEventListener("click", function (event) { event.preventDefault(); });
   });
+  /* Setup estimator prefill and live indicative package reference */
+  const query = new URLSearchParams(window.location.search);
+  const productField = document.querySelector('.contact-form [name="Product"]');
+  const descriptionField = document.querySelector('.contact-form [name="Description"]');
+  if (query.get("product") && productField) productField.value = query.get("product");
+  if (query.get("message") && descriptionField) descriptionField.value = query.get("message");
+  const estimator = document.getElementById("setup-estimator");
+  if (estimator) {
+    const get = id => document.getElementById(id);
+    const jurisdiction=get("jurisdiction"), packageField=get("package"), visas=get("visa-count"), duration=get("duration"), activities=get("activity-count"), shareholders=get("shareholder-count");
+    const total=get("estimate-total"), basis=get("estimate-basis"), rows=get("estimate-breakdown"), enquire=get("estimate-enquire");
+    const money=value=>new Intl.NumberFormat("en-AE",{style:"currency",currency:"AED",maximumFractionDigits:0}).format(value);
+    function updateEstimate(){
+      const route=jurisdiction.value; packageField.disabled=route!=="freezone";
+      if(route!=="freezone") packageField.value="quote"; else if(packageField.value==="quote") packageField.value="basic";
+      const amount=route==="freezone"?(packageField.value==="visa"?10800:4888):null, visaCount=Number(visas.value), included=packageField.value==="visa"?1:0;
+      const quoteRequired=route!=="freezone"||duration.value!=="1"||visaCount>included;
+      total.textContent=amount===null?"Custom quote":money(amount);
+      basis.textContent=amount===null?"Pricing depends on jurisdiction, activity and authority requirements.":"Published DUCES starting-package reference only; not an authority fee schedule.";
+      const values=[["Setup route",route==="freezone"?"Free Zone":route==="mainland"?"Mainland":"Offshore"],["Package reference",amount===null?"On quotation":money(amount)],["Licence duration",duration.options[duration.selectedIndex].text],["Business activities",activities.value],["Shareholders",shareholders.value],["Visas requested",visaCount+" visa(s)"]];
+      rows.innerHTML=values.map(item=>"<div><span>"+item[0]+"</span><strong>"+item[1]+"</strong></div>").join("");
+      get("visa-note").textContent=visaCount>included?(visaCount-included)+" additional visa(s) need separate pricing and eligibility confirmation.":"Visa eligibility and allocation depend on the selected authority and package.";
+      get("quote-note").hidden=!quoteRequired;
+      const extras=Array.from(estimator.querySelectorAll('input[name="extras"]:checked')).map(item=>item.value);
+      const message="Business setup enquiry: "+route+"; package: "+(amount===null?"Custom quotation":money(amount))+"; duration: "+duration.value+" year(s); activities: "+activities.value+"; shareholders: "+shareholders.value+"; visas requested: "+visaCount+"; additional services: "+(extras.join(", ")||"None selected")+". Please confirm current authority fees, package inclusions and additional charges.";
+      enquire.href="contact.html?product="+encodeURIComponent("Business Setup")+"&message="+encodeURIComponent(message);
+    }
+    estimator.addEventListener("input",updateEstimate); estimator.addEventListener("change",updateEstimate); updateEstimate();
+  }
 });
