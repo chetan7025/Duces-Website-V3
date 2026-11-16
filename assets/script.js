@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const navItems = [
     { label: "Home", href: "index.html", pages: ["index.html"] },
     { label: "About Us", href: "about.html", pages: ["about.html"] },
-    { label: "Business Setup", pages: ["business-setup.html", "calculator.html"], children: [["Business Setup Overview", "business-setup.html"], ["Setup Cost Calculator", "calculator.html"]] },
+    { label: "Business Setup", pages: ["business-setup.html", "offshore-business-setup.html", "calculator.html"], children: [["Business Setup Overview", "business-setup.html"], ["Offshore Business Setup", "offshore-business-setup.html"], ["Setup Cost Calculator", "calculator.html"]] },
     {
       label: "Bank Account",
       pages: ["business-bank-account.html", "personal-bank-account.html", "offshore-bank-account.html"],
@@ -132,6 +132,30 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('a[href="#"]').forEach(function (link) {
     link.addEventListener("click", function (event) { event.preventDefault(); });
   });
+  /* Page-specific activity imagery: one relevant visual per service page. */
+  const activityVisuals = {
+    "about.html": ["A closer look at the UAE business environment", "A connected view of company formation, banking and business support helps entrepreneurs plan their next steps with greater clarity.", "Modern professional office workspace", "photo-1524758631624-e2822e304c36"],
+    "business-setup.html": ["Choose the right structure before you form a company", "Mainland, free zone and offshore structures serve different purposes. The right option depends on your activity, customers and operating plans.", "Contemporary commercial buildings in a business district", "photo-1486406146926-c627a92ad1ab"],
+    "business-bank-account.html": ["Prepare for a business banking relationship", "A clear company profile, ownership details and expected transaction activity help shape a more informed banking discussion.", "Business banking and financial planning workspace", "photo-1601597111158-2fceff292cdc"],
+    "personal-bank-account.html": ["Review personal banking requirements", "Residency, income, identity documents and expected account activity can influence which personal banking options may be suitable.", "Person using a digital payment terminal", "photo-1556742049-0cfed4f6a45d"],
+    "offshore-bank-account.html": ["Understand cross-border banking requirements", "International account enquiries require careful attention to account purpose, beneficial ownership, source of funds and compliance requirements.", "Dubai skyline representing international business and finance", "photo-1512453979798-5ea266f8880c"],
+    "business-loan.html": ["Understand your business finance position", "Cash flow, turnover, financial records and the purpose of funding are important parts of a business finance discussion.", "Business financial analysis and performance charts", "photo-1460925895917-afdab827c52f"],
+    "mortgage-loan.html": ["Plan your property finance journey", "Property value, income, liabilities and lender criteria all play a role when exploring a mortgage or property finance option.", "Modern residential property exterior", "photo-1560518883-ce09059eeffa"],
+    "pro-visa-services.html": ["Keep documentation and administrative steps organised", "Visa and Emirates ID processes involve specific documents, appointments and follow-ups with the relevant authorised providers.", "Business documents and paperwork arranged on a desk", "photo-1450101499163-c8848c66ca85"],
+    "vat-corporate-tax.html": ["Keep business tax records in order", "Well-organised invoices, expense records and financial information support more effective VAT and Corporate Tax compliance coordination.", "Tax and accounting documents with calculator", "photo-1554224155-6726b3ff858f"],
+    "accounting-bookkeeping.html": ["Clear financial records support better decisions", "Organised bookkeeping and reconciliations help business owners understand transactions, monitor performance and prepare for reporting.", "Accounting records and financial calculations on a desk", "photo-1554224154-22dec7ec8818"],
+    "contact.html": ["Start with a clear conversation", "Share your business objective and the service you are considering. We can help identify the information and next steps relevant to your enquiry.", "Business professionals discussing a project together", "photo-1521737711867-e3b97375f902"],
+    "calculator.html": ["Build a clearer picture of your setup requirements", "Use the estimator to organise your preferred jurisdiction, activity, visa and workspace requirements before requesting an itemised quotation.", "Calculator and financial planning documents", "photo-1554224157-8d04cb21cd6c"]
+  };
+  const visual = activityVisuals[currentPage];
+  const heroSection = document.querySelector("main > section");
+  if (visual && heroSection && !document.querySelector(".activity-visual-section")) {
+    const imageSection = document.createElement("section");
+    imageSection.className = "activity-visual-section";
+    imageSection.setAttribute("aria-label", visual[0]);
+    imageSection.innerHTML = '<div class="container activity-visual-inner"><div class="activity-visual-copy"><span class="eyebrow">DUCES BUSINESS SUPPORT</span><h2>' + visual[0] + '</h2><p>' + visual[1] + '</p></div><img src="https://images.unsplash.com/' + visual[3] + '?auto=format&fit=crop&w=1200&q=85" alt="' + visual[2] + '" loading="lazy" decoding="async"></div>';
+    heroSection.insertAdjacentElement("afterend", imageSection);
+  }
   /* Setup estimator prefill and live indicative package reference */
   const query = new URLSearchParams(window.location.search);
   const productField = document.querySelector('.contact-form [name="Product"]');

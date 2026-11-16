@@ -415,3 +415,15 @@ form label,.contact-form label{font-size:12px!important;font-weight:700;color:va
 .estimator-faq{max-width:1120px;margin:0 auto 65px;padding:0 24px}.estimator-faq h2{font-size:24px;margin-bottom:18px}.faq-row{border-bottom:1px solid #E5EBF1;padding:15px 0}.faq-row summary{cursor:pointer;color:#123B70;font-weight:800;font-size:13px}.faq-row p{font-size:12px;margin:9px 0 0}
 @media(max-width:820px){.estimator-shell{grid-template-columns:1fr}.estimate-card{position:static;grid-row:1}.estimator-form{padding:22px}}
 @media(max-width:520px){.estimator-shell{padding:0 15px;margin:22px auto 45px}.estimator-hero{padding:38px 0 28px}.estimator-hero .container{width:calc(100% - 30px)}.field-grid,.extra-list{grid-template-columns:1fr}.field.full{grid-column:auto}.estimator-form{padding:19px}.estimate-head strong{font-size:27px}.estimator-faq{padding:0 18px}}
+
+/* Activity-specific imagery for service detail pages */
+.activity-visual-section{padding:28px 0 12px;background:#fff}
+.activity-visual-inner{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:34px;align-items:center}
+.activity-visual-copy{padding:14px 0}
+.activity-visual-copy .eyebrow{display:inline-block;margin:0 0 10px}
+.activity-visual-copy h2{font-size:clamp(22px,2.5vw,30px)!important;line-height:1.25!important;margin:0 0 10px!important}
+.activity-visual-copy p{font-size:13px!important;line-height:1.75!important;margin:0!important}
+.activity-visual-inner img{display:block;width:100%;height:250px;object-fit:cover;border-radius:12px;border:1px solid var(--v3-silver);box-shadow:var(--v3-shadow)}
+.setup-card-link{display:inline-block;margin-top:18px;color:var(--v3-blue);font-size:12px;font-weight:800;text-decoration:none}
+.setup-card-link:hover{color:var(--v3-green)}
+@media(max-width:760px){.activity-visual-section{padding:18px 0 8px}.activity-visual-inner{grid-template-columns:1fr;gap:14px}.activity-visual-inner img{height:210px}.activity-visual-copy{padding:5px 0}}
