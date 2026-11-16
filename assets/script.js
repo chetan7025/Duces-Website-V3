@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const navItems = [
     { label: "Home", href: "index.html", pages: ["index.html"] },
     { label: "About Us", href: "about.html", pages: ["about.html"] },
-    { label: "Business Setup", pages: ["business-setup.html", "offshore-business-setup.html", "offshore-bank-account.html", "calculator.html"], children: [["Business Setup Overview", "business-setup.html"], ["Offshore Business Setup", "offshore-business-setup.html"], ["Offshore Banking", "offshore-bank-account.html"], ["Setup Cost Calculator", "calculator.html"]] },
+    { label: "Business Setup", pages: ["business-setup.html", "offshore-business-setup.html", "offshore-bank-account.html", "calculator.html"], children: [["Business Setup Overview", "business-setup.html"], ["Setup Cost Calculator", "calculator.html"]] },
     {
       label: "Bank Account",
       pages: ["business-bank-account.html", "personal-bank-account.html"],
