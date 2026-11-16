@@ -147,8 +147,8 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateEstimate(){
       const route=jurisdiction.value; packageField.disabled=route!=="freezone";
       if(route!=="freezone") packageField.value="quote"; else if(packageField.value==="quote") packageField.value="basic";
-      const amount=route==="freezone"?(packageField.value==="visa"?10800:4888):null, visaCount=Number(visas.value), included=packageField.value==="visa"?1:0;
-      const quoteRequired=route!=="freezone"||duration.value!=="1"||visaCount>included;
+      const amount=route==="freezone"&&packageField.value!=="quote"?(packageField.value==="visa"?10800:4888):null, visaCount=Number(visas.value), included=packageField.value==="visa"?1:0;
+      const quoteRequired=route!=="freezone"||packageField.value==="quote"||duration.value!=="1"||visaCount>included;
       total.textContent=amount===null?"Custom quote":money(amount);
       basis.textContent=amount===null?"Pricing depends on jurisdiction, activity and authority requirements.":"Published DUCES starting-package reference only; not an authority fee schedule.";
       const values=[["Setup route",route==="freezone"?"Free Zone":route==="mainland"?"Mainland":"Offshore"],["Package reference",amount===null?"On quotation":money(amount)],["Licence duration",duration.options[duration.selectedIndex].text],["Business activities",activities.value],["Shareholders",shareholders.value],["Visas requested",visaCount+" visa(s)"]];
