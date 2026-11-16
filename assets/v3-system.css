@@ -108,3 +108,14 @@ form label,.contact-form label{font-size:12px!important;font-weight:700;color:va
  .page-hero p,.bank-page-hero p,.contact-hero p{font-size:13px!important}
  .footer-main{grid-template-columns:1fr!important}
 }
+
+/* Navigation enhancement: consistent dropdown behaviour on every page */
+.nav-dropdown{position:relative;display:block}.nav-dropdown>summary{list-style:none;display:flex;align-items:center;gap:7px}.nav-dropdown>summary::-webkit-details-marker{display:none}
+.nav-dropdown>summary:after{content:"";width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-4px;transition:transform .18s}
+.nav-dropdown[open]>summary:after{transform:rotate(225deg);margin-top:4px}
+.nav-dropdown>.dropdown-menu{display:none;position:absolute;top:calc(100% + 10px);left:0;min-width:245px;padding:9px;background:#fff;border:1px solid var(--v3-silver);border-radius:10px;box-shadow:0 16px 36px rgba(18,59,112,.14)}
+.nav-dropdown[open]>.dropdown-menu{display:block}.nav-dropdown>.dropdown-menu:before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
+.nav-links .nav-cta{padding:10px 15px;border-radius:8px;background:var(--v3-green);color:#fff!important}.nav-links .nav-cta:hover{background:#00785B!important;color:#fff!important}
+.nav-links .dropdown-menu a{display:block;padding:10px 12px;border-radius:7px;white-space:normal}.nav-links .dropdown-menu a.active{background:#F0F6FA;color:var(--v3-green)!important}
+@media(hover:hover) and (min-width:781px){.nav-dropdown:hover>.dropdown-menu,.nav-dropdown:focus-within>.dropdown-menu{display:block}.nav-dropdown:hover>summary:after{transform:rotate(225deg);margin-top:4px}}
+@media(max-width:780px){.nav-dropdown{width:100%;border-bottom:1px solid #edf1f5}.nav-dropdown>summary{padding:12px 4px;font-size:13px!important}.nav-dropdown>.dropdown-menu{position:static;min-width:0;width:100%;padding:4px 0 9px 12px;border:0;border-radius:0;box-shadow:none}.nav-dropdown>.dropdown-menu a{padding:10px 12px;font-size:13px}.nav-links .nav-cta{display:block;text-align:center;margin-top:12px;padding:12px}}
