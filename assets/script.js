@@ -147,16 +147,20 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateEstimate(){
       const route=jurisdiction.value; packageField.disabled=route!=="freezone";
       if(route!=="freezone") packageField.value="quote"; else if(packageField.value==="quote") packageField.value="basic";
-      const amount=route==="freezone"&&packageField.value!=="quote"?(packageField.value==="visa"?10800:4888):null, visaCount=Number(visas.value), included=packageField.value==="visa"?1:0;
-      const quoteRequired=route!=="freezone"||packageField.value==="quote"||duration.value!=="1"||visaCount>included;
-      total.textContent=amount===null?"Custom quote":money(amount);
-      basis.textContent=amount===null?"Pricing depends on jurisdiction, activity and authority requirements.":"Published DUCES starting-package reference only; not an authority fee schedule.";
-      const values=[["Setup route",route==="freezone"?"Free Zone":route==="mainland"?"Mainland":"Offshore"],["Package reference",amount===null?"On quotation":money(amount)],["Licence duration",duration.options[duration.selectedIndex].text],["Business activities",activities.value],["Shareholders",shareholders.value],["Visas requested",visaCount+" visa(s)"]];
+      const authority=get("authority"), workspace=get("workspace");
+      authority.disabled=route!=="freezone";
+      const visaCount=Number(visas.value), included=packageField.value==="visa"?1:0;
+      const extras=Array.from(estimator.querySelectorAll('input[name="extras"]:checked')).map(item=>item.value);
+      const amount=route==="freezone"&&packageField.value!=="quote"?(packageField.value==="visa"?10800:4888):null;
+      const quoteRequired=route!=="freezone"||packageField.value==="quote"||duration.value!=="1"||visaCount>included||authority.value!=="recommend"||workspace.value!=="undecided"||extras.length>0;
+      total.textContent=amount===null?"Custom quote":(quoteRequired?"From ":"")+money(amount);
+      basis.textContent=amount===null?"Pricing depends on jurisdiction, authority, activity and operating requirements.":"DUCES published starting-package reference. A tailored quote is required for selected extras or specific authority requirements.";
+      const authorityLabel=route!=="freezone"?"Not applicable":authority.options[authority.selectedIndex].text;
+      const values=[["Setup route",route==="freezone"?"Free Zone":route==="mainland"?"Mainland":"Offshore"],["Preferred authority",authorityLabel],["Package reference",amount===null?"On quotation":money(amount)],["Licence duration",duration.options[duration.selectedIndex].text],["Business activities",activities.value],["Shareholders",shareholders.value],["Visas requested",visaCount+" visa(s)"],["Workspace",workspace.options[workspace.selectedIndex].text]];
       rows.innerHTML=values.map(item=>"<div><span>"+item[0]+"</span><strong>"+item[1]+"</strong></div>").join("");
       get("visa-note").textContent=visaCount>included?(visaCount-included)+" additional visa(s) need separate pricing and eligibility confirmation.":"Visa eligibility and allocation depend on the selected authority and package.";
       get("quote-note").hidden=!quoteRequired;
-      const extras=Array.from(estimator.querySelectorAll('input[name="extras"]:checked')).map(item=>item.value);
-      const message="Business setup enquiry: "+route+"; package: "+(amount===null?"Custom quotation":money(amount))+"; duration: "+duration.value+" year(s); activities: "+activities.value+"; shareholders: "+shareholders.value+"; visas requested: "+visaCount+"; additional services: "+(extras.join(", ")||"None selected")+". Please confirm current authority fees, package inclusions and additional charges.";
+      const message="Business setup enquiry: "+(route==="freezone"?"Free Zone":route==="mainland"?"Mainland":"Offshore")+"; preferred authority: "+authorityLabel+"; package: "+(amount===null?"Custom quotation":money(amount))+"; duration: "+duration.value+" year(s); activities: "+activities.value+"; shareholders: "+shareholders.value+"; visas requested: "+visaCount+"; workspace: "+workspace.value+"; additional services: "+(extras.join(", ")||"None selected")+". Please confirm current authority fees, package inclusions and additional charges.";
       enquire.href="contact.html?product="+encodeURIComponent("Business Setup")+"&message="+encodeURIComponent(message);
     }
     estimator.addEventListener("input",updateEstimate); estimator.addEventListener("change",updateEstimate); updateEstimate();
